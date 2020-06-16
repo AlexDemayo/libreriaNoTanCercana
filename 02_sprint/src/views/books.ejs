@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/stylesheets/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/public/stylesheets/style.css">
+   
+    <title>Libros</title>
+</head>
+<body>
+    <header>
+        <!-- incluir header -->
+    </header>
+    <main>
+       <div class="container">
+           <div class="row">
+               <section class="col-5">
+                    <ul class="path">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#">Libros</a></li>
+                    </ul>
+               </section>
+               <section class="col-12">
+                   <ul class="categories">
+                       <li><a href="#">Arte</a></li>
+                       <li><a href="#">Crónica</a></li>
+                       <li><a href="#">Ensayo</a></li>
+                       <li><a href="#">Infantil y juvenil</a></li>
+                       <li><a href="#">Narrativa</a></li>
+                       <li><a href="#">Novelas gráficas y comics</a></li>
+                       <li><a href="#">Poesía</a></li>
+                   </ul>
+               </section>
+                <% books.forEach(book => { %>
+                    <div class="col-sm-6 col-md-2">
+                    <section class="book-container">
+                        <img src="<%= book.image %>" alt="book photo">
+                        <h2><%= book.title %></h2>
+                        <p>$<%= book.price %></p>
+                    </section>
+                    </div>                 
+                <% }) %>
+           </div>
+       </div>
+    </main>
+</body>
+
+</html>
