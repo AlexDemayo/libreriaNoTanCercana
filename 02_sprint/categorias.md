@@ -21,9 +21,6 @@ Narrativa
     Policiales
     Cuentos-relatos
 
-Infantil y Juvenil
-    Infantil
-
 Novelas gráficas y comics:
     Comics
     Historietas
