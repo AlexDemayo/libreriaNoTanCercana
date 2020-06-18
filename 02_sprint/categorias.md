@@ -23,6 +23,5 @@ Narrativa
 
 Novelas gráficas y comics:
     Comics
-    Historietas
     Manga (no sé si va)
     Novelas gráficas
