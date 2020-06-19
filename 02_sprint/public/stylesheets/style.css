@@ -10,7 +10,9 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
+.clase-subtitulo{
+  color: black;
+}
 img{
   width: 100%;
 
