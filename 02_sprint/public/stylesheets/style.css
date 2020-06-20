@@ -1,11 +1,16 @@
 *{
   box-sizing: border-box;
 }
-
+.containerDelBody{
+ 
+  padding-left: 10%;
+  padding-right: 10%;
+}
 
 body {
   /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
- font-family: 'Roboto', sans-serif;
+ /* font-family: 'Roboto', sans-serif; */
+ font-family : Helvetica,"Helvetica Neue",Arial,"Lucida Grande",sans-serif;
 }
 
 img{
@@ -41,6 +46,7 @@ ul,ol{
 h3{
   font-weight: 500;
   /* color: #38363b; */ 
+  /* color: #666666; */
   color: #362c36;
 }
 
@@ -116,12 +122,6 @@ h3{
 
 
 @media(min-width: 992px){
-  /* img{
-    height: 100%;
-  }
-  .image-container{
-    height:350px
-  } */
   .route li {
     font-size: 14px;
   }

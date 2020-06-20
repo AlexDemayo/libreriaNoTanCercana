@@ -1,0 +1,139 @@
+
+figure{
+    text-align: center;
+}
+
+label{
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+input{
+    display: block;
+    margin: 10px 0px;
+    width: 22%;
+    height: 7vh;
+    text-indent: 8px;
+    font-size: 1em;
+    border: 1px solid #b9b9b9;
+}
+
+button{
+    display: block;
+    width: 100%;
+    padding: 0px 5px;
+    background-color:#6E6B6B;
+    color:white;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+    margin: 20px 0;
+    font-weight: 500;
+    margin-bottom: 10px;
+    min-height: 44px;
+}
+
+
+.container{
+    margin-top: 30px;
+}
+
+.book-info{
+    border-bottom: 1px solid #b9b9b9;
+    width: 100%;
+}
+
+
+.book-info h1{
+    margin-bottom: 0px;
+    font-size: 2.15em;
+    font-weight: 400;
+    color:  #362c36;
+}
+
+
+.book-info p{
+    color: #362c36;
+    margin: 5px 0px 14px 0px;
+    font-size:15px;
+    /* margin: 10px 0px; */
+
+}
+
+.book-info i{
+    color:gold;
+    font-size: 15px;
+    margin-bottom: 10px
+}
+
+
+.book-price{
+    background-color: #fcb03d18;
+    width: 100%;
+    padding: 11px 0px;
+    margin: 25px 0px;
+    text-align: center;
+    border: 1px solid #b9b9b9;
+    border-radius: 5px;
+    font-weight: 300;
+
+}
+
+.book-price h3{
+    margin: 0px;
+    margin-bottom: 10px;
+}
+
+.book-price p{
+    margin: 0px;
+}
+
+
+
+
+
+
+@media(min-width:768px){
+    img{
+        width: auto;
+     }
+
+    input{
+        margin: 15px 0px;
+    }
+
+    button{
+        width: 70%;
+        margin: 30px 0;
+    }
+ 
+    .book-info{
+        width: 70%;
+    }
+
+    .book-info h1{
+        margin: 0px;
+    }
+
+    .book-price{
+        width: 45%;
+        padding: 10px 15px;
+        margin: 40px 0px;
+    }
+
+    .book-price h3{
+        margin: 4px 0px 12px 0px;
+    }
+
+    .book-price p{
+        margin: 4px;
+    }
+
+}
+
+
+@media (min-width: 992px){
+    .book-price{
+        width: 35%;
+    }
+}

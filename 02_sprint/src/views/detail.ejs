@@ -2,31 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=h2, initial-scale=1.0">
     <link rel="stylesheet" href="/public/stylesheets/bootstrap-grid.min.css">
     <link rel="stylesheet" href="/public/stylesheets/style.css">
-    <title><% book.name %> </title>
+    <link rel="stylesheet" href="/public/stylesheets/newStyles.css">
+    <title>Detalle de producto</title>
 </head>
 <body>
-    <header>
-        <!-- import header -->
-    </header>
-    <main>
-        <div class="container">
-            <div class="row">
-                <section class="col-12">
-                    <ul class="route">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/books">Libros</a></li>
-                        <li><a href="/books/<%= book.category%>"><%= book.category %> </a></li>
-                        <% if (book.subCategory != null) { %>
-                            <li><a href="/books/<%= book.subCategory%>"><%= book.subCategory %> </a></li>
-                        <% } %>
-                    </ul>
-               </section>
-               <h2>Estoy en el detalle de producto <%= book.name %> </h2>
+        <header>
+            <!-- importar header -->
+        </header>
+        <main>
+            <!-- camino de migas -->
+            <div class = "container">
+                <div class= "row">  
+                    <figure class="col-12 col-md-6">
+                        <img src="<%= book.image%>" alt="">
+                    </figure>
+                    <div class="col-12 col-md-6">
+                        <div class="book-info">
+                            <h1>Kentukis</h1>
+                            <p>Autor: Samanta schwelbin</p>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="book-price">
+                            <h3>Tapa blanda</h3>
+                            <p>AR$ 614,00</p>
+                        </div>
+                        <div class="book-buy">
+                            <label for="quantity">Cantidad</label>
+                            <input type="number" name="quantity" value="1" min="1"> 
+                            <button type="submit">Agregar al carrito</button>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <h2>Descripción</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo autem nisi voluptates, ratione soluta id? At quaerat modi placeat a sunt vitae distinctio nihil animi recusandae voluptates? Laudantium ullam soluta eveniet, quas minus voluptatem earum sint provident iure! Magnam sequi fuga veritatis nihil. Repellendus itaque vel nulla reiciendis fuga rerum voluptatum natus molestias nisi. Iste quidem fugiat, labore consequatur, sapiente inventore ea eos, deleniti adipisci sunt natus dolorum perspiciatis officia.</p>
+                    </div>
+                    <div class="col-12">
+                        <h2>Detalles del producto</h2>
+                        <ul class="detail-left">
+                            <li>Editorial:</li>
+                            <li>Fecha de publicación:</li>
+                            <li>Páginas:</li>
+                            <li>ISBN:</li>
+                        </ul>
+                        <ul class="detail-right">
+                            <li>Penguin Random House</li>
+                            <li>19-05-2017</li>
+                            <li>128</li>
+                            <li>8439729480</li>
+                        </ul>
+                    </div>
+                    <div class="col-12">
+                        <h2>Categorías Recomendadas para vos</h2>
+                    </div>
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
 </body>
 </html>
