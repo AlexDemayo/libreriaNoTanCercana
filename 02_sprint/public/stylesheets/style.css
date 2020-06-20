@@ -12,7 +12,9 @@ body {
  /* font-family: 'Roboto', sans-serif; */
  font-family : Helvetica,"Helvetica Neue",Arial,"Lucida Grande",sans-serif;
 }
-
+.clase-subtitulo{
+  color: black;
+}
 img{
   width: 100%;
 }
