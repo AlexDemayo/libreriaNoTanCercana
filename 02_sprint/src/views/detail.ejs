@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=h2, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/stylesheets/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="/public/stylesheets/style.css">
-    <link rel="stylesheet" href="/public/stylesheets/newStyles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css"/>
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+    <link rel="stylesheet" href="/stylesheets/newStyles.css">
     <title>Detalle de producto</title>
 </head>
 <body>
@@ -13,24 +14,34 @@
             <!-- importar header -->
         </header>
         <main>
-            <!-- camino de migas -->
             <div class = "container">
                 <div class= "row">  
+                    <section class="col-12">
+                        <ul class="route">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/category">Categorías</a></li>
+                            <li><a href="/category/<%=book.category%>"><%= book.category %></a></li>
+                            <% if (book.subCategory !=null) { %>
+                                <li><a href="/category/<%=book.category%>/<%book.subCategory%>"><%= book.subCategory %> </a></li>
+                            <% } %>
+                            <li><a href="#"><%= book.title %> </a></li>
+                        </ul>            
+                    </section>
                     <figure class="col-12 col-md-6">
                         <img src="<%= book.image%>" alt="">
                     </figure>
                     <div class="col-12 col-md-6">
                         <div class="book-info">
-                            <h1>Kentukis</h1>
-                            <p>Autor: Samanta schwelbin</p>
+                            <h1><%= book.title %> </h1>
+                            <p>Autor: <%= book.autor %>  </p>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
                         <div class="book-price">
-                            <h3>Tapa blanda</h3>
-                            <p>AR$ 614,00</p>
+                            <h3><%= book.cover %> </h3>
+                            <p>AR$ <%= book.price %></p>
                         </div>
                         <div class="book-buy">
                             <label for="quantity">Cantidad</label>
@@ -38,30 +49,46 @@
                             <button type="submit">Agregar al carrito</button>
                         </div>
                     </div>
-                    <div class="col-12">
-                        <h2>Descripción</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo autem nisi voluptates, ratione soluta id? At quaerat modi placeat a sunt vitae distinctio nihil animi recusandae voluptates? Laudantium ullam soluta eveniet, quas minus voluptatem earum sint provident iure! Magnam sequi fuga veritatis nihil. Repellendus itaque vel nulla reiciendis fuga rerum voluptatum natus molestias nisi. Iste quidem fugiat, labore consequatur, sapiente inventore ea eos, deleniti adipisci sunt natus dolorum perspiciatis officia.</p>
+                    <div id="book-info" class="col-12">
+                        <div class="book-info-section">
+                            <span>Descripción</span>
+                        </div>
+                        <p><%= book.description %> </p>
                     </div>
                     <div class="col-12">
-                        <h2>Detalles del producto</h2>
-                        <ul class="detail-left">
-                            <li>Editorial:</li>
-                            <li>Fecha de publicación:</li>
-                            <li>Páginas:</li>
-                            <li>ISBN:</li>
-                        </ul>
-                        <ul class="detail-right">
-                            <li>Penguin Random House</li>
-                            <li>19-05-2017</li>
-                            <li>128</li>
-                            <li>8439729480</li>
-                        </ul>
+                        <div class="book-info-section">
+                            <span>Detalle del producto</span>
+                        </div> 
+                        <table>
+                            <tr>
+                                <th>Editorial:</th>
+                                <td><%= book.publisher %></td>
+                            </tr>
+                            <tr>
+                                <th>Fecha de publicación:</th>
+                                <td><%= book.datePublished %> </td>
+                            </tr>
+                            <tr>
+                                <th>Páginas:</th>
+                                <td><%= book.pages %></td>
+                            </tr>
+                            <tr>
+                                <th>ISBN:</th>
+                                <td><%= book.isbn %></td>
+                            </tr>
+                        </table> 
                     </div>
                     <div class="col-12">
-                        <h2>Categorías Recomendadas para vos</h2>
+                        <div class="book-info-section">
+                            <span>Categorías recomendadas para vos</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
 </body>
 </html>
+
+
+
+

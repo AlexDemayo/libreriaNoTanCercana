@@ -1,4 +1,9 @@
 
+
+section{
+    margin-bottom: 20px;
+}
+
 figure{
     text-align: center;
 }
@@ -22,20 +27,56 @@ button{
     display: block;
     width: 100%;
     padding: 0px 5px;
-    background-color:#6E6B6B;
+    background-color:#585858;
     color:white;
     text-transform: uppercase;
     border: none;
     border-radius: 3px;
     margin: 20px 0;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     min-height: 44px;
 }
 
+button:hover{
+    cursor: pointer;
+    background-color: #8b8b8b;
+}
 
-.container{
-    margin-top: 30px;
+
+table{
+    font-size: 13px;
+    margin-left:auto; 
+    margin-right:auto;
+    margin-bottom: 12px
+}
+
+
+table th{
+   font-weight: 400;
+   text-align: inherit;
+   padding: 0px 30px 10px 0px;
+}
+
+table td{
+    padding-bottom: 10px;
+}
+
+span{
+    /* color:#3a3a3a; */
+    font-size: 17px; 
+    background-color: #ffffff; 
+    padding: 0 15px;
+}
+
+p{
+    margin: 28px 0px;
+    line-height: 23px;
+    font-size: 15px;
+}
+
+.route{
+    display: none;
 }
 
 .book-info{
@@ -46,16 +87,18 @@ button{
 
 .book-info h1{
     margin-bottom: 0px;
-    font-size: 2.15em;
+    font-size: 24px;
     font-weight: 400;
     color:  #362c36;
+    cursor: default;
 }
 
 
 .book-info p{
     color: #362c36;
-    margin: 5px 0px 14px 0px;
+    margin: 10px 0px;
     font-size:15px;
+    font-weight: 300;
     /* margin: 10px 0px; */
 
 }
@@ -69,6 +112,7 @@ button{
 
 .book-price{
     background-color: #fcb03d18;
+    /* background-color: #c9985f1e;; */
     width: 100%;
     padding: 11px 0px;
     margin: 25px 0px;
@@ -89,15 +133,20 @@ button{
 }
 
 
+.book-info-section {
+    width: 100%; 
+    height: 11px; 
+    border-bottom: 1px solid #b9b9b9;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
 
 
 
 
 @media(min-width:768px){
-    img{
-        width: auto;
-     }
-
     input{
         margin: 15px 0px;
     }
@@ -106,7 +155,20 @@ button{
         width: 70%;
         margin: 30px 0;
     }
- 
+
+    p{
+        margin: 40px 0
+    }
+
+    table{
+        font-size: 15px;
+        margin-bottom: 34px;
+        margin-top: 50px;
+    }
+
+    .route{
+        display: flex;
+    }
     .book-info{
         width: 70%;
     }
@@ -118,7 +180,7 @@ button{
     .book-price{
         width: 45%;
         padding: 10px 15px;
-        margin: 40px 0px;
+        margin: 38px 0px;
     }
 
     .book-price h3{
@@ -128,12 +190,34 @@ button{
     .book-price p{
         margin: 4px;
     }
+    
+    .book-info-section p{
+        margin: 28px 0px 12px 0px;
+    }
 
+    #book-info{
+        margin-top:20px
+    }
+
+ 
 }
 
 
 @media (min-width: 992px){
+    img{
+        width: 60%;
+    }
+    span{
+        font-size: 22px;
+        padding:20px
+    }
     .book-price{
         width: 35%;
+    }
+    #book-info{
+        margin-top:34px
+    }
+    .book-info-section{
+        height: 14px;
     }
 }
