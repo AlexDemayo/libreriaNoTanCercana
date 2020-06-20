@@ -1,5 +1,5 @@
 const jsonModel = require('../models/jsonModel');
-const bookModel = jsonModel('libreria')
+const bookModel = jsonModel('booksDataNew')
 
 
 module.exports = {
