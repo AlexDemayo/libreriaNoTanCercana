@@ -6,11 +6,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css"/>
     <link rel='stylesheet' href='/stylesheets/style.css'>
+    <link rel="stylesheet" href="/stylesheets/hfstyles.css.css">
     <title><%= category %> </title>
 </head>
 <body>
     <header> 
-        <!-- traer header de partials -->
+        <%- include('partials/header') %>
     </header>
     <main>
         <div class="container">
@@ -74,7 +75,7 @@
         </div>
     </main>
     <footer>
-        <!-- Requerir footer -->
+        <%- include('partials/footer') %>
     </footer>
 </body>
 
