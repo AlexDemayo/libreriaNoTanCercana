@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/css/uikit.min.css" />
+    <!-- <link rel="stylesheet" href="/stylesheets/hfstyles.css.css"> -->
+
     <link rel='stylesheet' href='/stylesheets/style.css'>
     <link rel="stylesheet" href="/stylesheets/newStyles.css">
     <link rel="stylesheet" href="/stylesheets/hfstyles.css.css">
@@ -16,16 +19,16 @@
 </head>
 <body>
         <header>
-            <%- include('partials/header') %>
+            <!-- <%- include('partials/header') %> -->
         </header>
         <main>
             <div class = "container">
                 <div class= "row">  
                     <section class="col-12">
                         <ul class="route">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/category">Categorías</a></li>
-                            <li><a href="/category/<%=book.category%>"><%= book.category %></a></li>
+                            <li id="breadCrumbs"><a href="/">Home</a></li>
+                            <li id="breadCrumbs"><a href="/category">Categorías</a></li>
+                            <li id="breadCrumbs"><a href="/category/<%=book.category%>"><%= book.category %></a></li>
                             <% if (book.subCategory !=null) { %>
                                 <li><a href="/category/<%=book.category%>/<%book.subCategory%>"><%= book.subCategory %> </a></li>
                             <% } %>
@@ -118,7 +121,7 @@
               </div>
         </main>
         <footer>
-            <%- include('partials/footer') %>
+       
         </footer>
 
 </body>
