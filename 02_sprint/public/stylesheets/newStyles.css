@@ -16,14 +16,14 @@ label{
 input{
     display: block;
     margin: 10px 0px;
-    width: 22%;
+    width: 15%;
     height: 7vh;
     text-indent: 8px;
     font-size: 1em;
     border: 1px solid #b9b9b9;
 }
 
-button{
+.book-buy button{
     display: block;
     width: 100%;
     padding: 0px 5px;
@@ -62,7 +62,7 @@ table td{
     padding-bottom: 10px;
 }
 
-span{
+.span-detail {
     /* color:#3a3a3a; */
     font-size: 17px; 
     background-color: #ffffff; 
@@ -150,6 +150,7 @@ p{
     }
     input{
         margin: 15px 0px;
+        width: 14%;
     }
 
     button{
@@ -208,7 +209,11 @@ p{
     img{
         width: 50%;
     }
-    span{
+    input{
+        margin: 15px 0px;
+        width: 12%;
+    }   
+    .span-detail{
         font-size: 22px;
         padding:20px
     }
@@ -220,5 +225,13 @@ p{
     }
     .book-info-section{
         height: 14px;
+        padding-top: 20px;
     }
+    .book-buy button{
+        
+        width: 70%;
+        
+    }
+    
+
 }

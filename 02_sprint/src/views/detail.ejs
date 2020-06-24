@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/css/uikit.min.css" />
-    <!-- <link rel="stylesheet" href="/stylesheets/hfstyles.css.css"> -->
+     <link rel="stylesheet" href="/stylesheets/hfstyles.css.css">
 
     <link rel='stylesheet' href='/stylesheets/style.css'>
     <link rel="stylesheet" href="/stylesheets/newStyles.css">
@@ -17,7 +17,7 @@
 </head>
 <body>
         <header>
-            <!-- <%- include('partials/header') %> -->
+        <%- include('partials/header') %> 
         </header>
         <main>
             <div class = "container">
@@ -57,13 +57,13 @@
                     </div>
                     <div id="book-info" class="col-12">
                         <div class="book-info-section">
-                            <span>Descripción</span>
+                            <span class="span-detail">Descripción</span>
                         </div>
                         <p><%= book.description %> </p>
                     </div>
                     <div class="col-12">
                         <div class="book-info-section">
-                            <span>Detalle del producto</span>
+                            <span class="span-detail">Detalle del producto</span>
                         </div> 
                         <table>
                             <tr>
@@ -86,7 +86,7 @@
                     </div>
                     <div class="col-12">
                         <div class="book-info-section">
-                            <span>Categorías recomendadas para vos</span>
+                            <span class="span-detail">Categorías recomendadas para vos</span>
                         </div>
                     </div>
                 </div>
@@ -119,7 +119,7 @@
               </div>
         </main>
         <footer>
-       
+ <%- include('partials/footer') %>
         </footer>
 
 </body>
