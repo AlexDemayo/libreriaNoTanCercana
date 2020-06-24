@@ -9,7 +9,7 @@
      <link rel="stylesheet" href="/stylesheets/hfstyles.css.css">
 
     <link rel='stylesheet' href='/stylesheets/style.css'>
-    <link rel="stylesheet" href="/stylesheets/newStyles.css">
+    <link rel="stylesheet" href="/stylesheets/detail.css">
 
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit-icons.min.js"></script>
@@ -22,11 +22,11 @@
         <main>
             <div class = "container">
                 <div class= "row">  
-                    <section class="col-12">
+                    <section id="breadCrumbs" class="col-12">
                         <ul class="route">
-                            <li id="breadCrumbs"><a href="/">Home</a></li>
-                            <li id="breadCrumbs"><a href="/category">Categorías</a></li>
-                            <li id="breadCrumbs"><a href="/category/<%=book.category%>"><%= book.category %></a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/category">Categorías</a></li>
+                            <li><a href="/category/<%=book.category%>"><%= book.category %></a></li>
                             <% if (book.subCategory !=null) { %>
                                 <li><a href="/category/<%=book.category%>/<%book.subCategory%>"><%= book.subCategory %> </a></li>
                             <% } %>
@@ -34,7 +34,7 @@
                         </ul>            
                     </section>
                     <figure class="col-12 col-md-6">
-                        <img src="<%= book.image%>" alt="">
+                        <img class="book-photo" src="<%= book.image%>" alt="">
                     </figure>
                     <div class="col-12 col-md-6">
                         <div class="book-info">
@@ -65,7 +65,7 @@
                         <div class="book-info-section">
                             <span class="span-detail">Detalle del producto</span>
                         </div> 
-                        <table>
+                        <table class="book-detail">
                             <tr>
                                 <th>Editorial:</th>
                                 <td><%= book.publisher %></td>

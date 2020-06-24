@@ -1,24 +1,24 @@
 *{
   box-sizing: border-box;
 }
-.containerDelBody{
- 
-  padding-left: 10%;
-  padding-right: 10%;
-  margin: 0 auto;
-}
+
 ul,ol{
   padding: 0px;
   margin: 0px;
   list-style: none;
 }
 
-
 body {
-  /* font-family: 'Roboto', sans-serif; */
   font-family : Helvetica,"Helvetica Neue",Arial,"Lucida Grande",sans-serif;
-  /* color:#3a3a3a */
+
   color: #4e4e4e;
+}
+
+.containerDelBody{
+ 
+  padding-left: 10%;
+  padding-right: 10%;
+  margin: 0 auto;
 }
 
 .clase-subtitulo{
@@ -50,7 +50,7 @@ p:hover{
 }
 
 
-h3{
+.book-container h3{
   font-weight: 500;
   color:#3a3a3a;
 }

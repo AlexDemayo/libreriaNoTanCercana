@@ -1,6 +1,4 @@
-
-
-section{
+#breadCrumbs{
     margin-bottom: 20px;
 }
 
@@ -44,21 +42,21 @@ button:hover{
 }
 
 
-table{
+.book-detail{
     font-size: 13px;
     margin-left:auto; 
     margin-right:auto;
-    margin-bottom: 12px
+    margin-bottom: 35px
 }
 
 
-table th{
+.book-detail th{
    font-weight: 400;
    text-align: inherit;
    padding: 0px 30px 10px 0px;
 }
 
-table td{
+.book-detail td{
     padding-bottom: 10px;
 }
 
@@ -70,7 +68,7 @@ table td{
   
 }
 
-p{
+.book-price p{
     margin: 28px 0px;
     line-height: 23px;
     font-size: 15px;
@@ -146,7 +144,7 @@ p{
 
 
 @media(min-width:768px){
-    img{
+    .book-photo{
      width: 80%
     }
     input[type=number]{
@@ -154,16 +152,16 @@ p{
         width: 14%;
     }
 
-    button{
+    button [type=submit]{
         width: 70%;
         margin: 30px 0;
     }
 
-    p{
+    /* p{
         margin: 40px 0
-    }
+    } */
 
-    table{
+    .book-detail{
         font-size: 15px;
         margin-bottom: 34px;
         margin-top: 50px;
@@ -207,7 +205,7 @@ p{
 
 
 @media (min-width: 992px){
-    img{
+    .book-photo{
         width: 50%;
     }
     input[type=number]{
