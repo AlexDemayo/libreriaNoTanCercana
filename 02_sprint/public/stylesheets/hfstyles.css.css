@@ -122,7 +122,8 @@ label {
   display: none;
   width: 35px;
   float: right;
-}                             CHOCA CON LABEL DE NEWSTYLES(linea 11)  // Esta comentado pero hace que el menu hamburguesa en mobile se caiga   */       
+}                             CHOCA CON LABEL DE NEWSTYLES(linea 11)  // Esta comentado pero hace que el MENU HAMBURGUESA en mobile se caiga, 
+                                     si no esta comentado esto, hace que la palabra CANTIDAD en details pierda su font,size y se pegue a la derecha de la pagina  */       
 
 
 #toggle {
@@ -240,7 +241,7 @@ html {
     cursor: pointer;
     border: 0;
     padding: 10px         /*CHOCA CON LOS INPUTS DE NEWSTYLES(LINEA 16,151 Y 212)  
-                              ( hace que el input del footer de mail tenga el mismo tamaño que el input de seleccionar cantidad de libros ) */
+                              ( Esta haciendo que el input del footer EMAIL tenga el mismo tamaño que el input de seleccionar la cantidad de libros que quiere el usuario ) */
   }                                     
   .newsletter-back{
     background-color: #fcfbb9;
