@@ -66,7 +66,8 @@ table td{
     /* color:#3a3a3a; */
     font-size: 17px; 
     background-color: #ffffff; 
-    padding: 0 15px;
+    padding: 15px;
+  
 }
 
 p{
@@ -138,7 +139,7 @@ p{
     height: 11px; 
     border-bottom: 1px solid #b9b9b9;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 
@@ -215,7 +216,9 @@ p{
     }   
     .span-detail{
         font-size: 22px;
-        padding:20px
+        padding:15px;
+        position: relative;
+        bottom: 19px
     }
     .book-price{
         width: 35%;
