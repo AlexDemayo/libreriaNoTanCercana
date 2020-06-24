@@ -8,12 +8,12 @@ figure{
     text-align: center;
 }
 
-label{
+label#quantity{
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 500;
 }
 
-input{
+input[type=number]{
     display: block;
     margin: 10px 0px;
     width: 15%;
@@ -149,7 +149,7 @@ p{
     img{
      width: 80%
     }
-    input{
+    input[type=number]{
         margin: 15px 0px;
         width: 14%;
     }
@@ -210,7 +210,7 @@ p{
     img{
         width: 50%;
     }
-    input{
+    input[type=number]{
         margin: 15px 0px;
         width: 12%;
     }   
