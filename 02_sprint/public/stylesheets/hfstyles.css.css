@@ -167,8 +167,8 @@ body {
 /* Footer main */
 
 footer {
-  display:flex;
-  justify-content: center;
+  /* display:flex;
+  justify-content: center; */
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   line-height: 1.5;
@@ -183,9 +183,10 @@ footer a {
 
 
 .ft-main {
-  padding: 20px 19px;
+  /* padding: 20px 19px; */
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 
@@ -206,7 +207,7 @@ html {
   display:flex;
   flex-wrap:wrap;
   justify-content: flex-start;
-  padding: 5px 30px;
+  /* padding: 5px 30px; */
   font-size: 30px;
 }
     
@@ -216,7 +217,7 @@ html {
 
 
 .ft-main-item {
-    padding: 20px;
+    padding: 10px 0;
     min-width: 200px;
     flex-direction: row;
     flex-wrap: wrap;
