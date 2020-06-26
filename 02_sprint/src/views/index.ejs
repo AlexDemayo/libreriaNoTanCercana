@@ -14,14 +14,15 @@
 
   <link rel="stylesheet" href="/stylesheets/hfstyles.css.css">
   </head>
-  <div class="containerDelBody" >
+  
   <body>
     <header> 
       <!-- traer header de partials -->
-  
+      <%- include('partials/header') %>
   </header>
 
-
+  <div class="containerDelBody" >
+  
   <br>
     <div class="book-info-section">
       <span>Recomendados</span>
@@ -159,12 +160,14 @@
   </div>
 </div>
 </div>
+
+</div>
 <footer>
   <!-- Requerir footer -->
-
+  <%- include('partials/footer') %>
 </footer>
   </body>
 
-</div>
+
 </html>
 

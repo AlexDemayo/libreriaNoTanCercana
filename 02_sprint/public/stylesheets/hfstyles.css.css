@@ -11,14 +11,14 @@ ul {
   padding-left: 0;
 }
 
-a{
+.a-header{
   color: #333d39;
 
 }
 
-a :hover{
-  color: #333d39;
-  text-decoration: none;
+.a-header:hover{
+  color: #272e2b;
+  text-decoration: underline;
 }
 
 /*Header main */
@@ -40,28 +40,26 @@ a :hover{
 
 
 #logoh img{
-  width: auto;
- margin-left: 10px;
+  width: 100%;
+  margin-left: 22px;
 }
 
 
 .shop-menu{
 display:flex;
 flex-wrap:nowrap;
-justify-content: space-evenly;
-  width: 30%;
+justify-content: end;
   text-align: right;
-  padding: 5px;
+  padding: 9px;
   float: right;
-
 }
 
 
 .header-container{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
-  padding-bottom: 20px;
+  padding-bottom: 14px;
 }
 
 
@@ -116,7 +114,7 @@ margin-left:10px;
 
 
 label#togglex{
-  margin: 0 60px 0 0;
+  margin: 0 21px 0 0;
   font-size: 26px;
   line-height: 25px;
   display: none;
@@ -257,6 +255,13 @@ html {
 
   }
 
+  .header-container{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    padding-bottom: 14px;
+  }
+
   .navvbar{
     display:flex;
     justify-content: center;
@@ -285,6 +290,15 @@ html {
     display:none;
   }
 
+  #logoh img{
+    width: 100%;
+    margin-left: 69px;
+  }
+
+  .shop-menu a{
+    font-size: 15px;
+    
+    }
 
 
 
@@ -292,6 +306,13 @@ html {
   @media (min-width: 992px) {
   .ft-main {
     justify-content: space-evenly;
+  }
+
+  .header-container{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    padding-bottom: 14px;
   }
  
   .navvbar{
@@ -324,8 +345,29 @@ html {
   }
 
   .shop-menu{
-  width: 20%;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 27%;
+    
     }
 
+    .shop-menu a{
+      font-size: 16px;
+      
+      }
+
+    .fa-shopping-cart{
+      margin-left:10px;
+      }
+
+      #logoh img{
+        width: 85%;
+        margin-left: 120px;
+      }
+
+
+
+
+      
 
 }
