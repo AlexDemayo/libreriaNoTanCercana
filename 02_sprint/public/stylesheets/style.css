@@ -32,15 +32,18 @@ figure {
   padding: 0;
 }
 
-a {
+li a,
+h3 a{
   display: inline-block;
   color: inherit;
   list-style: none;
   text-decoration: none;
 }
 
-a:hover{
+h3 a:hover,
+li a:hover{
   color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
 }
 
 p:hover{
