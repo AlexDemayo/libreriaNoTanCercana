@@ -1,5 +1,5 @@
 const jsonModel = require('../models/jsonModel');
-const bookModel = jsonModel('booksDataNew')
+const bookModel = jsonModel('booksData')
 
 
 

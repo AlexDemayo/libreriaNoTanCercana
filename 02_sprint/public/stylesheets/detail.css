@@ -1,6 +1,10 @@
 
+#body-container{
+    padding: 20px 0px;
+}
 
-section{
+
+#breadCrumbs{
     margin-bottom: 20px;
 }
 
@@ -8,22 +12,22 @@ figure{
     text-align: center;
 }
 
-label{
+label#quantity{
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 500;
 }
 
-input{
+input[type=number]{
     display: block;
     margin: 10px 0px;
-    width: 22%;
+    width: 15%;
     height: 7vh;
     text-indent: 8px;
     font-size: 1em;
     border: 1px solid #b9b9b9;
 }
 
-button{
+.book-buy button{
     display: block;
     width: 100%;
     padding: 0px 5px;
@@ -44,32 +48,33 @@ button:hover{
 }
 
 
-table{
+.book-detail{
     font-size: 13px;
     margin-left:auto; 
     margin-right:auto;
-    margin-bottom: 12px
+    margin-bottom: 35px
 }
 
 
-table th{
+.book-detail th{
    font-weight: 400;
    text-align: inherit;
    padding: 0px 30px 10px 0px;
 }
 
-table td{
+.book-detail td{
     padding-bottom: 10px;
 }
 
-span{
+.span-detail {
     /* color:#3a3a3a; */
     font-size: 17px; 
     background-color: #ffffff; 
-    padding: 0 15px;
+    padding: 15px;
+  
 }
 
-p{
+.book-price p{
     margin: 28px 0px;
     line-height: 23px;
     font-size: 15px;
@@ -138,30 +143,31 @@ p{
     height: 11px; 
     border-bottom: 1px solid #b9b9b9;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 
 
 
 @media(min-width:768px){
-    img{
+    .book-photo{
      width: 80%
     }
-    input{
+    input[type=number]{
         margin: 15px 0px;
+        width: 14%;
     }
 
-    button{
+    button [type=submit]{
         width: 70%;
         margin: 30px 0;
     }
 
-    p{
+    /* p{
         margin: 40px 0
-    }
+    } */
 
-    table{
+    .book-detail{
         font-size: 15px;
         margin-bottom: 34px;
         margin-top: 50px;
@@ -205,12 +211,18 @@ p{
 
 
 @media (min-width: 992px){
-    img{
+    .book-photo{
         width: 50%;
     }
-    span{
+    input[type=number]{
+        margin: 15px 0px;
+        width: 12%;
+    }   
+    .span-detail{
         font-size: 22px;
-        padding:20px
+        padding:15px;
+        position: relative;
+        bottom: 19px
     }
     .book-price{
         width: 35%;
@@ -220,5 +232,13 @@ p{
     }
     .book-info-section{
         height: 14px;
+        padding-top: 20px;
     }
+    .book-buy button{
+        
+        width: 70%;
+        
+    }
+    
+
 }

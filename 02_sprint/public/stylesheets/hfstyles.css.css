@@ -11,15 +11,18 @@ ul {
   padding-left: 0;
 }
 
+.a-header{
+  color: #333d39;
 
+}
+
+.a-header:hover{
+  color: #272e2b;
+  text-decoration: underline;
+}
 
 /*Header main */
 
-
-.nav li a:hover{
-  color: #404d48;
-  text-decoration: underline;
-}
 
 
 .navigation-list-inline {
@@ -37,28 +40,26 @@ ul {
 
 
 #logoh img{
-  width: auto;
- margin-left: 10px;
+  width: 100%;
+  margin-left: 22px;
 }
 
 
 .shop-menu{
 display:flex;
 flex-wrap:nowrap;
-justify-content: space-evenly;
-  width: 30%;
+justify-content: end;
   text-align: right;
-  padding: 5px;
+  padding: 9px;
   float: right;
-
 }
 
 
 .header-container{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
-  padding-bottom: 20px;
+  padding-bottom: 14px;
 }
 
 
@@ -112,14 +113,14 @@ margin-left:10px;
 
 
 
-label {
-  margin: 0 60px 0 0;
+label#togglex{
+  margin: 0 21px 0 0;
   font-size: 26px;
-  line-height: 29px;
+  line-height: 25px;
   display: none;
   width: 35px;
   float: right;
-}
+}                                    
 
 
 #toggle {
@@ -127,7 +128,7 @@ label {
 }
 
 
-label {
+label#togglex {
    display: block;
    cursor: pointer;
 }
@@ -164,12 +165,12 @@ body {
 /* Footer main */
 
 footer {
-  display:flex;
-  justify-content: center;
+  /* display:flex;
+  justify-content: center; */
   background-color: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   line-height: 1.5;
-  border-top: 1px rgb(167, 164, 164) solid;
+  border-top: 0.5px rgb(167, 164, 164) solid;
 }
 
 
@@ -180,9 +181,10 @@ footer a {
 
 
 .ft-main {
-  padding: 20px 19px;
+  /* padding: 20px 19px; */
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 
@@ -191,11 +193,20 @@ html {
 }
 
   
-.ft-title {
-  color: rgb(0, 0, 0);
+h2.ft-title {
+  color: rgb(36, 36, 36);
   font-family: "Merriweather", serif;
-   font-size: 1.375rem;
-  padding-bottom: 0.625rem;
+  font-weight: bold;
+   font-size: 22px;
+  padding-bottom: 2px;
+}
+
+h2.ft-title2 {
+  color: rgb(36, 36, 36);
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+   font-size: 22px;
+  padding-bottom: 2px;
 }
   
 
@@ -203,7 +214,7 @@ html {
   display:flex;
   flex-wrap:wrap;
   justify-content: flex-start;
-  padding: 5px 30px;
+  /* padding: 5px 30px; */
   font-size: 30px;
 }
     
@@ -213,7 +224,14 @@ html {
 
 
 .ft-main-item {
-    padding: 20px;
+    padding: 10px 0;
+    min-width: 200px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .ft-main-item2 {
+    padding: 10px 0;
     min-width: 200px;
     flex-direction: row;
     flex-wrap: wrap;
@@ -221,6 +239,7 @@ html {
   
   
   /* Newsletter form */
+  
   form {
     display: flex;
     flex-wrap: wrap;
@@ -235,9 +254,8 @@ html {
     color: #fff;
     cursor: pointer;
     border: 0;
-    padding: 10px 15px;
-    margin-top: 1px;
-  }
+    padding: 10px         
+  }                                     
   .newsletter-back{
     background-color: #fcfbb9;
     width: 100%;
@@ -251,6 +269,13 @@ html {
   .ft-main {
     justify-content: space-evenly;
 
+  }
+
+  .header-container{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    padding-bottom: 14px;
   }
 
   .navvbar{
@@ -281,12 +306,29 @@ html {
     display:none;
   }
 
+  #logoh img{
+    width: 100%;
+    margin-left: 69px;
+  }
+
+  .shop-menu a{
+    font-size: 15px;
+    
+    }
+
 
 
    }
   @media (min-width: 992px) {
   .ft-main {
     justify-content: space-evenly;
+  }
+
+  .header-container{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    padding-bottom: 14px;
   }
  
   .navvbar{
@@ -318,7 +360,30 @@ html {
   margin-left:80px;
   }
 
+  .shop-menu{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 27%;
+    
+    }
+
+    .shop-menu a{
+      font-size: 16px;
+      
+      }
+
+    .fa-shopping-cart{
+      margin-left:10px;
+      }
+
+      #logoh img{
+        width: 85%;
+        margin-left: 120px;
+      }
 
 
+
+
+      
 
 }
