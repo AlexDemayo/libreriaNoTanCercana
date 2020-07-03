@@ -3,12 +3,14 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');
 
-let indexRouter = require('./routes/index');
-let booksRouter = require('./routes/books');
-let categoryRouter = require('./routes/category')
-let cartRouter = require('./routes/cart');
-let logregRouter = require('./routes/logreg');
+const indexRouter = require('./routes/index');
+const booksRouter = require('./routes/books');
+const categoryRouter = require('./routes/category')
+const cartRouter = require('./routes/cart');
+const logregRouter = require('./routes/register');
+const loginRouter = require('./routes/login')
 
 var app = express();
 
@@ -22,12 +24,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static("public"));
+app.use(session({secret:'secreto'}));
 
 app.use('/', indexRouter);
 app.use('/books', booksRouter);
 app.use('/category', categoryRouter);
 app.use('/cart',cartRouter);
-app.use('/logreg',logregRouter);
+// app.use('/logreg',logregRouter);
+app.use('/register',logregRouter);
+app.use('/login', loginRouter)
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
