@@ -1,5 +1,61 @@
 
-.login input {
+.login input[type=email],
+.login input[type=password],
+.register input {
     width: 100%;
     height: 7vh;
+    border: 1px solid #b9b9b9;
+    text-indent: 5px;
+}
+
+.login input[type=checkbox]{
+    transform: scale(1.3);
+    margin-right: 10px;
+    border: 1px solid #b9b9b9;
+    
+}
+
+.login input[type=checkbox]{
+    margin-top: 10px;
+}
+
+.login label{
+    font-size: 14px;
+}
+
+.login button,
+.register button{
+    width: 100%;
+    padding: 0px 5px;
+    background-color: #1BAFC7;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+    font-weight: 500;
+    min-height: 44px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display:inline-block;
+}
+
+
+.register p{
+    font-size: 14px;
+}
+
+
+@media (min-width: 768){
+
+}
+
+@media(min-width: 992px){
+    #flex{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .login button{
+        margin-top: 36px;
+    }
 }

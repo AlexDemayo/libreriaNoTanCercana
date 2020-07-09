@@ -1,0 +1,93 @@
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- <link rel="stylesheet" href="/stylesheets/hfstyles.css.css"> -->
+<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css"/>
+<link rel='stylesheet' href='/stylesheets/style.css'> 
+
+<link rel="stylesheet" href="/stylesheets/login-register.css">
+
+<body>
+    <!-- Header -->
+    
+    <!-- /Header -->
+    
+        <div class="container products-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="products-title">Iniciar sesión</h2>
+                </div>
+                <div class="col-12 col-md-6">
+                    <form class="login" action="/login-register" method="POST">
+                        <div class="row product-detail">
+                            <div class="col-12">
+                                <div>
+                                    <label for="email"></label>
+                                    <input type="email" id="email" name="email" class="form-input" value="<%= typeof oldLogin == "undefined" ? null : oldLogin.email %>" placeholder="Email">
+                                    <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.email ? errorsLogin.email.msg : null %></p>
+                                </div>
+                                <div>
+                                    <label for="password"></label>
+                                    <input type="password" id="password" name="password" class="form-input" value="" placeholder="Contraseña">
+                                    <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.password ? errorsLogin.password.msg : null %></p>
+                                </div>
+                                <div>
+                                    <input type="checkbox" id="remember" name="remember" class="form-check">
+                                    <label for="remember" class="form-label">Recuérdame</label>
+                                </div>
+                                <div>
+                                    <button type="submit" class="buy-now-button">Iniciar sesión</button>
+                                    
+                                </div>
+                            </div>  
+                        </div>
+                    </form>
+                </div>
+            </div>    
+        </div>
+        <div class="container products-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="products-title">Registrate</h2>
+                </div>
+                <div class="col-12">   
+                    <form class="register" action="/login-register" method="POST">
+                        <div class="row product-detail">
+                            <div class="col-12 col-md-6">
+                                <div>
+                                    <input type="text" id="username" name="username" placeholder="Usuario *" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.username %>">
+                                    <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.username ? errorsRegister.username.msg : null %></p>
+                                </div>
+                                <div>
+                                    <input type="text" id="email" name="email" placeholder="Email *" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.email %>">
+                                    <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.email ? errorsRegister.email.msg : null %></p>
+                                </div>
+                                <div>
+                                    <input type="password" id="password" name="password" class="form-input" placeholder="Contraseña *">
+                                    <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.password ? errorsRegister.password.msg : null %></p>
+                                </div>
+                                <div>
+                                    <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" placeholder="Repita la contraseña: *">
+                                    <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.confirmPassword ? errorsRegister.confirmPassword.msg : null %></p>
+                                </div>
+                                <div>
+                                    <p>(*) Campos obligatorios.</p>
+                                </div>
+                                <div>
+                                    <button type="submit" class="buy-now-button">Registrate</button>
+                                </div>
+                            </div>
+            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    
+
+    <!-- /todos los productos -->
+    
+    <!-- footer -->
+    
+    <!-- /footer -->
+</body>
+
+</html>
