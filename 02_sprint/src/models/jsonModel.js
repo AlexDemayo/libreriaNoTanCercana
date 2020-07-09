@@ -14,7 +14,7 @@ const jsonModel = (archivo) => {
             
             fs.writeFileSync(this.path, data);
         },
-        guardarUno: function (newData) {
+        create: function (newData) {
             let allData = this.leerJson();
             allData = [...allData, newData];
             this.escribirJson(allData)

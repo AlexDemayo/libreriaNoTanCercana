@@ -9,8 +9,7 @@ const indexRouter = require('./routes/index');
 const booksRouter = require('./routes/books');
 const categoryRouter = require('./routes/category')
 const cartRouter = require('./routes/cart');
-const logregRouter = require('./routes/register');
-const loginRouter = require('./routes/login')
+const usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -24,15 +23,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static("public"));
-app.use(session({secret:'secreto'}));
+app.use(session({secret:'secreto',resave: false,
+saveUninitialized: true}));
 
 app.use('/', indexRouter);
 app.use('/books', booksRouter);
 app.use('/category', categoryRouter);
 app.use('/cart',cartRouter);
-// app.use('/logreg',logregRouter);
-app.use('/register',logregRouter);
-app.use('/login', loginRouter)
+app.use('/login-register', usersRouter);
+
 
 
 // catch 404 and forward to error handler

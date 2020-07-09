@@ -1,83 +1,92 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-        <link rel="stylesheet" href="/public/stylesheets/register-log-in.css">
-        <link rel="stylesheet" href="/stylesheets/hfstyles.css.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
-        <link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-        <title>Register y login</title>
-    </head>
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
 
-    <body>
-        <h2>¿Ya estás registrado/a?</h2>
-        <form id="register-form" action="/login-register" method="post" role="form" style="display: block;">
-                               
-                                <div class="form-group">
-                                    <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-                                </div>
-                               
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-sm-6 col-sm-offset-3">
-                                            <input id="registerSubmit" type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Iniciar sesión">
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+<body>
+    <!-- Header -->
+    
+    <!-- /Header -->
+    
+    <div class="container products-wrapper">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h2 class="products-title">Registro</h2>
+            </div>
+            <div class="col-6">   
+                <form action="/login-register" method="POST">
+                    <div class="row product-detail">
+                        <div class="col-12">
+                            <label for="username" class="form-label">Username: *</label>
+                            <input type="text" id="username" name="username" placeholder="user name" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.username %>">
+                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.username ? errorsRegister.username.msg : null %></p>
+                        </div>
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email: *</label>
+                            <input type="text" id="email" name="email" placeholder="Ej: gonza@dh.com" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.email %>">
+                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.email ? errorsRegister.email.msg : null %></p>
+                        </div>
+                        <div class="col-12">
+                            <label for="password" class="form-label">Contraseña: *</label>
+                            <input type="password" id="password" name="password" class="form-input" value="">
+                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.password ? errorsRegister.password.msg : null %></p>
+                        </div>
+                        <div class="col-12">
+                            <label for="retype" class="form-label">Repite la contraseña: *</label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" value="">
+                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.confirmPassword ? errorsRegister.confirmPassword.msg : null %></p>
+                        </div>
+                        <div class="mt-5 col-12">
+                            <button type="submit" class="buy-now-button">Registrate</button>
+                        </div>
+                        <div class="mt-3 col-12">
+                            <p>(*) Campos obligatorios.</p>
                         </div>
                     </div>
-                </div>
+                </form>
+                
+                <div class="g-signin2 mt-5" data-onsuccess="onSignIn"></div>
             </div>
         </div>
+        
     </div>
-</div>
-
-
-
-
-            <h2>¿No estas registrado/a?</h2>
-            <form id="register-form" action="/login-register" method="post" role="form" style="display: block;">
-									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
-									</div>
-									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
-									</div>
-									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-									</div>
-									<div class="form-group">
-										<input type="password" name="confirmPassword" id="confirmPassword" tabindex="2" class="form-control" placeholder="Confirm Password">
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Registrate">
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+    <div class="container products-wrapper">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h2 class="products-title">Login</h2>
+            </div>
+            
+            
+            <div class="col-6">
+                <form action="/login-register" method="POST">
+                    <div class="row product-detail">
+                        <div class="col-12">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="text" id="email" name="email" placeholder="nombre@tudominio.com" class="form-input" value="<%= typeof oldLogin == "undefined" ? null : oldLogin.email %>">
+                            <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.email ? errorsLogin.email.msg : null %></p>
+                        </div>
+                        <div class="col-12">
+                            <label for="price" class="form-label">Contraseña:</label>
+                            <input type="password" id="password" name="password" class="form-input" value="">
+                            <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.password ? errorsLogin.password.msg : null %></p>
+                        </div>
+                        <div class="col-12">
+                            <label for="remember" class="form-label">Recuérdame</label>
+                            <input type="checkbox" id="remember" name="remember" class="form-check">
+                        </div>
+                        <div class="col-12 mt-5">
+                            <button type="submit" class="buy-now-button">Iniciar sesión</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
     </div>
+    <!-- /todos los productos -->
     
+    <!-- footer -->
+    
+    <!-- /footer -->
+</body>
 
-    </body>
 </html>
