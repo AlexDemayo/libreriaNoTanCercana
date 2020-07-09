@@ -1,38 +1,65 @@
-<!DOCTYPE html>
-<html lang="es">
-<!-- Include Head -->
+<!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css"/>
+<link rel='stylesheet' href='/stylesheets/style.css'> -->
+<!-- <link rel="stylesheet" href="/stylesheets/hfstyles.css.css"> -->
+<!-- <link rel="stylesheet" href="/stylesheets/login-register.css"> -->
 
 <body>
     <!-- Header -->
     
     <!-- /Header -->
-    
     <div class="container products-wrapper">
         <div class="row justify-content-center">
             <div class="col-12">
-                <h2 class="products-title">Registro</h2>
+                <h2 class="products-title">Iniciar sesión</h2>
+            </div>
+            <div class="col-12">
+                <form class="login" action="/login-register" method="POST">
+                    <div class="row product-detail">
+                        <div class="col-12">
+                            <label for="email"></label>
+                            <input type="text" id="email" name="email" class="form-input" value="<%= typeof oldLogin == "undefined" ? null : oldLogin.email %>" placeholder="Email">
+                            <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.email ? errorsLogin.email.msg : null %></p>
+                        </div>
+                        <div class="col-12">
+                            <label for="password"></label>
+                            <input type="password" id="password" name="password" class="form-input" value="" placeholder="Contraseña">
+                            <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.password ? errorsLogin.password.msg : null %></p>
+                        </div>
+                        <div class="col-12">
+                            <label for="remember" class="form-label">Recuérdame</label>
+                            <input type="checkbox" id="remember" name="remember" class="form-check">
+                        </div>
+                        <div class="col-12 mt-5">
+                            <button type="submit" class="buy-now-button">Iniciar sesión</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>    
+    </div>
+    <div class="container products-wrapper">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h2 class="products-title">Registrate</h2>
             </div>
             <div class="col-6">   
                 <form action="/login-register" method="POST">
                     <div class="row product-detail">
                         <div class="col-12">
-                            <label for="username" class="form-label">Username: *</label>
-                            <input type="text" id="username" name="username" placeholder="user name" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.username %>">
+                            <input type="text" id="username" name="username" placeholder="Usuario *" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.username %>">
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.username ? errorsRegister.username.msg : null %></p>
                         </div>
                         <div class="col-12">
-                            <label for="email" class="form-label">Email: *</label>
-                            <input type="text" id="email" name="email" placeholder="Ej: gonza@dh.com" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.email %>">
+                            <input type="text" id="email" name="email" placeholder="Email *" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.email %>">
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.email ? errorsRegister.email.msg : null %></p>
                         </div>
                         <div class="col-12">
-                            <label for="password" class="form-label">Contraseña: *</label>
-                            <input type="password" id="password" name="password" class="form-input" value="">
+                            <input type="password" id="password" name="password" class="form-input" placeholder="Contraseña *">
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.password ? errorsRegister.password.msg : null %></p>
                         </div>
                         <div class="col-12">
-                            <label for="retype" class="form-label">Repite la contraseña: *</label>
-                            <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" value="">
+                            <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" placeholder="Repita la contraseña: *">
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.confirmPassword ? errorsRegister.confirmPassword.msg : null %></p>
                         </div>
                         <div class="mt-5 col-12">
@@ -49,39 +76,7 @@
         </div>
         
     </div>
-    <div class="container products-wrapper">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <h2 class="products-title">Login</h2>
-            </div>
-            
-            
-            <div class="col-6">
-                <form action="/login-register" method="POST">
-                    <div class="row product-detail">
-                        <div class="col-12">
-                            <label for="email" class="form-label">Email:</label>
-                            <input type="text" id="email" name="email" placeholder="nombre@tudominio.com" class="form-input" value="<%= typeof oldLogin == "undefined" ? null : oldLogin.email %>">
-                            <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.email ? errorsLogin.email.msg : null %></p>
-                        </div>
-                        <div class="col-12">
-                            <label for="price" class="form-label">Contraseña:</label>
-                            <input type="password" id="password" name="password" class="form-input" value="">
-                            <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.password ? errorsLogin.password.msg : null %></p>
-                        </div>
-                        <div class="col-12">
-                            <label for="remember" class="form-label">Recuérdame</label>
-                            <input type="checkbox" id="remember" name="remember" class="form-check">
-                        </div>
-                        <div class="col-12 mt-5">
-                            <button type="submit" class="buy-now-button">Iniciar sesión</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        
-    </div>
+
     <!-- /todos los productos -->
     
     <!-- footer -->
