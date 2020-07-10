@@ -1,19 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css"/>
-    <link rel='stylesheet' href='/stylesheets/style.css'>
-    <link rel="stylesheet" href="/stylesheets/hfstyles.css.css">
-    <link rel="stylesheet" href="/stylesheets/newStyles.css">
-    <title>Libros</title>
-</head>
+    <%- include('partials/head', {title: 'Libros'}) %>
 <body>
-    <header>
-        <%- include('partials/header') %>
-    </header>
+   
+    <%- include('partials/header') %>
+  
     <main>
        <div class="container">
            <div class="row">
@@ -50,9 +41,10 @@
            </div>
        </div>
     </main>
-    <footer>
-        <%- include('partials/footer') %>
-    </footer>
+  
+  
+    <%- include('partials/footer') %>
+   
 </body>
 
 </html>

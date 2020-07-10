@@ -1,26 +1,10 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Libreria No tan cercana</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css"/>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/css/uikit.min.css" />
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit-icons.min.js"></script>
+    <%- include('partials/head', {title: 'Libreria No Tan Cercana'}) %>
+ <body>
 
-  <link rel="stylesheet" href="/stylesheets/hfstyles.css.css">
-  </head>
-  
-  <body>
-    <header> 
-      <!-- traer header de partials -->
-      <%- include('partials/header') %>
-  </header>
-
+    <%- include('partials/header') %>
+     
   <div class="containerDelBody" >
   
   <br>
@@ -188,10 +172,12 @@
 </div>
 
 </div>
-<footer>
-  <!-- Requerir footer -->
-    <%- include('partials/footer') %>
-</footer>
+
+   
+     <%- include('partials/footer') %>
+  
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit-icons.min.js"></script>
   </body>
 
 

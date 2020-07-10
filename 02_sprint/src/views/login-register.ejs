@@ -1,12 +1,11 @@
 
 <html>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-<!-- <link rel="stylesheet" href="/stylesheets/hfstyles.css.css"> -->
-<link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css"/>
-<link rel='stylesheet' href='/stylesheets/style.css'> 
-<link rel="stylesheet" href="/stylesheets/login-register.css">
-
+    <%- include('partials/head', {title: 'Bienvenido!'}) %>
 <body>
+   
+    <%- include('partials/header') %>
+ 
+
     <div class="container">
         <div id="flex" class="row">
             <div class="col-12 col-md-8 col-lg-5">
@@ -62,8 +61,11 @@
             </div>
         </div>
     </div>
-</body>
 
+ 
+    <%- include('partials/footer') %>
+  
+  </body>
 
 </html>
 

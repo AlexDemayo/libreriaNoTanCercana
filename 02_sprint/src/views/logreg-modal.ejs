@@ -1,23 +1,7 @@
     <!DOCTYPE html>
     <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-        <link rel="stylesheet" href="/public/stylesheets/register-log-in.css">
-        <link rel="stylesheet" href="/stylesheets/hfstyles.css.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">        
-        <link rel="stylesheet" href="/stylesheets/bootstrap-grid.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-        <title>Register y login</title>
-    </head>
-
+        <%- include('partials/head', {title: 'Register y login'}) %>
+    
     <body>
         <h2>¿Ya estás registrado/a?</h2>
         <form id="register-form" action="/login-register" method="post" role="form" style="display: block;">
@@ -78,6 +62,10 @@
 		</div>
     </div>
     
-
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    
     </body>
 </html>
