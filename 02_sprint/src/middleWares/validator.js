@@ -2,18 +2,18 @@ const { body } = require('express-validator');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 const jsonModel = require('../models/jsonModel');
-const users = jsonModel('users');
+const usersModel = jsonModel('users');
 
 const validator = {
     register: [
-        body('username')
+        body('usernameReg')
             .notEmpty()
             .withMessage('Campo obligatorio')
             .bail()
             .isLength({min:5})
             .withMessage('El campo debe tener un mínimo de cinco caracteres'),
         
-        body('email')
+        body('emailReg')
             .notEmpty()
             .withMessage('Campo obligatorio')
             .bail()
@@ -21,43 +21,43 @@ const validator = {
             .withMessage('Email invalido')
             .bail()
             .custom((value, {req}) => {
-            let user = users.findBySomething(user => user.email == value);
+            let user = usersModel.findBySomething(user => user.emailReg == value);
             return !user;
             })
             .withMessage('Email ya existente'),
         
-        body('password')
+        body('passwordReg')
             .notEmpty()
             .withMessage('Campo obligatorio')
             .bail()
             .isLength({ min: 8 })
             .withMessage('La contraseña debe tener un mínimo de ocho caracteres'),
         
-        body('confirmPassword')
+        body('confirmPasswordReg')
             .notEmpty()
             .withMessage('Campo obligatorio')
             .bail()
-            .custom((value, {req}) => req.body.password === value)
+            .custom((value, {req}) => req.body.passwordReg === value)
             .withMessage('Las contraseñas no coinciden')
     ],
 
     login: [
-        body('email')
+        body('emailLog')
             .notEmpty()
             .withMessage('Campo obligatorio')
             .bail()
             .custom((value, {req}) => {
-            const user = User.findBySomething((user) => user.email == value);
+            const user = usersModel.findBySomething(user => user.emailReg == value);
 
             if (user) {
-              return bcrypt.compareSync(req.body.password, user.password);
+              return bcrypt.compareSync(req.body.passwordLog, user.passwordReg);
             } else {
               return false;
             }
             })
             .withMessage('Email o contraseña invalidos'),
 
-        body('password')
+        body('passwordLog')
             .notEmpty()
             .withMessage('Campo obligatorio'),
     ]

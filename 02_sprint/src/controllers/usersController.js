@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const {validationResult} = require('express-validator')
 
 const usersController = {
-    root: function(req,res){
+    logYreg: function(req,res){
         res.render('login-register')
     }, 
 
@@ -12,8 +12,8 @@ const usersController = {
         const errors = validationResult(req);
 
         if(errors.isEmpty()){
-            delete req.body.confirmPassword;
-            req.body.password = bcrypt.hashSync(req.body.password, 10);
+            delete req.body.confirmPasswordReg;
+            req.body.passwordReg = bcrypt.hashSync(req.body.passwordReg, 10);
 
             userModel.create({
                 id : " ",
@@ -31,14 +31,14 @@ const usersController = {
         const errors = validationResult(req);
 
         if(errors.isEmpty()){
-            let user = userModel.findBySomething(user => user.email == req.body.email);
+            let user = userModel.findBySomething(user => user.emailReg == req.body.emailLog);
             
-            delete user.password;
+            delete user.passwordReg;
 
             req.session.user = user; //lo guarda en sesión
 
             if(req.body.remember){
-                res.cookie('remember', user.email, { maxAge: 1000 * 60 * 60 * 24 }); 
+                res.cookie('remember', user.emailReg, { maxAge: 1000 * 60 * 60 * 24 }); 
             } 
             // si el usuario puso remember, guardamos el mail por un día 
 
@@ -47,7 +47,19 @@ const usersController = {
         } else {
             return res.render('login-register', {errorsLogin : errors.mapped(), oldLogin : req.body});
         }
-    }
+    },
+    
+    logout: function(req, res) {
+    
+        req.session.destroy();
+    
+        if(req.cookies.email){
+          res.clearCookie('remember');
+        }
+    
+        return res.redirect('/')
+    
+      }
 };
 
 module.exports = usersController

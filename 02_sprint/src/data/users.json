@@ -1,8 +1,8 @@
 [
  {
   "id": " ",
-  "username": "camigil",
-  "email": "camila@hola.com",
-  "password": "$2a$10$rIQsMsaZTgVqL700eftRzu0Jsin7VMklEjvp/z7cUqFcW738reXce"
+  "usernameReg": "camila",
+  "emailReg": "gilcamilat@gmail.com",
+  "passwordReg": "$2a$10$2l2bMZbYM7gqprgZP1dd6ur9xszYSmNwEGfF0Sv5R67y5USm2n3Me"
  }
 ]

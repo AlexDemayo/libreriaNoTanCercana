@@ -8,53 +8,53 @@
 
     <div class="container">
         <div id="flex" class="row">
-            <div class="col-12 col-md-8 col-lg-5">
+            <div class="col-12 col-md-5 col-lg-5">
                 <h2>Iniciar sesión</h2>
-                <form  class="login"  action="/login-register" method="POST">
+                <form  class="login"  action="login" method="POST" value="login">
                     <div>
-                        <label for="email"></label>
-                        <input type="email" id="email" name="email" class="form-input" value="<%= typeof oldLogin == "undefined" ? null : oldLogin.email %>" placeholder="Email">
-                        <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.email ? errorsLogin.email.msg : null %></p>
+                        <label for="emailLog"></label>
+                        <input type="email" id="emailLog" name="emailLog" class="form-input" value="<%= typeof oldLogin == "undefined" ? null : oldLogin.emailLog %>" placeholder="Email">
+                        <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.emailLog ? errorsLogin.emailLog.msg : null %></p>
                     </div>
                     <div>
                         <label for="password"></label>
-                        <input type="password" id="password" name="password" class="form-input" value="" placeholder="Contraseña">
-                        <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.password ? errorsLogin.password.msg : null %></p>
+                        <input type="password" id="passwordLog" name="passwordLog" class="form-input" value="" placeholder="Contraseña">
+                        <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.passwordLog ? errorsLogin.passwordLog.msg : null %></p>
                     </div>
                     <div>
                         <input type="checkbox" id="remember" name="remember" class="form-check">
                         <label for="remember" class="form-label">Recuérdame</label>
                     </div>
                     <div>
-                        <button type="submit" class="buy-now-button">Iniciar sesión</button>  
+                        <button type="submit">Iniciar sesión</button>  
                     </div>
                 </form>
             </div>
-            <div class="col-12 col-md-8 col-lg-5">
+            <div class="col-12 col-md-5 col-lg-5">
                 <h2>Registrate</h2>
-                <form class="register" action="/login-register" method="POST">
+                <form class="register" action="register" method="POST" value="register">
                     <div>
                         <div>
-                            <input type="text" id="username" name="username" placeholder="Usuario *" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.username %>">
-                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.username ? errorsRegister.username.msg : null %></p>
+                            <input type="text" id="usernameReg" name="usernameReg" placeholder="Usuario *" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.usernameReg %>">
+                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.usernameReg ? errorsRegister.usernameReg.msg : null %></p>
                         </div>
                         <div>
-                            <input type="text" id="email" name="email" placeholder="Email *" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.email %>">
-                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.email ? errorsRegister.email.msg : null %></p>
+                            <input type="text" id="emailReg" name="emailReg" placeholder="Email *" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.emailReg %>">
+                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.emailReg ? errorsRegister.emailReg.msg : null %></p>
                         </div>
                         <div>
-                            <input type="password" id="password" name="password" class="form-input" placeholder="Contraseña *">
-                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.password ? errorsRegister.password.msg : null %></p>
+                            <input type="password" id="passwordReg" name="passwordReg" class="form-input" placeholder="Contraseña *">
+                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.passwordReg ? errorsRegister.passwordReg.msg : null %></p>
                         </div>
                         <div>
-                            <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" placeholder="Repita la contraseña: *">
-                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.confirmPassword ? errorsRegister.confirmPassword.msg : null %></p>
+                            <input type="password" id="confirmPasswordReg" name="confirmPasswordReg" class="form-input" placeholder="Repita la contraseña: *">
+                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.confirmPasswordReg ? errorsRegister.confirmPasswordReg.msg : null %></p>
                         </div>
                         <div>
                             <p>(*) Campos obligatorios.</p>
                         </div>
                         <div>
-                            <button type="submit" class="buy-now-button">Registrate</button>
+                            <button type="submit">Registrate</button>
                         </div>
                     </div>
                 </form>

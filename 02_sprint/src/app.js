@@ -11,6 +11,8 @@ const categoryRouter = require('./routes/category')
 const cartRouter = require('./routes/cart');
 const usersRouter = require('./routes/users');
 
+const log = require('./middleWares/log');
+
 var app = express();
 
 // view engine setup
@@ -26,11 +28,13 @@ app.use(express.static("public"));
 app.use(session({secret:'secreto',resave: false,
 saveUninitialized: true}));
 
+app.use(log);
+
 app.use('/', indexRouter);
 app.use('/books', booksRouter);
 app.use('/category', categoryRouter);
 app.use('/cart',cartRouter);
-app.use('/login-register', usersRouter);
+app.use('/users', usersRouter);
 
 
 
