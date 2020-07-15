@@ -1,28 +1,19 @@
 module.exports = (sequelize, DataTypes) => {
-	let Product = sequelize.define('Product', {
-		title: {
+	let User = sequelize.define('User', {
+		userName: {
 			allowNull: false,
 			type: DataTypes.STRING
 		},
-		author: {
+		email: {
 			allowNull: false,
 			type: DataTypes.STRING
 		},
-		publisherId: {
+		password: {
 			allowNull: false,
-			type: DataTypes.INTEGER
+			type: DataTypes.STRING
 		},
-		datePublished: {
-			type: DataTypes.DATE
-		},
-		pages: {
-			type: DataTypes.INTEGER
-		},
-		isbn: {
-			type: DataTypes.INTEGER
-		},
-		/*image: {}, PREGUNTAR COMO INSERTAR IMAGENES EN BASE*/
-		subCategory: {
+		admin: {
+			allowNull: false,
 			type: DataTypes.INTEGER
 		},
 		createdAt: {
@@ -35,6 +26,13 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.DATE
 		}
 	});
-
-	return Product;
+	/*
+	User.associate = function(models) {
+		User.hasMany(models.item, {
+			as: 'items',
+			foreignKey: 'itemId'
+		});
+	};                  (PREGUNTAR ACERCA DE RELACION 1 A 1 , CART / USER )
+*/
+	return User;
 };

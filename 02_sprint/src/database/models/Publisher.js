@@ -1,10 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
-	let SubCategory = sequelize.define('SubCategory', {
+	let Publisher = sequelize.define('Publisher', {
 		name: {
+			allowNull: false,
 			type: DataTypes.STRING
-		},
-		categoryId: {
-			type: DataTypes.INTEGER
 		},
 		createdAt: {
 			type: DataTypes.DATE
@@ -17,5 +15,5 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	});
 
-	return SubCategory;
+	return Publisher;
 };

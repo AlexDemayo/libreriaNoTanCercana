@@ -1,0 +1,102 @@
+CREATE SCHEMA libreriadb;
+
+CREATE table products(
+	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(50) NOT NULL,
+    author VARCHAR(50) NOT NULL,
+    publisherId INT UNSIGNED NOT NULL,
+    datePublished DATE,
+    pages SMALLINT UNSIGNED,
+    price FLOAT UNSIGNED,
+    isbn INT,
+    image VARCHAR(50),
+    categoryId INT UNSIGNED,
+    subCategoryId INT UNSIGNED,
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updatedAt DATETIME ON UPDATE CURRENT_TIMESTAMP, 
+    deteledAt DATETIME 
+);
+
+CREATE table categories(
+	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updatedAt DATETIME ON UPDATE CURRENT_TIMESTAMP, 
+    deteledAt DATETIME 
+);
+
+CREATE table subCategories(
+	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    categoryId INT UNSIGNED NOT NULL ,
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updatedAt DATETIME ON UPDATE CURRENT_TIMESTAMP, 
+    deteledAt DATETIME 
+);
+
+CREATE table publishers(
+	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50),
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updatedAt DATETIME ON UPDATE CURRENT_TIMESTAMP, 
+    deteledAt DATETIME 
+);
+
+CREATE table items(
+	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    userId INT UNSIGNED,
+    productName VARCHAR(50),
+    description VARCHAR(50),
+    quantity SMALLINT UNSIGNED,
+    price INT UNSIGNED,
+    total INT UNSIGNED,
+    image VARCHAR(50),
+    status INT UNSIGNED,
+    orderId INT UNSIGNED,
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updatedAt DATETIME ON UPDATE CURRENT_TIMESTAMP, 
+    deteledAt DATETIME 
+);
+
+CREATE table orders(
+	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    number INT UNSIGNED,
+    total INT UNSIGNED,
+    userId INT UNSIGNED,
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updatedAt DATETIME ON UPDATE CURRENT_TIMESTAMP, 
+    deteledAt DATETIME 
+);
+
+CREATE table users(
+    id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    userName VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    password VARCHAR(50) NOT NULL,
+    admin SMALLINT UNSIGNED NOT NULL,
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updatedAt DATETIME ON UPDATE CURRENT_TIMESTAMP, 
+    deteledAt DATETIME 
+);
+
+
+
+ALTER TABLE subcategories
+ADD FOREIGN KEY(categoryId) REFERENCES categories(id);
+
+ALTER TABLE products
+ADD FOREIGN KEY(categoryId) REFERENCES categories(id),
+ADD FOREIGN KEY(subCategoryId) REFERENCES subcategories(id);
+
+
+ALTER TABLE products 
+ADD FOREIGN KEY(publisherId) REFERENCES publishers(id);
+
+ALTER TABLE orders
+ADD FOREIGN KEY(userId) REFERENCES users(id);
+
+ALTER TABLE items
+ADD FOREIGN KEY(userId) REFERENCES users(id),
+ADD FOREIGN KEY(orderId) REFERENCES orders(id);
+
+

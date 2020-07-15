@@ -1,13 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
-	let User = sequelize.define('User', {
-		userName: {
+	let SubCategory = sequelize.define('SubCategory', {
+		name: {
 			allowNull: false,
 			type: DataTypes.STRING
 		},
-		email: {
-			type: DataTypes.STRING
+		categoryId: {
+			type: DataTypes.INTEGER
 		},
-		/*password: {}, PREGUNTAR COMO INSERTAR IMAGENES EN BASE*/
 		createdAt: {
 			type: DataTypes.DATE
 		},
@@ -19,5 +18,5 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	});
 
-	return User;
+	return SubCategory;
 };

@@ -1,28 +1,34 @@
 module.exports = (sequelize, DataTypes) => {
-	let Item = sequelize.define('Item', {
-		userId: {
-			type: DataTypes.INTEGER
-		},
-		productName: {
+	let Product = sequelize.define('Product', {
+		title: {
+			allowNull: false,
 			type: DataTypes.STRING
 		},
-		description: {
+		author: {
+			allowNull: false,
 			type: DataTypes.STRING
 		},
-		quantity: {
+		publisherId: {
+			allowNull: false,
 			type: DataTypes.INTEGER
 		},
-		price: {
+		datePublished: {
+			type: DataTypes.DATE
+		},
+		pages: {
 			type: DataTypes.INTEGER
 		},
-		total: {
+		isbn: {
 			type: DataTypes.INTEGER
 		},
-		/*image: {}, PREGUNTAR COMO INSERTAR IMAGENES EN BASE*/
-		status: {
+		image: {
+			type: DataTypes.STRING
+		},
+		categoryId: {
+			allowNull: false,
 			type: DataTypes.INTEGER
 		},
-		orderId: {
+		subCategoryId: {
 			type: DataTypes.INTEGER
 		},
 		createdAt: {
@@ -36,5 +42,5 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	});
 
-	return Item;
+	return Product;
 };
