@@ -42,5 +42,26 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	});
 
+	Product.associate = function(models) {
+		Product.belongsTo(models.Publisher, {
+			as: 'publisher',
+			foreignKey: 'publisherId'
+		});
+	};
+
+	Product.associate = function(models) {
+		Product.belongsTo(models.Category, {
+			as: 'category',
+			foreignKey: 'categoryId'
+		});
+	};
+
+	Product.associate = function(models) {
+		Product.belongsTo(models.subCategory, {
+			as: 'subCategory',
+			foreignKey: 'subCategoryId'
+		});
+	};
+
 	return Product;
 };

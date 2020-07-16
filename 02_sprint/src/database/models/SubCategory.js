@@ -18,5 +18,12 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	});
 
+	subCategory.associate = function(models) {
+		subCategory.belongsTo(models.Category, {
+			as: 'category',
+			foreignKey: 'categoryId'
+		});
+	}; /* PREGUNTAR LA CATEGORY HAS MANY SUB CATEGORIES */
+
 	return SubCategory;
 };

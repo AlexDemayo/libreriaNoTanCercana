@@ -20,5 +20,12 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	});
 
+	Order.associate = function(models) {
+		Order.belongsTo(models.User, {
+			as: 'user',
+			foreignKey: 'userId'
+		});
+	};
+
 	return Order;
 };

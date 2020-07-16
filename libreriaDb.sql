@@ -99,4 +99,12 @@ ALTER TABLE items
 ADD FOREIGN KEY(userId) REFERENCES users(id),
 ADD FOREIGN KEY(orderId) REFERENCES orders(id);
 
+ALTER TABLE users
+ADD orderId INT UNSIGNED 
+AFTER admin;
+
+ALTER TABLE users 
+ADD FOREIGN KEY(orderId) REFERENCES orders(id);
+
+
 

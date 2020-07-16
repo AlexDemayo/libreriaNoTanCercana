@@ -16,6 +16,9 @@ module.exports = (sequelize, DataTypes) => {
 			allowNull: false,
 			type: DataTypes.INTEGER
 		},
+		orderId: {
+			type: DataTypes.INTEGER
+		},
 		createdAt: {
 			type: DataTypes.DATE
 		},
@@ -34,5 +37,13 @@ module.exports = (sequelize, DataTypes) => {
 		});
 	};                  (PREGUNTAR ACERCA DE RELACION 1 A 1 , CART / USER )
 */
+
+	User.associate = function(models) {
+		User.belongsTo(models.Order, {
+			as: 'orders',
+			foreignKey: 'orderId'
+		});
+	};
+
 	return User;
 };
