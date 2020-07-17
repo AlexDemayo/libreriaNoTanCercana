@@ -39,9 +39,6 @@ const categoryController = {
 		.catch(error => {
 			console.log(error)
 		})
-
-		// const books = bookModel.filterBySomething((book) => book.subCategory == subCategory);
-		// return res.render('subCategory', { category, subCategory, books });
 	}
 };
 
