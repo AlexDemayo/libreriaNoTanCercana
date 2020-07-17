@@ -29,21 +29,18 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.DATE
 		}
 	});
-	/*
-	User.associate = function(models) {
-		User.hasMany(models.item, {
-			as: 'items',
-			foreignKey: 'itemId'
-		});
-	};                  (PREGUNTAR ACERCA DE RELACION 1 A 1 , CART / USER )
-*/
 
 	User.associate = function(models) {
-		User.belongsTo(models.Order, {
+		User.hasMany(models.Item, {
+			as: 'items',
+			foreignKey: 'itemId'
+		}),
+		User.hasMany(models.Order, {
 			as: 'orders',
 			foreignKey: 'orderId'
 		});
 	};
+	
 
 	return User;
 };

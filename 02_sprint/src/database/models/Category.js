@@ -15,13 +15,12 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	});
 
-	// Category.associate = function(models) {
-	// 	Category.hasMany(models.Product, {
-	// 		as: 'Product',
-	// 		foreignKey: 'ProductId'
-	// 	});
-	// };
-
+	Category.associate = function (models) {
+		Category.hasMany(models.Product, {
+			as: 'products',
+			foreignKey: 'categoryId'
+		})
+	}
 
 	return Category;
 };

@@ -37,20 +37,17 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.DATE
 		}
 	});
-	/*
+    
 	Item.associate = function(models) {
 		Item.belongsTo(models.User, {
 			as: 'User',
 			foreignKey: 'userId'
-		});
-	};
-                                           (PREGUNTAR ACERCA DE RELACION 1 A 1 , CART / USER )
-	Item.associate = function(models) {
+		}),
 		Item.belongsTo(models.Order, {
 			as: 'order',
 			foreignKey: 'orderId'
 		});
 	};
-*/
+
 	return Item;
 };

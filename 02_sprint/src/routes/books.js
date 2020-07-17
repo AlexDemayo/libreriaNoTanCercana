@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const bookController = require('../controllers/booksController')
+const booksController = require('../controllers/booksController')
 
 /* GET users listing. */
-router.get('/:id', bookController.detail);
+router.get('/:id', booksController.detail);
 
 
 
