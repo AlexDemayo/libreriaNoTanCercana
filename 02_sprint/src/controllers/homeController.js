@@ -5,14 +5,13 @@ const db = require('../database/models');
 
 const homeController = {
 	root: function(req, res) {
-		db.Product
-			.findAll()
-			.then(function(books) {
-				res.render('index', { books: books });
-			})
-			.catch(function(error) {
-				console.log(error);
-			});
+		db.Product.findAll()
+		.then(books => {
+			res.render('index', {books})
+		})
+		.catch(error => {
+			console.log(error)
+		})
 	}
 };
 

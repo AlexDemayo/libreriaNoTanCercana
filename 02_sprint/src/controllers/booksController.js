@@ -1,11 +1,19 @@
-const jsonModel = require('../models/jsonModel');
-const bookModel = jsonModel('booksData')
+// const jsonModel = require('../models/jsonModel');
+// const bookModel = jsonModel('booksData')
+
+const db = require('../database/models')
 
 
 module.exports = {
     detail : function(req,res){
-        let book = bookModel.findById(req.params.id)
-        return res.render('detail', {book})
-       
+        db.Product.findByPk(req.params.id, {
+            include: [{association: 'category'}, {association: 'subCategory'}]
+        })
+        .then(book => {
+            res.render('detail', {book:book})
+        })
+        .catch(error => {
+			console.log(error)
+		})
     }
 }
