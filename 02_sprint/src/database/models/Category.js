@@ -1,5 +1,3 @@
-const { DataTypes } = require('sequelize/types');
-
 module.exports = (sequelize, DataTypes) => {
 	let Category = sequelize.define('Category', {
 		name: {
@@ -12,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
 		updatedAt: {
 			type: DataTypes.DATE
 		},
-		deleteAt: {
+		deletedAt: {
 			type: DataTypes.DATE
 		}
 	});

@@ -5,9 +5,14 @@ const db = require('../database/models');
 
 const homeController = {
 	root: function(req, res) {
-		db.Product.findAll().then(function(books) {
-			res.render('index', { books });
-		});
+		db.Product
+			.findAll()
+			.then(function(books) {
+				res.render('index', { books: books });
+			})
+			.catch(function(error) {
+				console.log(error);
+			});
 	}
 };
 

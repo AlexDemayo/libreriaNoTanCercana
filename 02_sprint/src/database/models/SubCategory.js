@@ -13,13 +13,13 @@ module.exports = (sequelize, DataTypes) => {
 		updatedAt: {
 			type: DataTypes.DATE
 		},
-		deleteAt: {
+		deletedAt: {
 			type: DataTypes.DATE
 		}
 	});
 
-	subCategory.associate = function(models) {
-		subCategory.belongsTo(models.Category, {
+	SubCategory.associate = function(models) {
+		SubCategory.belongsTo(models.Category, {
 			as: 'category',
 			foreignKey: 'categoryId'
 		});

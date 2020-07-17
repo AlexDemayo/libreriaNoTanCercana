@@ -1,5 +1,3 @@
-const { BelongsTo } = require('sequelize/types');
-
 module.exports = (sequelize, DataTypes) => {
 	let Item = sequelize.define('Item', {
 		userId: {
@@ -35,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
 		updatedAt: {
 			type: DataTypes.DATE
 		},
-		deleteAt: {
+		deletedAt: {
 			type: DataTypes.DATE
 		}
 	});
