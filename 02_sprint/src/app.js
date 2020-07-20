@@ -6,7 +6,7 @@ var logger = require('morgan');
 const session = require('express-session');
 
 const indexRouter = require('./routes/index');
-const detailController = require('./routes/detail');
+const booksController = require('./routes/books');
 const categoryRouter = require('./routes/category')
 const cartRouter = require('./routes/cart');
 const usersRouter = require('./routes/users');
@@ -31,7 +31,7 @@ saveUninitialized: true}));
 app.use(log);
 
 app.use('/', indexRouter);
-app.use('/detail', detailController);
+app.use('/books', booksController);
 app.use('/category', categoryRouter);
 app.use('/cart',cartRouter);
 app.use('/users', usersRouter);

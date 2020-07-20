@@ -3,15 +3,6 @@ module.exports = (sequelize, DataTypes) => {
 		name: {
 			allowNull: false,
 			type: DataTypes.STRING
-		},
-		createdAt: {
-			type: DataTypes.DATE
-		},
-		updatedAt: {
-			type: DataTypes.DATE
-		},
-		deletedAt: {
-			type: DataTypes.DATE
 		}
 	});
 

@@ -14,7 +14,7 @@ CREATE table products(
     subCategoryId INT UNSIGNED,
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
     updatedAt DATETIME ON UPDATE CURRENT_TIMESTAMP, 
-    deteledAt DATETIME 
+    deletedAt DATETIME 
 );
 
 CREATE table categories(
@@ -22,7 +22,7 @@ CREATE table categories(
     name VARCHAR(50),
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
     updatedAt DATETIME ON UPDATE CURRENT_TIMESTAMP, 
-    deteledAt DATETIME 
+    deletedAt DATETIME 
 );
 
 CREATE table subCategories(
@@ -31,7 +31,7 @@ CREATE table subCategories(
     categoryId INT UNSIGNED NOT NULL ,
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
     updatedAt DATETIME ON UPDATE CURRENT_TIMESTAMP, 
-    deteledAt DATETIME 
+    deletedAt DATETIME 
 );
 
 CREATE table publishers(
@@ -39,7 +39,7 @@ CREATE table publishers(
     name VARCHAR(50),
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
     updatedAt DATETIME ON UPDATE CURRENT_TIMESTAMP, 
-    deteledAt DATETIME 
+    deletedAt DATETIME 
 );
 
 CREATE table items(
@@ -55,7 +55,7 @@ CREATE table items(
     orderId INT UNSIGNED,
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
     updatedAt DATETIME ON UPDATE CURRENT_TIMESTAMP, 
-    deteledAt DATETIME 
+    deletedAt DATETIME 
 );
 
 CREATE table orders(
@@ -65,7 +65,7 @@ CREATE table orders(
     userId INT UNSIGNED,
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
     updatedAt DATETIME ON UPDATE CURRENT_TIMESTAMP, 
-    deteledAt DATETIME 
+    deletedAt DATETIME 
 );
 
 CREATE table users(
@@ -76,7 +76,7 @@ CREATE table users(
     admin SMALLINT UNSIGNED NOT NULL,
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
     updatedAt DATETIME ON UPDATE CURRENT_TIMESTAMP, 
-    deteledAt DATETIME 
+    deletedAt DATETIME 
 );
 
 
@@ -106,5 +106,6 @@ AFTER admin;
 ALTER TABLE users 
 ADD FOREIGN KEY(orderId) REFERENCES orders(id);
 
-
-
+ALTER TABLE products
+ADD description TEXT
+AFTER image

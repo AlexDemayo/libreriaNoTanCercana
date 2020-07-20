@@ -25,28 +25,3 @@ module.exports = (sequelize, DataTypes) => {
 	return Category;
 };
 
-
-// module.exports = (sequelize, DataTypes) => {
-// 	let alias = 'Category'
-// 	let cols = {
-// 		name: {
-// 			allowNull: false,
-// 			type: DataTypes.STRING
-// 		},
-// 		createdAt: {
-// 			type: DataTypes.DATE
-// 		},
-// 		updatedAt: {
-// 			type: DataTypes.DATE
-// 		},
-// 		deletedAt: {
-// 			type: DataTypes.DATE
-// 		}
-// 	};
-// 	let config = {
-// 		tableName : "categories"
-// 	};
-
-// 	const Category = sequelize.define(alias, cols, config);
-// 	return Category
-// }

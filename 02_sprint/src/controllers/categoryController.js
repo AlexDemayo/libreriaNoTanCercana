@@ -7,7 +7,7 @@ const categoryController = {
 	root: function(req, res) {
 		db.Product.findAll()
 		.then(books => {
-			res.render('books', {books})
+			res.render('allCategories', {books})
 		})
 		.catch(error => {
 			console.log(error)
@@ -45,33 +45,6 @@ const categoryController = {
 
 
 
-/*
-    root: function(req, res) {
-	    db.Product.findAll().then(function(titles) {
-		    res.render('index', { titles });
-	});
-	},
-	category: function(req, res) {
-		db.Category.findAll().then(function(categories) {
-			res.render('Category', { titles, categories});
-		});
-	subCategory: function(req, res) {
-		db.SubCategory.findAll().then(function(subCategories) {
-			res.render('subCategory', { titles, categories, subCategories });
-			});
-
-
-
-
-			/*category: function(req, res) {
-		const category = req.params.category;
-		db.Category.findOne({where: {
-			name: ""}
-		})
-		.then(function(categories){
-			res.render("category", { title, categories })
-		}
-	}*/
 
 
 	

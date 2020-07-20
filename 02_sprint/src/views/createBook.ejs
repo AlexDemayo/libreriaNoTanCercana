@@ -1,0 +1,28 @@
+<html>
+    <%- include('partials/head', {title: 'Bienvenido!'}) %>
+<body>
+    <%- include('partials/header') %>
+    
+
+    <form action="store" method="POST">
+        <div>
+            <label for="title">Título</label>
+            <input type="text" name="title">
+        </div>
+       <div>
+        <label for="author">Autor</label>
+        <input type="text" name="author">
+       </div>
+        <div>
+            <label for="publisher">Editorial</label>
+            <select name="publisher">
+                <option value=""></option>
+            </select>
+            
+        </div>
+        
+
+
+    <%- include('partials/footer') %>
+</body>
+</html>
