@@ -202,8 +202,10 @@ h2.ft-title2 {
 	font-size: 30px;
 }
 
-.icons i {
+.iconsft {
+	width: 27px;
 	margin-right: 13px;
+	padding-bottom: 20px;
 }
 
 .ft-main-item {
