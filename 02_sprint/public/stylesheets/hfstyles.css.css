@@ -16,10 +16,23 @@ ul {
 }
 
 .a-header:hover {
-	color: #272e2b;
+	color: #343a38;
 	text-decoration: underline;
 }
 
+.logout {
+	border: none;
+	color: #333d39;
+	background-color: inherit;
+	font-size: 16px;
+	padding-right: 13px;
+	padding-left: 15px;
+}
+.logout:hover {
+	color: #343a38;
+	background-color: inherit;
+	text-decoration: underline;
+}
 /*Header main */
 
 .navigation-list-inline {
@@ -43,6 +56,7 @@ ul {
 	justify-content: end;
 	text-align: right;
 	padding: 9px;
+	padding-top: 20px;
 	float: right;
 }
 
@@ -226,7 +240,7 @@ input[type="submit"] {
 }
 
 .newsletter-back {
-	background-color: #fcfbb9;
+	background-color: #f8f7bf;
 	width: 100%;
 }
 
@@ -238,7 +252,7 @@ input[type="submit"] {
 	.header-container {
 		display: flex;
 		justify-content: space-between;
-		width: 90%;
+		width: 99%;
 		padding-bottom: 14px;
 	}
 
@@ -282,7 +296,7 @@ input[type="submit"] {
 	.header-container {
 		display: flex;
 		justify-content: space-between;
-		width: 95%;
+		width: 100%;
 		padding-bottom: 14px;
 	}
 
@@ -315,7 +329,10 @@ input[type="submit"] {
 	.shop-menu {
 		display: flex;
 		flex-wrap: nowrap;
-		width: 27%;
+		justify-content: flex-end;
+		width: 41%;
+		padding-top: 20px;
+		padding-right: 45px;
 	}
 
 	.shop-menu a {
