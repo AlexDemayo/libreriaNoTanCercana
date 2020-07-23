@@ -1,0 +1,67 @@
+<html>
+      <%- include('partials/head', {title: 'Mi Perfil'}) %>
+  <body>
+   
+      <%- include('partials/header') %>
+
+      <div class="container">
+        <div id="flex" class="row space">
+            <div class="col-6 col-md-4 col-lg-2">
+              <div >
+                <img id="imgg" src="https://fotomanias.com.ar/wp-content/uploads/2019/03/foto-carnet-fondo-celeste.jpg">
+                  <div class="menu-profile">
+                    <a class="a-profile" href="#">Configuración</a>
+                  </div>
+                  <div class="menu-profile">
+                    <a class="a-profile" href="#">Compras</a>
+                  </div>
+                  <div class="menu-profile">
+                    <a class="a-profile" href="#">Favoritos</a>
+                  </div>
+                
+              </div>
+              
+            </div>
+
+            <div class="col-12 col-md-5 col-lg-5">
+                <form class="register" action="update" method="POST" value="update">
+                    <div>
+                        <div>
+                            <p>Username</p>
+                            <input type="text" id="usernameReg" name="usernameReg" " class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.usernameReg %>">
+                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.usernameReg ? errorsRegister.usernameReg.msg : null %></p>
+                        </div>
+                        <div>
+                            <p>Email</p>
+                            <input type="text" id="emailReg" name="emailReg" " class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.emailReg %>">
+                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.emailReg ? errorsRegister.emailReg.msg : null %></p>
+                        </div>
+                        <div>
+                            <p>Old password</p>
+                            <input type="password" id="passwordReg" name="passwordReg" class="form-input" ">
+                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.passwordReg ? errorsRegister.passwordReg.msg : null %></p>
+                        </div>
+                        <div>
+                            <p>New password</p>
+                            <input type="password" id="confirmPasswordReg" name="confirmPasswordReg" class="form-input" ">
+                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.confirmPasswordReg ? errorsRegister.confirmPasswordReg.msg : null %></p>
+                        </div>
+                        <div>
+                            <p>Repeat new password</p>
+                            <input type="password" id="confirmPasswordReg" name="confirmPasswordReg" class="form-input" ">
+                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.confirmPasswordReg ? errorsRegister.confirmPasswordReg.msg : null %></p>
+                        </div>
+                        <div>
+                            <button type="submit">Update</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+         
+       <%- include('partials/footer') %>
+
+   </body>
+
+</html>
