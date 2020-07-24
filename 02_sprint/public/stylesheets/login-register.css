@@ -102,6 +102,17 @@
 	background-color: #1bb0c7da;
 }
 
+.avatar-label{
+	font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.register input[type=file]{
+	border:none;
+	text-indent: 0px;
+	/* margin-top: 15px; */
+}
+
 .register p {
 	font-size: 14px;
 }

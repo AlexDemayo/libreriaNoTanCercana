@@ -11,27 +11,28 @@ const usersController = {
 	user: function(req, res) {
 		res.render('user');
 	},
-
-	createBook: function(req, res) {
-		res.render('createBook');
-	},
-
 	register: function(req, res) {
 		const errors = validationResult(req);
+		
+		console.log(errors);
 
 		if (errors.isEmpty()) {
 			delete req.body.confirmPasswordReg;
 			req.body.passwordReg = bcrypt.hashSync(req.body.passwordReg, 10);
 
+			
+
 			userModel.create({
-				id: ' ',
-				...req.body
+				...req.body,
+				image: req.file.filename
 			});
+			
 
 			return res.redirect('/');
 		} else {
 			return res.render('login-register', { errorsRegister: errors.mapped(), oldRegister: req.body });
 		}
+		
 	},
 
 	login: function(req, res) {

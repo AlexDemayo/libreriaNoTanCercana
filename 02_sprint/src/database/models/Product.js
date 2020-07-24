@@ -18,10 +18,16 @@ module.exports = (sequelize, DataTypes) => {
 		pages: {
 			type: DataTypes.INTEGER
 		},
-		isbn: {
+		price:{
 			type: DataTypes.INTEGER
 		},
+		isbn: {
+			type: DataTypes.STRING
+		},
 		image: {
+			type: DataTypes.STRING
+		},
+		cover:{
 			type: DataTypes.STRING
 		},
 		description:{

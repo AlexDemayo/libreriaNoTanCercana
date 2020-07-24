@@ -32,7 +32,7 @@
             </div>
             <div class="col-12 col-md-5 col-lg-5 form-right">
                 <h2>Registrate</h2>
-                <form class="register" action="register" method="POST" value="register">
+                <form class="register" action="register" method="POST" value="register" enctype="multipart/form-data">
                     <div>
                         <div>
                             <input type="text" id="usernameReg" name="usernameReg" placeholder="Usuario *" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.usernameReg %>">
@@ -49,6 +49,11 @@
                         <div>
                             <input type="password" id="confirmPasswordReg" name="confirmPasswordReg" class="form-input" placeholder="Repita la contraseña: *">
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.confirmPasswordReg ? errorsRegister.confirmPasswordReg.msg : null %></p>
+                        </div>
+                        <div>
+                            <label class="avatar-label" name="image">Imagen de perfil</label>
+                            <input type="file" name="image" class="avatar-input">
+                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.image ? errorsRegister.image.msg : null %></p>
                         </div>
                         <div>
                             <p>(*) Campos obligatorios.</p>

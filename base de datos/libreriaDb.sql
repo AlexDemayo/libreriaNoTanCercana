@@ -108,4 +108,8 @@ ADD FOREIGN KEY(orderId) REFERENCES orders(id);
 
 ALTER TABLE products
 ADD description TEXT
+AFTER image;
+
+ALTER TABLE products
+ADD cover VARCHAR(50)
 AFTER image

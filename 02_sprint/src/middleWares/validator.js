@@ -38,7 +38,29 @@ const validator = {
             .withMessage('Campo obligatorio')
             .bail()
             .custom((value, {req}) => req.body.passwordReg === value)
-            .withMessage('Las contraseñas no coinciden')
+            .withMessage('Las contraseñas no coinciden'),
+
+        body('image')
+            .custom((value, { req }) => {
+                if (req.file) {
+                return true;
+                } else {
+                return false;
+                }
+            })
+            .withMessage('Campo obligatorio')
+            .bail() 
+            .custom((value, {req}) => {
+                const acceptedExtensions = ['.jpg', '.png', '.jpeg'];
+                const ext = path.extname(req.file.originalname);
+
+                if(acceptedExtensions.includes(ext)){
+                    return true
+                } else{
+                    return false
+                }
+            })
+            .withMessage('Extensión invalida')
     ],
 
     login: [
