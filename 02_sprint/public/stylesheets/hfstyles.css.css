@@ -136,9 +136,10 @@ ul {
 
 .hav {
 	text-align: right;
-	/* height: 70px; */
+	height: 70px;
 	line-height: 70px;
 	z-index: 2;
+	float:right;
 }
 
 .menu a {
@@ -171,6 +172,7 @@ label#togglex {
 	text-align: center;
 	width: 100%;
 	display: none;
+	background-color: white;
 }
 
 .menu a {

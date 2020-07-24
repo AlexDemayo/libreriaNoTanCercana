@@ -6,7 +6,7 @@
 
       <div class="container">
         <div id="flex" class="row space">
-            <div class="col-6 col-md-4 col-lg-2">
+            <div class="col-12 col-md-4 col-lg-2 profile-config">
               <div >
                 <img id="imgg" src="https://fotomanias.com.ar/wp-content/uploads/2019/03/foto-carnet-fondo-celeste.jpg">
                   <div class="menu-profile">
@@ -33,12 +33,12 @@
                         </div>
                         <div>
                             <p>Email</p>
-                            <input type="text" id="emailReg" name="emailReg" " class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.emailReg %>">
+                            <input type="text" id="emailReg" name="emailReg" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.emailReg %>">
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.emailReg ? errorsRegister.emailReg.msg : null %></p>
                         </div>
                         <div>
                             <p>Old password</p>
-                            <input type="password" id="passwordReg" name="passwordReg" class="form-input" ">
+                            <input type="password" id="passwordReg" name="passwordReg" class="form-input">
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.passwordReg ? errorsRegister.passwordReg.msg : null %></p>
                         </div>
                         <div>

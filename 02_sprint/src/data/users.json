@@ -1,7 +1,7 @@
 [
  {
   "id": " ",
-  "usernameReg": "camila",
+  "usernameReg": "Camila",
   "emailReg": "gilcamilat@gmail.com",
   "passwordReg": "$2a$10$2l2bMZbYM7gqprgZP1dd6ur9xszYSmNwEGfF0Sv5R67y5USm2n3Me"
  },
@@ -10,11 +10,5 @@
   "usernameReg": "Nahuelcri",
   "emailReg": "nahuel.crisafio@hotmail.com",
   "passwordReg": "$2a$10$nv.ZL.LCNh18dLx.kb0Qdewo.kkyhQ60LBs4V1ocyoz0sBYb4R9O6"
- },
- {
-  "id": " ",
-  "usernameReg": "marcela",
-  "emailReg": "marcelaiaco@yahoo.com.ar",
-  "passwordReg": "$2a$10$N3BezId4xjY4loRNMlg.1O4EYEpLB2BzU83N7CMwKRGLtePEdJzaq"
  }
 ]
