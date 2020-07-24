@@ -57,13 +57,19 @@
 
 @media (min-width: 768px) {
 	.space {
-		margin: 35px 0px;
+		margin: 37px 0px;
 		
 	} 
 	#flex {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+	}
+	.form-left{
+		margin-right:30px
+	}
+	.form-right{
+		margin-left:30px;
 	}
 }
 
