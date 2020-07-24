@@ -80,16 +80,17 @@ ul {
 #logoh img {
 	width: 100%;
 	margin-left: 22px;
+	margin-top:12px
 }
 
 .shop-menu {
 	display: flex;
 	flex-wrap: nowrap;
-	justify-content: end;
+	justify-content: start;
 	text-align: right;
-	padding: 9px;
+	/* padding: 9px; */
 	padding-top: 20px;
-	float: right;
+	/* float: right; */
 }
 
 .header-container {
@@ -115,6 +116,14 @@ ul {
 	margin-left: 10px;
 }
 
+#shopping-cart{
+	font-size: 20px;
+}
+
+#search{
+	font-size: 18px
+}
+
 .navbar-toggler {
 	display: inline-block;
 }
@@ -127,7 +136,7 @@ ul {
 
 .hav {
 	text-align: right;
-	height: 70px;
+	/* height: 70px; */
 	line-height: 70px;
 	z-index: 2;
 }

@@ -17,7 +17,7 @@ label#quantity{
     font-weight: 500;
 }
 
-input[type=number]{
+.book-buy input[type=number]{
     display: block;
     margin: 10px 0px;
     width: 15%;
@@ -146,7 +146,7 @@ button:hover{
     .book-photo{
      width: 80%
     }
-    input[type=number]{
+    .book-buy input[type=number]{
         margin: 5px 0px;
         width: 23%;
     }
@@ -212,7 +212,7 @@ button:hover{
     .book-photo{
         width: 60%;
     }
-    input[type=number]{
+    .book-buy input[type=number]{
         margin: 15px 0px;
         width: 12%;
     }   

@@ -1,28 +1,82 @@
 <html>
-    <%- include('partials/head', {title: 'Bienvenido!'}) %>
+    <%- include('partials/head', {title: 'Agregar libro'}) %>
+    <link rel="stylesheet" href="/stylesheets/create-edit.css">
 <body>
     <%- include('partials/header') %>
     
-
-    <form action="store" method="POST">
-        <div>
-            <label for="title">Título</label>
-            <input type="text" name="title">
-        </div>
-       <div>
-        <label for="author">Autor</label>
-        <input type="text" name="author">
-       </div>
-        <div>
-            <label for="publisher">Editorial</label>
-            <select name="publisher">
-                <option value=""></option>
-            </select>
-            
-        </div>
-        
-
-
+    <div class="container create-container">
+        <div class="row space">
+            <h2 class="col-12">Agregá un libro</h2>
+            <form action="store" method="POST" class="create-form" enctype="multipart/form-data">
+                <div class="container">
+                    <div class="row">
+                        <div class="section col-12 col-md-6">
+                            <label for="title">Título:</label>
+                            <input type="text" name="title" class="create-input">
+                        </div>
+                        <div class="section col-12 col-md-6">
+                            <label for="author">Autor:</label>
+                            <input type="text" name="author" class="create-input">
+                        </div>
+                        <div class="section col-12 col-md-6">
+                            <label for="publisher">Editorial:</label>
+                            <select name="publisher" class="create-input">
+                                <% publishers.forEach(publisher => { %>
+                                    <option value="<%= publisher.id %> "><%= publisher.name %> </option>
+                                <% }) %>
+                            </select>
+                        </div>
+                        <div class="section col-12 col-md-6">
+                            <label for="datePublished">Fecha de publicación:</label>
+                            <input type="date" name="datePublished" class="create-input">
+                        </div>
+                        <div class="section col-12 col-md-6">
+                            <label for="category">Categoría:</label>
+                            <select name="category" class="create-input">
+                                <% categories.forEach(category => { %>
+                                    <option value="<%= category.id %>"><%= category.name %></option>
+                                <% }) %>
+                            </select>
+                        </div>
+                        <div class="section col-12 col-md-6">
+                            <label for="subCategory">Sub categoría:</label>
+                            <select name="subCategory" class="create-input">
+                                <% subCategories.forEach(subCategory => { %>
+                                    <option value="<%= subCategory.id%>"> <%= subCategory.name %> </option>
+                                <% }) %>
+                            </select>        
+                        </div>
+                        <div class="section col-12 col-md-6">
+                            <label for="pages">Número de páginas:</label>
+                            <input type="number" class="create-input">
+                        </div>
+                        <div class="section col-12 col-md-6">
+                            <label for="isbn">Código ISBN:</label>
+                            <input type="number" class="create-input">
+                        </div>
+                       
+                        <div class="section col-12">
+                            <label for="description">Descripción:</label>
+                            <textarea name="description" cols="30" rows="5"></textarea>
+                        </div>
+                        <!-- <div>
+                            <label for="image"></label>
+                            <input type="">
+                        </div> -->
+                        <div class="section col-12 col-md-3">
+                            <button type="submit">Guardar</button>
+                        </div>
+                    </div>
+                </div>               
+            </form>
+        </div> 
+    </div>
+    
     <%- include('partials/footer') %>
+    
 </body>
 </html>
+
+
+
+
