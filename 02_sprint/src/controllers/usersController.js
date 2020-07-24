@@ -12,6 +12,10 @@ const usersController = {
 		res.render('user');
 	},
 
+	createBook: function(req, res) {
+		res.render('createBook');
+	},
+
 	register: function(req, res) {
 		const errors = validationResult(req);
 

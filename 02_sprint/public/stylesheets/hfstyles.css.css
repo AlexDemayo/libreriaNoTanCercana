@@ -1,35 +1,3 @@
-/* Profile styling */
-#imgg {
-	padding-bottom: 40px;
-}
-
-.a-profile {
-	color: #7d8180;
-	font-family: sans-serif;
-	font-size: 16px;
-	font-weight: 535;
-}
-
-.a-profile:hover {
-	color: #4fa7e2;
-	text-decoration: underline;
-}
-
-.menu-profile {
-	padding: 13%;
-	background-color: rgb(238, 238, 238);
-	margin-bottom: 1px;
-}
-
-.menu-profile:hover {
-	background-color: inherit;
-}
-
-.menu-profile a:hover {
-	background-color: inherit;
-	text-decoration: none;
-}
-
 /* Generic styling */
 * {
 	box-sizing: border-box;
@@ -80,7 +48,7 @@ ul {
 #logoh img {
 	width: 100%;
 	margin-left: 22px;
-	margin-top:12px
+	margin-top: 12px;
 }
 
 .shop-menu {
@@ -116,12 +84,12 @@ ul {
 	margin-left: 10px;
 }
 
-#shopping-cart{
+#shopping-cart {
 	font-size: 20px;
 }
 
-#search{
-	font-size: 18px
+#search {
+	font-size: 18px;
 }
 
 .navbar-toggler {
@@ -139,7 +107,7 @@ ul {
 	height: 70px;
 	line-height: 70px;
 	z-index: 2;
-	float:right;
+	float: right;
 }
 
 .menu a {

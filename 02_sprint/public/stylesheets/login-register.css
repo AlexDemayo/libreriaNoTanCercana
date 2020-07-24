@@ -1,4 +1,58 @@
-.space{
+/* Profile styling */
+.imgg {
+	border-radius: 200px;
+	width: 230px;
+}
+
+.a-profile {
+	color: #7d8180;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-weight: 535;
+}
+
+.a-profile:hover {
+	color: #4fa7e2;
+	text-decoration: underline;
+}
+
+.menu-profile {
+	padding: 13%;
+	background-color: rgb(238, 238, 238);
+	margin-bottom: 1px;
+	text-align: center;
+}
+
+.margin {
+	margin-top: 100px;
+}
+
+.menu-profile:hover {
+	background-color: inherit;
+}
+
+.menu-profile a:hover {
+	background-color: inherit;
+	text-decoration: none;
+}
+
+.profile-confg {
+	padding-bottom: 100px;
+}
+
+.profilediv {
+	display: flex;
+	justify-content: center;
+}
+
+.buttcf {
+	display: flex;
+	background-color: #e3e6e6;
+	z-index: 1;
+}
+/* Profile styling */
+
+.space {
 	padding: 30px 0;
 }
 
@@ -7,12 +61,11 @@
 .register input {
 	display: block;
 	width: 100%;
-	height: 7vh;
+	height: 6vh;
 	border: 1px solid #b9b9b9;
 	text-indent: 10px;
-    margin-bottom: 15px;
-    /* border-radius: 8px; */
-
+	margin-bottom: 15px;
+	/* border-radius: 8px; */
 }
 
 .login input[type=checkbox] {
@@ -45,11 +98,9 @@
 	display: inline-block;
 }
 .login button:hover,
-.register button:hover{
+.register button:hover {
 	background-color: #1bb0c7da;
-	
 }
-
 
 .register p {
 	font-size: 14px;
@@ -58,18 +109,20 @@
 @media (min-width: 768px) {
 	.space {
 		margin: 37px 0px;
-		
-	} 
+	}
 	#flex {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 	}
-	.form-left{
-		margin-right:30px
+	.form-left {
+		margin-right: 30px;
 	}
-	.form-right{
-		margin-left:30px;
+	.form-right {
+		margin-left: 30px;
+	}
+	.menu-profile {
+		text-align: unset;
 	}
 }
 
@@ -82,7 +135,13 @@
 	.login button {
 		margin-top: 36px;
 	}
-	.profile-config{
-		margin-right:30px;
+	.profile-config {
+		margin-right: 40px;
+	}
+	.margin {
+		margin-top: 20px;
+	}
+	.menu-profile {
+		text-align: unset;
 	}
 }

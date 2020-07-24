@@ -6,11 +6,20 @@
 
       <div class="container">
         <div id="flex" class="row space">
-            <div class="col-12 col-md-4 col-lg-2 profile-config">
+            <div class="col-12 col-md-4 col-lg-2 profile-confg">
               <div >
-                <img id="imgg" src="https://fotomanias.com.ar/wp-content/uploads/2019/03/foto-carnet-fondo-celeste.jpg">
+
+                  <div class="profilediv">
+                    <img class="imgg" src="https://fotomanias.com.ar/wp-content/uploads/2019/03/foto-carnet-fondo-celeste.jpg">
+                  </div>
+                  <div class="imgdiv">
+                    <button class="w3-button w3-large w3-circle buttcf">+</button>
+                  </div>
+                  <div class="menu-profile margin">
+                    <a class="a-profile" href="/Users/user/createBook">Cargar Producto</a>
+                  </div>
                   <div class="menu-profile">
-                    <a class="a-profile" href="#">Configuración</a>
+                    <a class="a-profile" href="/Users/user">Configuración</a>
                   </div>
                   <div class="menu-profile">
                     <a class="a-profile" href="#">Compras</a>
@@ -27,7 +36,7 @@
                 <form class="register" action="update" method="POST" value="update">
                     <div>
                         <div>
-                            <p>Username</p>
+                            <p>Usuario</p>
                             <input type="text" id="usernameReg" name="usernameReg" " class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.usernameReg %>">
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.usernameReg ? errorsRegister.usernameReg.msg : null %></p>
                         </div>
@@ -37,17 +46,17 @@
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.emailReg ? errorsRegister.emailReg.msg : null %></p>
                         </div>
                         <div>
-                            <p>Old password</p>
+                            <p>Contraseña antigua</p>
                             <input type="password" id="passwordReg" name="passwordReg" class="form-input">
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.passwordReg ? errorsRegister.passwordReg.msg : null %></p>
                         </div>
                         <div>
-                            <p>New password</p>
+                            <p>Nueva contraseña</p>
                             <input type="password" id="confirmPasswordReg" name="confirmPasswordReg" class="form-input" ">
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.confirmPasswordReg ? errorsRegister.confirmPasswordReg.msg : null %></p>
                         </div>
                         <div>
-                            <p>Repeat new password</p>
+                            <p>Repetir contraseña</p>
                             <input type="password" id="confirmPasswordReg" name="confirmPasswordReg" class="form-input" ">
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.confirmPasswordReg ? errorsRegister.confirmPasswordReg.msg : null %></p>
                         </div>
