@@ -7,7 +7,7 @@ module.exports = (req,res,next) => {
 
     if(!req.session.user){
        console.log("no esta logueado")
-       res.redirect('http://localhost:3030/')
+       res.redirect('http://localhost:3030/users/login-register')
         return next();
     } else{
         return next();
