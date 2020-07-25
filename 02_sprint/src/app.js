@@ -13,6 +13,7 @@ const usersRouter = require('./routes/users');
 
 const log = require('./middleWares/log');
 
+
 var app = express();
 
 // view engine setup
@@ -33,7 +34,7 @@ app.use(log);
 app.use('/', indexRouter);
 app.use('/books', booksController);
 app.use('/category', categoryRouter);
-app.use('/cart',cartRouter);
+app.use('/cart', cartRouter);
 app.use('/users', usersRouter);
 
 

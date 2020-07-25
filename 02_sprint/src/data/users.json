@@ -10,5 +10,17 @@
   "emailReg": "gilcamilat@gmail.com",
   "passwordReg": "$2a$10$SwKq.POzwYK3/ip2lWlT/ufoZHSheo4RNZHvJEQ.rtCmSznhHJlhG",
   "image": "image-1595631436017.png"
+ },
+ {
+  "usernameReg": "Alex Demayo",
+  "emailReg": "alex@gmail.com",
+  "passwordReg": "$2a$10$dYxcokrvpVbACvV7CP3O9.wEyJg.1yq7cMgW5cOVcQrwAuxbuu.ka",
+  "image": "image-1595711804778.jpeg"
+ },
+ {
+  "usernameReg": "Carlos",
+  "emailReg": "carlos@gmail.com",
+  "passwordReg": "$2a$10$Y3KSj9yO6A/wDjvO6H2JNedIf7C9GUVUSmXvsO.C5By7YWt2kyyOu",
+  "image": "image-1595712676560.jpeg"
  }
 ]
