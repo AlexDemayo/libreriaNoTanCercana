@@ -6,6 +6,7 @@ const { body } = require('express-validator');
 const multer = require('multer');
 const path = require('path');
 const logueado = require('../middleWares/estalogueado');
+const nologueado = require('../middleWares/noestalogueado');
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, path.resolve(__dirname, '../../public/images/users'))
@@ -36,7 +37,7 @@ var storage = multer.diskStorage({
 
 
 router.get('/login-register',logueado, usersController.logYreg);
-router.get('/user', usersController.user);
+router.get('/user', nologueado , usersController.user);
 router.post('/register', upload.single('image') , validator.register, usersController.register);
 router.post('/login', validator.login, usersController.login);
 router.post('/logout', usersController.logout);
