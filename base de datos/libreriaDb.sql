@@ -2,13 +2,13 @@ CREATE SCHEMA libreriadb;
 
 CREATE table products(
 	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    title VARCHAR(50) NOT NULL,
+    title VARCHAR(100) NOT NULL,
     author VARCHAR(50) NOT NULL,
     publisherId INT UNSIGNED NOT NULL,
     datePublished DATE,
     pages SMALLINT UNSIGNED,
     price FLOAT UNSIGNED,
-    isbn INT,
+    isbn VARCHAR(100),
     image VARCHAR(50),
     categoryId INT UNSIGNED,
     subCategoryId INT UNSIGNED,

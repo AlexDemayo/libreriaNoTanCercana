@@ -8,37 +8,33 @@ const path = require('path');
 const logueado = require('../middleWares/estalogueado');
 const nologueado = require('../middleWares/noestalogueado');
 var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, path.resolve(__dirname, '../../public/images/users'))
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    }
-  })
-   
-  var upload = multer({ 
-      storage: storage,
+	destination: function(req, file, cb) {
+		cb(null, path.resolve(__dirname, '../../public/images/users'));
+	},
+	filename: function(req, file, cb) {
+		cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+	}
+});
 
-      fileFilter: ( req, file, cb) => {
+var upload = multer({
+	storage: storage,
 
-        const acceptedExtensions = ['.jpg', '.png', '.jpeg'];
+	fileFilter: (req, file, cb) => {
+		const acceptedExtensions = [ '.jpg', '.png', '.jpeg' ];
 
-        const ext = path.extname(file.originalname);
+		const ext = path.extname(file.originalname);
 
-        if(!acceptedExtensions.includes(ext)){
-            req.file = file;
-        }
+		if (!acceptedExtensions.includes(ext)) {
+			req.file = file;
+		}
 
-        cb(null, acceptedExtensions.includes(ext))
+		cb(null, acceptedExtensions.includes(ext));
+	}
+});
 
-      }
-    
-    })
-
-
-router.get('/login-register',logueado, usersController.logYreg);
-router.get('/user', nologueado , usersController.user);
-router.post('/register', upload.single('image') , validator.register, usersController.register);
+router.get('/login-register', logueado, usersController.logYreg);
+router.get('/user', nologueado, usersController.user);
+router.post('/register', upload.single('image'), validator.register, usersController.register);
 router.post('/login', validator.login, usersController.login);
 router.post('/logout', usersController.logout);
 
