@@ -7,7 +7,7 @@ const categoryController = {
 	root: function(req, res) {
 		db.Product.findAll()
 		.then(books => {
-			res.render('allCategories', {books})
+			return res.render('allCategories', {books})
 		})
 		.catch(error => {
 			console.log(error)
@@ -20,7 +20,7 @@ const categoryController = {
 			include : [{association: "category"}]
 		})
 		.then(books => {
-			res.render('category', {books, category})
+			return res.render('category', {books, category})
 		})
 		.catch(error => {
 			console.log(error)
@@ -34,7 +34,7 @@ const categoryController = {
 			include: [{association: "subCategory"}]
 		})
 		.then(books => {
-			res.render('subCategory', { category, subCategory, books });
+			return res.render('subCategory', { category, subCategory, books });
 		})
 		.catch(error => {
 			console.log(error)

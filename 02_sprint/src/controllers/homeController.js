@@ -7,7 +7,7 @@ const homeController = {
 	root: function(req, res) {
 		db.Product.findAll()
 		.then(books => {
-			res.render('index', {books})
+			return res.render('index', {books})
 		})
 		.catch(error => {
 			console.log(error)

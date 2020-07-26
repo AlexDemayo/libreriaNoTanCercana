@@ -7,6 +7,8 @@ const multer = require('multer');
 const path = require('path');
 const logueado = require('../middleWares/estalogueado');
 const nologueado = require('../middleWares/noestalogueado');
+
+
 var storage = multer.diskStorage({
 	destination: function(req, file, cb) {
 		cb(null, path.resolve(__dirname, '../../public/images/users'));

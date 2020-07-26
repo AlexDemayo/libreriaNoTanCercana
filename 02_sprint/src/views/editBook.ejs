@@ -1,40 +1,48 @@
 <html>
-    <%- include('partials/head', {title: 'Agregar libro'}) %>
+    <%- include('partials/head', {title: 'Editar libro'}) %>
     <link rel="stylesheet" href="/stylesheets/create-edit.css">
 <body>
     <%- include('partials/header') %>
     
-    <div class="container create-container">
+    <div class="container -container">
         <div class="row space">
-            <h2 class="col-12">Agregá un libro</h2>
-            <form action="/books/create" method="POST" class="form" enctype="multipart/form-data">
+            <h2 class="col-12">Editar libro</h2>
+            <form action="/books/edit/<%= book.id %>" method="POST" class="form" enctype="multipart/form-data">
                 <div class="container">
                     <div class="row">
                         <div class="section col-12 col-md-6">
                             <label for="title">Título:</label>
-                            <input type="text" name="title" class="input">
+                            <input type="text" name="title" class="input" value='<%= book.title %>'>
                         </div>
                         <div class="section col-12 col-md-6">
                             <label for="author">Autor:</label>
-                            <input type="text" name="author" class="input">
+                            <input type="text" name="author" class="input" value='<%= book.author %>'>
                         </div>
                         <div class="section col-12 col-md-6">
                             <label for="publisher">Editorial:</label>
                             <select name="publisher" class="input">
                                 <% publishers.forEach(publisher => { %>
-                                    <option value="<%= publisher.id %> "><%= publisher.name %> </option>
+                                    <% if (publisher.id == book.publisherId) { %>
+                                        <option value="<%= publisher.id %>" selected><%= publisher.name %> </option>
+                                    <% } else { %>
+                                        <option value="<%= publisher.id %> "><%= publisher.name %> </option>
+                                    <% } %>
                                 <% }) %>
                             </select>
                         </div>
                         <div class="section col-12 col-md-6">
                             <label for="datePublished">Fecha de publicación:</label>
-                            <input type="date" name="datePublished" class="input">
+                            <input type="date" name="datePublished" class="input" value='<%= book.datePublished %>'>
                         </div>
                         <div class="section col-12 col-md-6">
                             <label for="category">Categoría:</label>
                             <select name="category" class="input">
                                 <% categories.forEach(category => { %>
-                                    <option value="<%= category.id %>"><%= category.name %></option>
+                                    <% if (category.id == book.categoryId) { %>
+                                        <option value="<%= category.id %>" selected><%= category.name %></option>
+                                    <% } else { %>
+                                        <option value="<%= category.id %>"><%= category.name %></option>
+                                    <% } %>
                                 <% }) %>
                             </select>
                         </div>
@@ -42,36 +50,40 @@
                             <label for="subCategory">Sub categoría:</label>
                             <select name="subCategory" class="input">
                                 <% subCategories.forEach(subCategory => { %>
-                                    <option value="<%= subCategory.id%>"> <%= subCategory.name %> </option>
+                                    <% if (subCategory.id == book.subCategoryId) { %>
+                                        <option value="<%= subCategory.id%>" selected> <%= subCategory.name %> </option>
+                                    <% } else { %>
+                                        <option value="<%= subCategory.id%>"> <%= subCategory.name %> </option>
+                                    <% } %>
                                 <% }) %>
                             </select>        
                         </div>
                         <div class="section col-12 col-md-6">
                             <label for="pages">Número de páginas:</label>
-                            <input type="number" class="input" name="pages">
+                            <input type="number" class="input" name="pages" value='<%= book.pages%>'>
                         </div>
                         <div class="section col-12 col-md-6">
                             <label for="cover">Tipo de tapa:</label>
-                            <input type="text" class="input" name="cover">
+                            <input type="text" class="input" name="cover" value='<%= book.cover %>'>
                         </div>
                         <div class="section col-12 col-md-6">
                             <label for="isbn">Código ISBN:</label>
-                            <input type="number" class="input" name="isbn">
+                            <input type="number" class="input" name="isbn" value='<%= book.isbn %>'>
                         </div>
                         <div class="section col-12 col-md-6">
                             <label for="isbn">Precio:</label>
-                            <input type="number" class="input" name="price">
+                            <input type="number" class="input" name="price" value='<%= book.price %>'>
                         </div>
                         <div class="section col-12">
                             <label for="description">Descripción:</label>
-                            <textarea name="description" cols="30" rows="5"></textarea>
+                            <textarea name="description" cols="30" rows="5" value='<%= book.description %>'></textarea>
                         </div>
                         <div class="section col-12">
                             <label for="image">Añadir imágen</label>
-                            <input type="file" name="image">
+                            <input type="file" name="image" value='<%= book.image %>'>
                         </div>
                         <div class="section col-12 col-md-3">
-                            <button type="submit">Crear</button>
+                            <button type="submit">Guardar</button>
                         </div>
                     </div>
                 </div>               
