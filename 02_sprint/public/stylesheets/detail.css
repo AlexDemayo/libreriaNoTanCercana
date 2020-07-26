@@ -1,16 +1,18 @@
 
-#body-container{
-    padding: 20px 0px;
+.body-container{
+    padding: 20px;
 }
 
 
-#breadCrumbs{
-    margin-bottom: 20px;
+.breadcrumbs{
+    display: none;
 }
 
-figure{
+
+.photo-container{
     text-align: center;
-}
+    margin: 20px 0px;
+} 
 
 label#quantity{
     text-transform: uppercase;
@@ -20,7 +22,7 @@ label#quantity{
 .book-buy input[type=number]{
     display: block;
     margin: 10px 0px;
-    width: 15%;
+    width: 27%;
     height: 7vh;
     text-indent: 10px;
     font-size: 1em;
@@ -75,19 +77,18 @@ button:hover{
   
 }
 
-/* .book-price {
+.book-price {
     margin: 28px 0px;
     line-height: 23px;
     font-size: 15px;
-} */
-
-.route{
-    display: none;
 }
+
+
 
 .book-info{
     border-bottom: 1px solid #b9b9b9;
     width: 100%;
+    padding: 8px 0px;
 }
 
 
@@ -117,7 +118,7 @@ button:hover{
 
 
 /* fondo book price */
-/* .book-price{
+.book-price{
     background-color: #fcb03d18;
     width: 100%;
     padding: 11px 0px;
@@ -126,11 +127,13 @@ button:hover{
     border: 1px solid #b9b9b9;
     border-radius: 5px;
     font-weight: 300;
-} */
-
-.book-price h3{
-    margin: 25px 0px;
 }
+
+.book-price h3,
+.book-price p {
+    margin: 5px 0px;
+}
+
 
 
 .div-span-detail, .div-span-index {
@@ -143,9 +146,21 @@ button:hover{
 
 
 @media(min-width:768px){
-    .book-photo{
-     width: 80%
+    .body-container{
+        padding: 30px 10px;
     }
+
+    .breadcrumbs{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 35px;
+    }
+   
+    /* .book-photo{
+     width: 80%
+    } */
+
+
     .book-buy input[type=number]{
         margin: 5px 0px;
         width: 23%;
@@ -166,7 +181,7 @@ button:hover{
         margin-top: 50px;
     }
 
-    .route{
+    .breadcrumbs{
         display: flex;
     }
     .book-info{
@@ -177,20 +192,11 @@ button:hover{
         margin: 0px;
     }
 
-    /* .book-price{
+    .book-price{
         width: 70%;
         padding: 10px 15px;
         margin: 29px 0px;
-    } */
-
-    .book-price h3{
-        margin: 35px 0px
-    }
-
-    /* .book-price p{
-        margin: 4px;
-    }
-     */
+    }    
 
     #book-info{
         margin-top:30px;
@@ -212,6 +218,11 @@ button:hover{
     .book-photo{
         width: 60%;
     }
+
+    .book-price{
+        padding: 15px 10px;
+    }
+
     .book-buy input[type=number]{
         margin: 15px 0px;
         width: 12%;
@@ -224,9 +235,9 @@ button:hover{
         bottom: 32px;
     }
 
-    /* .book-price{
+    .book-price{
         width: 50%;
-    } */
+    }
     #book-info{
         margin-top:34px
     }

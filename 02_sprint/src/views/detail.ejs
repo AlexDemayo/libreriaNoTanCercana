@@ -6,9 +6,9 @@
     <%- include('partials/header') %> 
      
         <main>
-            <div id="body-container" class="container">
+            <div class="container body-container">
                 <div class= "row">  
-                    <section id="breadCrumbs" class="col-12">
+                    <section class="col-12 breadcrumbs">
                         <ul class="route">
                             <li><a href="/">Home</a></li>
                             <li><a href="/category">Categorías</a></li>
@@ -19,7 +19,7 @@
                             <li><a href="#"><%= book.title %> </a></li>
                         </ul>            
                     </section>
-                    <figure class="col-12 col-md-6">
+                    <figure class="col-12 col-md-6 photo-container">
                         <img class="book-photo" src="<%= book.image%>" alt="">
                     </figure>
                     <div class="col-12 col-md-6">
@@ -32,7 +32,8 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <div class="book-price">
-                            <h3>AR$ <%= book.price %> </h3>
+                            <h3><%= book.cover %> </h3>
+                            <p>AR$ <%= book.price %></p>
                         </div>
                         <div class="book-buy">
                             <label for="quantity" id="quantity">Cantidad</label>

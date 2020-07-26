@@ -80,8 +80,7 @@ p:hover{
 }
 
 .route{
-  margin-top: 15px;
-  
+  margin: 15px 0px;
 }
 
 .route li{
@@ -113,6 +112,7 @@ p:hover{
 .categories{
   text-transform: uppercase;
   font-size: 10px;
+  margin-bottom: 15px;
 }
 
 .book-container{
