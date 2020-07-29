@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const booksController = require('../controllers/booksController');
 const multer = require('multer');
-const path = require('path')
+const path = require('path');
+// const auth = require('../middleWares/auth');
 
 var storage = multer.diskStorage({
 	destination: function(req, file, cb) {
@@ -35,7 +36,12 @@ router.post('/create', upload.single('image') ,booksController.createBook);
 /* Editar libro */
 
 router.get('/edit/:id', booksController.updateForm);
-router.post('/edit/:id', booksController.updateBook);
+router.post('/edit/:id', upload.single('image'), booksController.updateBook);
+
+
+/* Editar libro */
+
+router.post('/delete/:id', booksController.deleteBook)
 
 
 /* Detalle producto */

@@ -4,7 +4,7 @@ const db = require('../database/models')
 module.exports = {
     detail : function(req,res){
         db.Product.findByPk(req.params.id, {
-            include: [{association: 'category'}, {association: 'subCategory'}]
+            include: ['category', 'subCategory', 'publisher']
         })
         .then(book => {
            return res.render('detail', {book});
@@ -31,7 +31,6 @@ module.exports = {
 
     createBook: function(req,res){
 
-        
         db.Product.create({
             title: req.body.title ,
             author: req.body.author,
@@ -69,26 +68,38 @@ module.exports = {
 
     updateBook: function(req,res){
 
-        console.log(req.file)
+        db.Product.findByPk(req.params.id)
+        .then(product => {
+          return db.Product.update({
+                title: req.body.title ,
+                author: req.body.author,
+                publisherId: req.body.publisher,
+                datePublished: req.body.datePublished,
+                categoryId: req.body.category, 
+                subCategoryId: req.body.subCategory,
+                pages: req.body.pages,
+                cover: req.body.cover, 
+                isbn: req.body.isbn, 
+                price: req.body.price, 
+                description: req.body.description,
+                image: req.file ? req.file.filename : product.image
+            },{
+                where:{
+                    id : req.params.id
+                }
+            }); 
+        })
+        .then(() => {
+            return res.redirect('/books/' + req.params.id)
+        })
+    },
 
-        db.Product.update({
-            title: req.body.title ,
-            author: req.body.author,
-            publisherId: req.body.publisher,
-            datePublished: req.body.datePublished,
-            categoryId: req.body.category, 
-            subCategoryId: req.body.subCategory,
-            pages: req.body.pages,
-            cover: req.body.cover, 
-            isbn: req.body.isbn, 
-            price: req.body.price, 
-            description: req.body.description,
-            image: req.file.filename
-        },{
-            where:{
-                id : req.params.id
+    deleteBook: function(req,res){
+        db.Product.destroy({
+            where: {
+                id: req.params.id
             }
-        });
-        return res.redirect('/books/' + req.params.id)
+        })
+        return res.redirect('/category')
     }
 }

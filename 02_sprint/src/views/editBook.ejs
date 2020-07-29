@@ -68,7 +68,7 @@
                         </div>
                         <div class="section col-12 col-md-6">
                             <label for="isbn">Código ISBN:</label>
-                            <input type="number" class="input" name="isbn" value='<%= book.isbn %>'>
+                            <input type="text" class="input" name="isbn" value='<%= book.isbn %>'>
                         </div>
                         <div class="section col-12 col-md-6">
                             <label for="isbn">Precio:</label>
@@ -76,7 +76,7 @@
                         </div>
                         <div class="section col-12">
                             <label for="description">Descripción:</label>
-                            <textarea name="description" cols="30" rows="5" value='<%= book.description %>'></textarea>
+                            <textarea name="description" cols="30" rows="5"><%= book.description %></textarea>
                         </div>
                         <div class="section col-12">
                             <label for="image">Añadir imágen</label>

@@ -12,15 +12,15 @@
                         <ul class="route">
                             <li><a href="/">Home</a></li>
                             <li><a href="/category">Categorías</a></li>
-                            <li><a href="/category/<%= book.category %>"><%= book.category %></a></li>
+                            <li><a href="/category/<%= book.category.name %>"><%= book.category.name %></a></li>
                             <% if (book.subCategory !=null) { %>
-                                <li><a href="/category/<%=book.category%>/<%book.subCategory%>"><%= book.subCategory %> </a></li>
+                                <li><a href="/category/<%=book.category.name%>/<%book.subCategory.name%>"><%= book.subCategory.name %> </a></li>
                             <% } %>
                             <li><a href="#"><%= book.title %> </a></li>
                         </ul>            
                     </section>
                     <figure class="col-12 col-md-6 photo-container">
-                        <img class="book-photo" src="<%= book.image %>" alt="">
+                        <img class="book-photo" src="/images/books/<%=book.image %>" alt="">
                     </figure>
                     <div class="col-12 col-md-6">
                         <div class="book-info">
@@ -40,6 +40,14 @@
                             <input type="number" name="quantity" value="1" min="1"> 
                             <button type="submit">Agregar al carrito</button>
                         </div>
+                        <div class="book-buy">
+                            <a href="/books/edit/<%= book.id %>"><button type="submit">Editar producto</button></a>
+                        </div>
+                        <div class="book-buy">
+                            <form action="/books/delete/<%= book.id %>" method="POST">
+                                <button type="submit">Eliminar</button>
+                            </form> 
+                        </div>
                     </div>
                     <div class="col-12 book-description">
                         <div class="div-span-detail">
@@ -54,7 +62,7 @@
                         <table class="book-detail">
                             <tr>
                                 <th>Editorial:</th>
-                                <td><%= book.publisher %></td>
+                                <td><%= book.publisher.name %></td>
                             </tr>
                             <tr>
                                 <th>Fecha de publicación:</th>
