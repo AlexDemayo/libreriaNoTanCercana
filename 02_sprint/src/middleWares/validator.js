@@ -4,16 +4,18 @@ const bcrypt = require('bcryptjs');
 const jsonModel = require('../models/jsonModel');
 const usersModel = jsonModel('users');
 
+const db = require('../database/models')
+
 const validator = {
     register: [
-        body('usernameReg')
+        body('username')
             .notEmpty()
             .withMessage('Campo obligatorio')
             .bail()
             .isLength({min:5})
             .withMessage('El campo debe tener un mínimo de cinco caracteres'),
         
-        body('emailReg')
+        body('email')
             .notEmpty()
             .withMessage('Campo obligatorio')
             .bail()
@@ -21,23 +23,23 @@ const validator = {
             .withMessage('Email invalido')
             .bail()
             .custom((value, {req}) => {
-            let user = usersModel.findBySomething(user => user.emailReg == value);
+            let user = usersModel.findBySomething(user => user.email == value);
             return !user;
             })
             .withMessage('Email ya existente'),
         
-        body('passwordReg')
+        body('password')
             .notEmpty()
             .withMessage('Campo obligatorio')
             .bail()
             .isLength({ min: 8 })
             .withMessage('La contraseña debe tener un mínimo de ocho caracteres'),
         
-        body('confirmPasswordReg')
+        body('confirmPassword')
             .notEmpty()
             .withMessage('Campo obligatorio')
             .bail()
-            .custom((value, {req}) => req.body.passwordReg === value)
+            .custom((value, {req}) => req.body.password === value)
             .withMessage('Las contraseñas no coinciden'),
 
         body('image')
@@ -69,10 +71,10 @@ const validator = {
             .withMessage('Campo obligatorio')
             .bail()
             .custom((value, {req}) => {
-            const user = usersModel.findBySomething(user => user.emailReg == value);
+            const user = usersModel.findBySomething(user => user.email == value);
 
             if (user) {
-              return bcrypt.compareSync(req.body.passwordLog, user.passwordReg);
+              return bcrypt.compareSync(req.body.passwordLog, user.password);
             } else {
               return false;
             }

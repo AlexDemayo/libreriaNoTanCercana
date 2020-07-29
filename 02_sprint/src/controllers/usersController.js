@@ -17,8 +17,8 @@ const usersController = {
 		console.log(errors);
 
 		if (errors.isEmpty()) {
-			delete req.body.confirmPasswordReg;
-			req.body.passwordReg = bcrypt.hashSync(req.body.passwordReg, 10);
+			delete req.body.confirmPassword;
+			req.body.password = bcrypt.hashSync(req.body.password, 10);
 
 			
 
@@ -39,14 +39,14 @@ const usersController = {
 		const errors = validationResult(req);
 
 		if (errors.isEmpty()) {
-			let user = userModel.findBySomething((user) => user.emailReg == req.body.emailLog);
+			let user = userModel.findBySomething((user) => user.email == req.body.emailLog);
 
-			delete user.passwordReg;
+			delete user.password;
 
 			req.session.user = user; //lo guarda en sesión
 
 			if (req.body.remember) {
-				res.cookie('remember', user.emailReg, { maxAge: 1000 * 60 * 60 * 24 });
+				res.cookie('remember', user.email, { maxAge: 1000 * 60 * 60 * 24 });
 			}
 			// si el usuario puso remember, guardamos el mail por un día
 

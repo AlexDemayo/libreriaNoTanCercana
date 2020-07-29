@@ -3,7 +3,10 @@ const router = express.Router();
 const booksController = require('../controllers/booksController');
 const multer = require('multer');
 const path = require('path');
-// const auth = require('../middleWares/auth');
+const logueado = require('../middleWares/estalogueado');
+const nologueado = require('../middleWares/noestalogueado');
+const auth = require('../middleWares/auth');
+
 
 var storage = multer.diskStorage({
 	destination: function(req, file, cb) {

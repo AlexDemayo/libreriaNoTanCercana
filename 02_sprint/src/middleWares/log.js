@@ -9,7 +9,7 @@ module.exports = (req,res,next) => {
         res.locals.user = req.session.user;
         return next();
     } else if(req.cookies.remember){
-        let user = userModel.findBySomething(user => user.emailReg == req.cookies.emailReg);
+        let user = userModel.findBySomething(user => user.email == req.cookies.email);
 
         // delete user.passwordReg;
 

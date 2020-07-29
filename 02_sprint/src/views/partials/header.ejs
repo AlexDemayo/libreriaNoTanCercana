@@ -14,7 +14,7 @@
       <div class="shop-menu">
         <a  type="submit" class="search-form_button mobile-icon a-header"><i id="search" class="fa fa-search"></i></a>
         <% if (locals.user) { %>
-          <a href="/users/user" class="search-form_button mobile-icon mobile-hide a-header"><%= locals.user.usernameReg %> </a>
+          <a href="/users/user" class="search-form_button mobile-icon mobile-hide a-header"><%= locals.user.username %> </a>
            <form action="/users/logout" method="POST">
             <button class="logout" type="submit">Cerrar sesión</button>
           </form>

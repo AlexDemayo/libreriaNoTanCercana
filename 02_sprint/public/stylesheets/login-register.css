@@ -65,7 +65,7 @@
 	border: 1px solid #b9b9b9;
 	text-indent: 10px;
 	margin-bottom: 15px;
-	/* border-radius: 8px; */
+	padding:0px
 }
 
 .login input[type=checkbox] {
