@@ -18,8 +18,8 @@
                   <div class="menu-profile margin">
                     <a class="a-profile" href="/books/create">Cargar Producto</a>
                   </div>
-                  <div class="menu-profile">
-                    <a class="a-profile" href="/Users/user">Configuración</a>
+                  <div class="menu-profile js-a">
+                    <a class="a-profile ">Configuración</a>
                   </div>
                   <div class="menu-profile">
                     <a class="a-profile" href="#">Compras</a>
@@ -29,48 +29,44 @@
                   </div>
                 
               </div>
-              
-            </div>
+                  
+              </div>
 
-            <div class="col-12 col-md-5 col-lg-5">
-                <form class="register" action="update" method="POST" value="update">
-                    <div>
-                        <div>
-                            <p>Usuario</p>
-                            <input type="text" id="usernameReg" name="usernameReg" " class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.usernameReg %>">
-                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.usernameReg ? errorsRegister.usernameReg.msg : null %></p>
-                        </div>
-                        <div>
-                            <p>Email</p>
-                            <input type="text" id="emailReg" name="emailReg" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.emailReg %>">
-                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.emailReg ? errorsRegister.emailReg.msg : null %></p>
-                        </div>
-                        <div>
-                            <p>Contraseña antigua</p>
-                            <input type="password" id="passwordReg" name="passwordReg" class="form-input">
-                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.passwordReg ? errorsRegister.passwordReg.msg : null %></p>
-                        </div>
-                        <div>
-                            <p>Nueva contraseña</p>
-                            <input type="password" id="confirmPasswordReg" name="confirmPasswordReg" class="form-input" ">
-                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.confirmPasswordReg ? errorsRegister.confirmPasswordReg.msg : null %></p>
-                        </div>
-                        <div>
-                            <p>Repetir contraseña</p>
-                            <input type="password" id="confirmPasswordReg" name="confirmPasswordReg" class="form-input" ">
-                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.confirmPasswordReg ? errorsRegister.confirmPasswordReg.msg : null %></p>
-                        </div>
-                        <div>
-                            <button type="submit">Update</button>
-                        </div>
+             <div class="col-12 col-md-5 col-lg-7 user-info">
+                 <a class="a-profile marginpf">Usuario</a>
+                   <div class="user-div">
+                         <div class="user-img">
+                           <i class="fas fa-user"></i>
+                         </div>
+                         <div class="user-menu">
+                            Nombre del Usuario
+                         </div>
                     </div>
-                </form>
+                <a class="a-profile marginpf1">Email</a>
+                   <div class="user-div">
+                        <div class="user-img">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="user-menu">
+                            Emaildelusuario@hotmail.com
+                        </div>
+                  </div>
+               <a class="a-profile marginpf1">Contraseña</a>
+                   <div class="user-div">
+                        <div class="user-img">
+                           <i class="fas fa-key"></i>
+                        </div>
+                        <div class="user-menu">
+                           ****************
+                        </div>
+                   </div>
             </div>
         </div>
     </div>
          
        <%- include('partials/footer') %>
 
+       <script src="/js/profile-menu.js"></script>
    </body>
 
 </html>

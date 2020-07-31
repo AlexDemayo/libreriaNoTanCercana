@@ -40,12 +40,10 @@
                             <input type="number" name="quantity" value="1" min="1"> 
                             <button type="submit">Agregar al carrito</button>
                         </div>
-                        <div class="book-buy">
+                        <div class="book-adm">
                             <a href="/books/edit/<%= book.id %>"><button type="submit">Editar producto</button></a>
-                        </div>
-                        <div class="book-buy">
                             <form action="/books/delete/<%= book.id %>" method="POST">
-                                <button type="submit">Eliminar</button>
+                                <button class="elm-button" type="submit">Eliminar</button>
                             </form> 
                         </div>
                     </div>

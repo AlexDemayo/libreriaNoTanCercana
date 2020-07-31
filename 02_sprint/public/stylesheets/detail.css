@@ -1,267 +1,350 @@
-
-.body-container{
-    padding: 20px;
+.body-container {
+	padding: 20px;
 }
 
-
-.breadcrumbs{
-    display: none;
+.breadcrumbs {
+	display: none;
 }
 
-
-.photo-container{
-    text-align: center;
-    margin: 20px 0px;
-} 
-
-label#quantity{
-    text-transform: uppercase;
-    font-weight: 500;
+.photo-container {
+	text-align: center;
+	margin: 20px 0px;
 }
 
-.book-buy input[type=number]{
-    display: block;
-    margin: 10px 0px;
-    width: 27%;
-    height: 7vh;
-    text-indent: 10px;
-    font-size: 1em;
-    border: 1px solid #b9b9b9;
+label#quantity {
+	text-transform: uppercase;
+	font-weight: 500;
 }
 
-.book-buy button{
-    display: block;
-    width: 100%;
-    padding: 0px 5px;
-    background-color:#585858;
-    /* background-color: #1BAFC7; */
-    color:white;
-    text-transform: uppercase;
-    border: none;
-    border-radius: 3px;
-    margin: 20px 0;
-    font-weight: 500;
-    margin-bottom: 25px;
-    min-height: 44px;
+.book-buy input[type=number] {
+	display: block;
+	margin: 10px 0px;
+	width: 27%;
+	height: 7vh;
+	text-indent: 10px;
+	font-size: 1em;
+	border: 1px solid #b9b9b9;
 }
 
-button:hover{
-    cursor: pointer;
-    background-color: #8b8b8b;
+.book-buy button {
+	display: block;
+	width: 100%;
+	padding: 0px 5px;
+	background-color: #585858;
+	/* background-color: #1BAFC7; */
+	color: white;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 3px;
+	margin: 20px 0;
+	font-weight: 500;
+	margin-bottom: 25px;
+	min-height: 44px;
+}
+.book-buy button:hover {
+	cursor: pointer;
+	background-color: #8b8b8b;
 }
 
-
-.book-detail{
-    font-size: 13px;
-    margin-left:auto; 
-    margin-right:auto;
-    margin-bottom: 35px
+.book-adm {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
 }
 
-
-.book-detail th{
-   font-weight: 400;
-   text-align: inherit;
-   padding: 0px 30px 10px 0px;
+.book-adm button {
+	padding: 0px 10px 0px 10px;
+	width: 99%;
+	background-color: #25cfe9;
+	/* background-color: #1BAFC7; */
+	color: white;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 5px;
+	font-weight: 500;
+	margin-bottom: 25px;
+	min-height: 44px;
 }
 
-.book-detail td{
-    padding-bottom: 10px;
+.book-adm a {
+	text-decoration: none;
 }
 
-.span-detail, .span-index {
-    /* color:#3a3a3a; */
-    font-size: 17px; 
-    background-color: #ffffff; 
-    padding: 15px;
-  
+.book-adm button:hover {
+	cursor: pointer;
+	background-color: #6fd3e2;
+}
+
+button.elm-button {
+	width: 99%;
+	padding: 0px 35px 0px 35px;
+	background-color: #fd3e37;
+	/* background-color: #1BAFC7; */
+	color: white;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 5px;
+	font-weight: 500;
+	margin-bottom: 25px;
+	min-height: 44px;
+}
+
+button.elm-button:hover {
+	cursor: pointer;
+	background-color: #f15e59;
+}
+
+.book-detail {
+	font-size: 13px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 35px;
+}
+
+.book-detail th {
+	font-weight: 400;
+	text-align: inherit;
+	padding: 0px 30px 10px 0px;
+}
+
+.book-detail td {
+	padding-bottom: 10px;
+}
+
+.span-detail,
+.span-index {
+	/* color:#3a3a3a; */
+	font-size: 17px;
+	background-color: #ffffff;
+	padding: 15px;
 }
 
 .book-price {
-    margin: 28px 0px;
-    line-height: 23px;
-    font-size: 15px;
+	margin: 28px 0px;
+	line-height: 23px;
+	font-size: 15px;
 }
 
-
-
-.book-info{
-    border-bottom: 1px solid #b9b9b9;
-    width: 100%;
-    padding: 8px 0px;
+.book-info {
+	border-bottom: 1px solid #b9b9b9;
+	width: 100%;
+	padding: 8px 0px;
 }
 
-
-.book-info h1{
-    margin-bottom: 0px;
-    font-size: 24px;
-    font-weight: 400;
-    color:  #362c36;
-    cursor: default;
+.book-info h1 {
+	margin-bottom: 0px;
+	font-size: 24px;
+	font-weight: 400;
+	color: #362c36;
+	cursor: default;
 }
 
-
-.book-info p{
-    color: #362c36;
-    margin: 10px 0px;
-    font-size:15px;
-    font-weight: 300;
-    text-transform: capitalize;
-    /* margin: 10px 0px; */
-
+.book-info p {
+	color: #362c36;
+	margin: 10px 0px;
+	font-size: 15px;
+	font-weight: 300;
+	text-transform: capitalize;
+	/* margin: 10px 0px; */
 }
 
-.book-info i{
-    color:gold;
-    font-size: 15px;
-    margin-bottom: 10px
+.book-info i {
+	color: gold;
+	font-size: 15px;
+	margin-bottom: 10px;
 }
-
 
 /* fondo book price */
-.book-price{
-    background-color: #fcb03d18;
-    width: 100%;
-    padding: 11px 0px;
-    margin: 25px 0px;
-    text-align: center;
-    border: 1px solid #b9b9b9;
-    border-radius: 5px;
-    font-weight: 300;
+.book-price {
+	background-color: #fcb03d18;
+	width: 100%;
+	padding: 11px 0px;
+	margin: 25px 0px;
+	text-align: center;
+	border: 1px solid #b9b9b9;
+	border-radius: 5px;
+	font-weight: 300;
 }
 
 .book-price h3,
 .book-price p {
-    margin: 5px 0px;
+	margin: 5px 0px;
 }
 
-
-
-.div-span-detail, .div-span-index {
-    width: 100%; 
-    height: 11px; 
-    border-bottom: 1px solid #b9b9b9;
-    text-align: center;
-    margin-bottom: 30px;
+.div-span-detail,
+.div-span-index {
+	width: 100%;
+	height: 11px;
+	border-bottom: 1px solid #b9b9b9;
+	text-align: center;
+	margin-bottom: 30px;
 }
 
+@media (min-width: 768px) {
+	.body-container {
+		padding: 35px 10px;
+	}
 
-@media(min-width:768px){
-    .body-container{
-        padding: 35px 10px;
-    }
+	.breadcrumbs {
+		display: block;
+		margin-top: 10px;
+		margin-bottom: 25px;
+	}
 
-    .breadcrumbs{
-        display: block;
-        margin-top: 10px;
-        margin-bottom: 25px;
-    }
-   
-    /* .book-photo{
+	/* .book-photo{
      width: 80%
     } */
 
+	.book-buy input[type=number] {
+		margin: 5px 0px;
+		width: 23%;
+	}
 
-    .book-buy input[type=number]{
-        margin: 5px 0px;
-        width: 23%;
-    }
+	button [type=submit] {
+		width: 70%;
+		margin: 30px 0;
+	}
 
-    button [type=submit]{
-        width: 70%;
-        margin: 30px 0;
-    }
-
-    /* p{
+	/* p{
         margin: 40px 0
     } */
 
-    .book-detail{
-        font-size: 15px;
-        margin-bottom: 34px;
-        margin-top: 50px;
-    }
+	.book-detail {
+		font-size: 15px;
+		margin-bottom: 34px;
+		margin-top: 50px;
+	}
 
-    .breadcrumbs{
-        display: flex;
-    }
-    .book-info{
-        width: 70%;
-    }
+	.breadcrumbs {
+		display: flex;
+	}
+	.book-info {
+		width: 70%;
+	}
 
-    .book-info h1{
-        margin: 0px;
-        text-transform: capitalize;
-    }
+	.book-info h1 {
+		margin: 0px;
+		text-transform: capitalize;
+	}
 
-    .book-price{
-        width: 70%;
-        padding: 10px 15px;
-        margin: 29px 0px;
-    }    
+	.book-price {
+		width: 70%;
+		padding: 10px 15px;
+		margin: 29px 0px;
+	}
 
-    .book-description{
-        margin-top:30px;
-    }
+	.book-description {
+		margin-top: 30px;
+	}
 
-    .book-description p {
-        margin: 30px 0px;
-        /* text-transform: capitalize; */
-    }
-    
-    .book-buy button{
-        margin: 56px 0px;
-        margin-bottom: 20px
-    }
+	.book-description p {
+		margin: 30px 0px;
+		/* text-transform: capitalize; */
+	}
+
+	.book-buy button {
+		margin: 56px 0px;
+		margin-bottom: 20px;
+	}
+
+	.book-adm button {
+		padding: 0px 21px 0px 21px;
+		width: 99%;
+		background-color: #25cfe9;
+		/* background-color: #1BAFC7; */
+		color: white;
+		text-transform: uppercase;
+		border: none;
+		border-radius: 5px;
+		font-weight: 500;
+		margin-bottom: 25px;
+		min-height: 44px;
+	}
+	button.elm-button {
+		width: 99%;
+		padding: 0px 43px 0px 43px;
+		background-color: #fd3e37;
+		/* background-color: #1BAFC7; */
+		color: white;
+		text-transform: uppercase;
+		border: none;
+		border-radius: 5px;
+		font-weight: 500;
+		margin-bottom: 25px;
+		min-height: 44px;
+	}
 }
 
+@media (min-width: 992px) {
+	.book-photo {
+		width: 60%;
+	}
 
-@media (min-width: 992px){
+	.book-price {
+		padding: 15px 10px;
+	}
 
-    .book-photo{
-        width: 60%;
-    }
+	.book-buy input[type=number] {
+		margin: 15px 0px;
+		width: 12%;
+	}
+	.span-detail,
+	.span-index {
+		font-size: 22px;
+		padding: 15px;
+		display: inline-block;
+		position: relative;
+		bottom: 32px;
+	}
 
-    .book-price{
-        padding: 15px 10px;
-    }
+	.book-price {
+		width: 50%;
+	}
+	#book-info {
+		margin-top: 34px;
+	}
+	.div-span-detail,
+	.div-span-index {
+		height: 14px;
+		padding-top: 20px;
+	}
 
-    .book-buy input[type=number]{
-        margin: 15px 0px;
-        width: 12%;
-    }   
-    .span-detail, .span-index{
-        font-size: 22px;
-        padding:15px;
-        display: inline-block;
-        position: relative;
-        bottom: 32px;
-    }
+	.div-span-index {
+		margin-top: 30px;
+		margin-bottom: 40px;
+	}
 
-    .book-price{
-        width: 50%;
-    }
-    #book-info{
-        margin-top:34px
-    }
-    .div-span-detail, .div-span-index{
-        height: 14px;
-        padding-top: 20px;
-    }
+	.book-buy button {
+		width: 70%;
+	}
+	.book-adm {
+		width: 70%;
+	}
+	.book-adm button {
+		padding: 0px 27px 0px 27px;
+		width: 99%;
+		background-color: #25cfe9;
+		/* background-color: #1BAFC7; */
+		color: white;
+		text-transform: uppercase;
+		border: none;
+		border-radius: 5px;
+		font-weight: 500;
+		margin-bottom: 25px;
+		min-height: 44px;
+	}
 
-    .div-span-index{
-        margin-top:30px;
-        margin-bottom: 40px;
-       
-    }
-
-    .book-buy button{
-        
-        width: 70%;
-        
-    }
-    
-
+	button.elm-button {
+		width: 99%;
+		padding: 0px 45px 0px 45px;
+		background-color: #fd3e37;
+		/* background-color: #1BAFC7; */
+		color: white;
+		text-transform: uppercase;
+		border: none;
+		border-radius: 5px;
+		font-weight: 500;
+		margin-bottom: 25px;
+		min-height: 44px;
+	}
 }
-
-
