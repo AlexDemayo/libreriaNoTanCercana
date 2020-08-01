@@ -18,7 +18,10 @@ module.exports = (sequelize, DataTypes) => {
 		},
 		orderId: {
 			type: DataTypes.INTEGER
-		},
+        },
+        image: {
+            type: DataTypes.STRING
+        },
 		createdAt: {
 			type: DataTypes.DATE
 		},

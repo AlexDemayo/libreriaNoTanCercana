@@ -1,5 +1,4 @@
-const jsonModel = require('../models/jsonModel');
-const userModel = jsonModel('users');
+
 
 module.exports = (req,res,next) => {
     

@@ -10,7 +10,7 @@
                <div >
 
                   <div class="profilediv">
-                    <img class="imgg" src="https://fotomanias.com.ar/wp-content/uploads/2019/03/foto-carnet-fondo-celeste.jpg">
+                    <img class="imgg" src="/images/users/<%= user.image %>">
                   </div>
                   <div class="imgdiv">
                     <button class="w3-button w3-large w3-circle buttcf">+</button>
@@ -39,7 +39,7 @@
                            <i class="fas fa-user"></i>
                          </div>
                          <div class="user-menu">
-                            Nombre del Usuario
+                            <%= user.userName %> 
                          </div>
                     </div>
                 <a class="a-profile marginpf1">Email</a>
@@ -48,7 +48,7 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="user-menu">
-                            Emaildelusuario@hotmail.com
+                            <%= user.email %> 
                         </div>
                   </div>
                <a class="a-profile marginpf1">Contraseña</a>

@@ -5,7 +5,8 @@ const multer = require('multer');
 const path = require('path');
 const logueado = require('../middleWares/estalogueado');
 const nologueado = require('../middleWares/noestalogueado');
-const auth = require('../middleWares/auth');
+const admin = require('../middleWares/admin');
+
 
 
 var storage = multer.diskStorage({
@@ -32,13 +33,13 @@ var upload = multer({
 
 /* Crear libro */
 
-router.get('/create', booksController.createForm);
+router.get('/create', admin, booksController.createForm);
 router.post('/create', upload.single('image') ,booksController.createBook);
 
 
 /* Editar libro */
 
-router.get('/edit/:id', booksController.updateForm);
+router.get('/edit/:id', admin, booksController.updateForm);
 router.post('/edit/:id', upload.single('image'), booksController.updateBook);
 
 

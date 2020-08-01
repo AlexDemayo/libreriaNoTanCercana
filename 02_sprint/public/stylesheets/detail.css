@@ -46,11 +46,11 @@ label#quantity {
 	background-color: #8b8b8b;
 }
 
-.book-adm {
+/* .book-adm {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-}
+} */
 
 .book-adm button {
 	padding: 0px 10px 0px 10px;
@@ -205,6 +205,11 @@ button.elm-button:hover {
 		margin: 30px 0;
 	}
 
+	.book-adm {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+	}
 	/* p{
         margin: 40px 0
     } */
@@ -250,28 +255,11 @@ button.elm-button:hover {
 	.book-adm button {
 		padding: 0px 21px 0px 21px;
 		width: 99%;
-		background-color: #25cfe9;
-		/* background-color: #1BAFC7; */
-		color: white;
-		text-transform: uppercase;
-		border: none;
-		border-radius: 5px;
-		font-weight: 500;
-		margin-bottom: 25px;
-		min-height: 44px;
 	}
+
 	button.elm-button {
 		width: 99%;
 		padding: 0px 43px 0px 43px;
-		background-color: #fd3e37;
-		/* background-color: #1BAFC7; */
-		color: white;
-		text-transform: uppercase;
-		border: none;
-		border-radius: 5px;
-		font-weight: 500;
-		margin-bottom: 25px;
-		min-height: 44px;
 	}
 }
 
@@ -322,29 +310,10 @@ button.elm-button:hover {
 	}
 	.book-adm button {
 		padding: 0px 27px 0px 27px;
-		width: 99%;
-		background-color: #25cfe9;
-		/* background-color: #1BAFC7; */
-		color: white;
-		text-transform: uppercase;
-		border: none;
-		border-radius: 5px;
-		font-weight: 500;
-		margin-bottom: 25px;
-		min-height: 44px;
 	}
 
 	button.elm-button {
 		width: 99%;
-		padding: 0px 45px 0px 45px;
-		background-color: #fd3e37;
-		/* background-color: #1BAFC7; */
-		color: white;
-		text-transform: uppercase;
-		border: none;
-		border-radius: 5px;
-		font-weight: 500;
-		margin-bottom: 25px;
-		min-height: 44px;
+		padding: 0px 50px 0px 50px;
 	}
 }

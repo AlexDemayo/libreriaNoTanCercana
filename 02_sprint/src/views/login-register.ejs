@@ -35,8 +35,8 @@
                 <form class="register" action="register" method="POST" value="register" enctype="multipart/form-data">
                     <div>
                         <div>
-                            <input type="text" id="username" name="username" placeholder="Usuario *" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.username %>">
-                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.username ? errorsRegister.username.msg : null %></p>
+                            <input type="text" id="userName" name="userName" placeholder="Usuario *" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.userName %>">
+                            <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.userName ? errorsRegister.userName.msg : null %></p>
                         </div>
                         <div>
                             <input type="text" id="email" name="email" placeholder="Email *" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.email %>">

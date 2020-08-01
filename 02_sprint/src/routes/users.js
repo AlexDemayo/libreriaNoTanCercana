@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const usersController = require('../controllers/usersController');
-const validator = require('../middleWares/validator');
 const { body } = require('express-validator');
 const multer = require('multer');
 const path = require('path');
+const validator = require('../middleWares/validator');
 const logueado = require('../middleWares/estalogueado');
 const nologueado = require('../middleWares/noestalogueado');
 
@@ -34,7 +34,7 @@ var upload = multer({
 	}
 });
 
-router.get('/login-register', logueado, usersController.logYreg);
+router.get('/login-register', logueado ,usersController.logYreg);
 router.get('/user', nologueado, usersController.user);
 router.post('/register', upload.single('image'), validator.register, usersController.register);
 router.post('/login', validator.login, usersController.login);

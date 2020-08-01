@@ -1,5 +1,5 @@
-const jsonModel = require('../models/jsonModel');
-const userModel = jsonModel('users');
+
+const db = require('../database/models')
 
 module.exports = (req,res,next) => {
     
@@ -9,16 +9,20 @@ module.exports = (req,res,next) => {
         res.locals.user = req.session.user;
         return next();
     } else if(req.cookies.remember){
-        let user = userModel.findBySomething(user => user.email == req.cookies.email);
-
-        // delete user.passwordReg;
-
-        req.session.user = user;
-        res.locals.user = user;
-
-        return next();
+                
+        db.User.findOne({where: { email : req.cookies.rememberemail}})
+        .then(function(user){
+            
+            req.session.user = user;
+            res.locals.user = user;
+            return next()
+        })
+        .catch(error => {
+            console.log('error de log: ' + error)
+        })
 
     } else {
         return next();
     }
 }
+
