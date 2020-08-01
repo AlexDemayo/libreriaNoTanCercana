@@ -65,6 +65,24 @@
 	border-radius: 7px;
 	margin-bottom: 100px;
 }
+.user-info-config {
+	background-color: rgb(238, 238, 238);
+
+	border: 1px solid #b9b9b9;
+	border-radius: 10px;
+}
+.user-info-config {
+	background-color: rgb(238, 238, 238);
+
+	border: 1px solid #b9b9b9;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	border: 1px solid #cccbcb;
+	border-radius: 7px;
+	margin-bottom: 100px;
+}
 .user-menu {
 	padding: 1%;
 	background-color: #e5e2e2;
@@ -190,6 +208,14 @@
 		border-radius: 7px;
 		margin-bottom: 100px;
 	}
+	.user-info-config {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		border: 1px solid #cccbcb;
+		border-radius: 7px;
+		margin-bottom: 100px;
+	}
 	.user-menu {
 		padding: 1%;
 		background-color: #e5e2e2;
@@ -242,6 +268,14 @@
 		text-align: unset;
 	}
 	.user-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		border: 1px solid #cccbcb;
+		border-radius: 7px;
+		margin-bottom: 100px;
+	}
+	.user-info-config {
 		display: flex;
 		flex-direction: column;
 		justify-content: start;

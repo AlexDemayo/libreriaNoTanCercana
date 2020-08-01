@@ -7,7 +7,7 @@
       <div class="container">
         <div id="flex" class="row space">
             <div class="col-12 col-md-4 col-lg-2 profile-confg">
-              <div >
+               <div >
 
                   <div class="profilediv">
                     <img class="imgg" src="https://fotomanias.com.ar/wp-content/uploads/2019/03/foto-carnet-fondo-celeste.jpg">
@@ -28,9 +28,9 @@
                     <a class="a-profile" href="#">Favoritos</a>
                   </div>
                 
-              </div>
+               </div>
                   
-              </div>
+             </div>
               
              <div class="col-12 col-md-5 col-lg-7 user-info">
                  <a class="a-profile marginpf">Usuario</a>
@@ -62,15 +62,69 @@
                    </div>
                   
             </div>
-         
-            <div class = "user-info-completo" style = "display:none">
-              <form class="register" action="update" method="POST" value="update"> <div> <div> <a class="a-profile marginpf">Usuario<a/> <div class="user-div"><div class="user-img"> <i class="fas fa-user"></i></div><input type="text" id="usernameReg" name="usernameReg" " class="user-menu" value=""> <p class="error"></div><div> <a class="a-profile marginpf1">Email</a> <div class="user-div"><div class="user-img"> <i class="fas fa-envelope"></i></div><input type="text" id="emailReg" name="emailReg" class="user-menu" value=""><p class="error"></p></div><div><a class="a-profile marginpf1">Contraseña</a><div class="user-div"><div class="user-img"> <i class="fas fa-key"></i></div><input type="password" id="passwordReg" name="passwordReg" class="user-menu"><p class="error"></p></div><div><a class="a-profile marginpf1">Nueva contraseña</a><div class="user-div"><div class="user-img"><i class="fas fa-key"></i></div><input type="password" id="confirmPasswordReg" name="confirmPasswordReg" class="user-menu" "><p class="error"></p></div><div> <a class="a-profile marginpf1">Repetir nueva contraseña</a><input type="password" id="confirmPasswordReg" name="confirmPasswordReg" class="user-menu" "><p class="error"></p></div><div><button type="submit">Actualizar</button></div></div>
-            </div>
-        </div>
-   
-    </div>
+        
+          <div class = "col-12 col-md-5 col-lg-7 user-info-config" style = "display:none">
 
-   
+              <form class="register" action="update" method="POST" value="update"> 
+                     
+                       <a class="a-profile marginpf">Usuario<a/>
+                         <div class="user-div">
+                                <div class="div-img user-img"> 
+                                  <i class="fas fa-user"></i>
+                                </div>
+                                  <input type="text" id="usernameReg" name="usernameReg" " class="user-menu" value=""> 
+                                  <p class="error">
+
+                         </div>
+                     
+                     
+                        <a class="a-profile marginpf1">Email</a>
+                          <div class="user-div">
+                                 <div class="user-img"> 
+                                   <i class="fas fa-envelope"></i>
+                                 </div>
+                                   <input type="text" id="emailReg" name="emailReg" class="user-menu" value="">
+                                   <p class="error"></p>
+                          </div>
+                     
+                     
+                        <a class="a-profile marginpf1">Contraseña</a>
+                           <div class="user-div">
+                                   <div class="user-img">
+                                      <i class="fas fa-key"></i>
+                                   </div>
+                                      <input type="password" id="passwordReg" name="passwordReg" class="user-menu">
+                                      <p class="error"></p>
+                           </div>
+                         
+                      
+                         <a class="a-profile marginpf1">Nueva contraseña</a>
+                             <div class="user-div">
+                                    <div class="user-img">
+                                        <i class="fas fa-key"></i>
+                                    </div>
+                                        <input type="password" id="confirmPasswordReg" name="confirmPasswordReg" class="user-menu" ">
+                                        <p class="error"></p>
+                             </div>
+                          
+                        
+                          <a class="a-profile marginpf1">Repetir nueva contraseña</a>
+                             <div class="user-div">
+                                      <div class="user-img">
+                                          <i class="fas fa-key"></i>
+                                        </div>
+                                         <input type="password" id="confirmPasswordReg" name="confirmPasswordReg" class="user-menu" ">
+                                         <p class="error"></p>
+                             </div>
+                       
+                      <div>
+                            <button type="submit">Actualizar</button>
+                     </div>
+               
+                 </form>
+             </div>
+         </div>
+     </div>
     <%- include('partials/footer') %>   
 
 
