@@ -112,7 +112,7 @@ AFTER image;
 
 ALTER TABLE products
 ADD cover VARCHAR(50)
-AFTER image;
+AFTER image
 
 ALTER TABLE users
 ADD image VARCHAR(100)
