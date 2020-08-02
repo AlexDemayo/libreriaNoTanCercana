@@ -9,8 +9,8 @@ module.exports = (req,res,next) => {
         res.locals.user = req.session.user;
         return next();
     } else if(req.cookies.remember){
-                
-        db.User.findOne({where: { email : req.cookies.rememberemail}})
+       
+        db.User.findOne({where: { email : req.cookies.remember.email}})
         .then(function(user){
             
             req.session.user = user;

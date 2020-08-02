@@ -57,7 +57,7 @@ const usersController = {
 	logout: function(req, res) {
 		req.session.destroy();
 
-		if (req.cookies.email) {
+		if (req.cookies.remember) {
 			res.clearCookie('remember');
 		}
 
@@ -65,7 +65,7 @@ const usersController = {
 	},
 
 	user: function(req, res) {
-		console.log(req.session);
+		// console.log('sesion: ' + req.session);
 		
 		db.User.findByPk({where: {id: req.session.user.id}})
 		.then(function(user){
