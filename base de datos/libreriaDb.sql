@@ -112,4 +112,11 @@ AFTER image;
 
 ALTER TABLE products
 ADD cover VARCHAR(50)
-AFTER image
+AFTER image;
+
+ALTER TABLE users
+ADD image VARCHAR(100)
+AFTER orderId;
+
+ALTER TABLE `libreriadb`.`users` 
+CHANGE COLUMN `password` `password` VARCHAR(200) NOT NULL ;
