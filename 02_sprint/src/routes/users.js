@@ -39,5 +39,6 @@ router.get('/user', nologueado, usersController.user);
 router.post('/register', upload.single('image'), validator.register, usersController.register);
 router.post('/login', validator.login, usersController.login);
 router.post('/logout', usersController.logout);
+router.post('/user/update', usersController.update);
 
 module.exports = router;

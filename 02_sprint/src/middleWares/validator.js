@@ -19,21 +19,22 @@ const validator = {
         .bail()
         .isEmail()
         .withMessage('Email invalido')
-        .bail(),
-        // .custom((value, {req}) => {
+        .bail()
+        .custom((value, {req}) => {
             
-        //     db.User.findOne({where: {email : value}})
-        //     .then(function(user){
-        //         console.log('Este es user: ' + user);
-        //         console.log('Este es user negado: ' + !user)
-        //         return !user
-        //     })
-        //     .catch(error => {
-        //         console.log(error)
-        //     })
+            db.User.findOne({where: {email : value}})
+            .then(function(user){
+                console.log('Este es user: ' + !user);
+                // console.log('Este es user negado: ' + !user)
+                if(user){
+                    return Promise.reject('El usuario ya existe')
+                }
+            })
+            .catch(error => {
+                console.log(error)
+            })
             
-        // })
-        // .withMessage('Email ya existente'),
+        }),
         
         body('password')
         .notEmpty()

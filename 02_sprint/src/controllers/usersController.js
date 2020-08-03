@@ -65,7 +65,6 @@ const usersController = {
 	},
 
 	user: function(req, res) {
-		// console.log('sesion: ' + req.session);
 		
 		db.User.findByPk({where: {id: req.session.user.id}})
 		.then(function(user){
@@ -75,6 +74,33 @@ const usersController = {
 
 		res.render('user')
 	},
+
+	update: function(req,res){
+
+		db.User.findOne({where: {id: req.session.user.id}})
+		.then(() => {
+			let passwordN;
+			if(req.body.newPassword){
+				
+				passwordN = bcrypt.hashSync(req.body.newPassword, 10);
+			}else{
+				
+				passwordN = bcrypt.hashSync(req.body.password, 10);
+			};
+
+			return db.User.update({
+				userName: req.body.userName,
+				email: req.body.email,
+				password: passwordN
+			}, {
+				where: {
+					id : req.session.user.id
+				}
+			});
+		})
+		.then(() => res.redirect('/users/user'))
+		.catch(err => console.log(err))
+	}
 };
 
 module.exports = usersController;

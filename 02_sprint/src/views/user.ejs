@@ -66,55 +66,51 @@
         
           <div class = "col-12 col-md-5 col-lg-7 user-info-config" style = "display:none">
 
-              <form class="register" action="update" method="POST" value="update"> 
+              <form class="register" action="user/update" method="POST" value="update"> 
                      
-                       <a class="a-profile marginpf">Usuario<a/>
+                       <a class="a-profile marginpf">Usuario</a>
                          <div class="user-div">
                                 <div class="div-img user-img"> 
                                   <i class="fas fa-user"></i>
                                 </div>
-                                  <input type="text" id="usernameReg" name="usernameReg" " class="user-menu" value=""> 
+                                  <input type="text" id="userName" name="userName"  class="user-menu" value="<%= user.userName %>"> 
                                   <p class="error">
-
                          </div>
-                     
                      
                         <a class="a-profile marginpf1">Email</a>
                           <div class="user-div">
                                  <div class="user-img"> 
                                    <i class="fas fa-envelope"></i>
                                  </div>
-                                   <input type="text" id="emailReg" name="emailReg" class="user-menu" value="">
+                                   <input type="text" id="email" name="email" class="user-menu" value="<%= user.email %>">
                                    <p class="error"></p>
                           </div>
-                     
                      
                         <a class="a-profile marginpf1">Contraseña</a>
                            <div class="user-div">
                                    <div class="user-img">
                                       <i class="fas fa-key"></i>
                                    </div>
-                                      <input type="password" id="passwordReg" name="passwordReg" class="user-menu">
+                                      <input type="password" id="password" name="password" class="user-menu">
                                       <p class="error"></p>
                            </div>
                          
-                      
                          <a class="a-profile marginpf1">Nueva contraseña</a>
                              <div class="user-div">
                                     <div class="user-img">
                                         <i class="fas fa-key"></i>
                                     </div>
-                                        <input type="password" id="confirmPasswordReg" name="confirmPasswordReg" class="user-menu" ">
+                                        <input type="password" id="newPassword" name="newPassword" class="user-menu">
                                         <p class="error"></p>
                              </div>
-                          
+                      
                         
                           <a class="a-profile marginpf1">Repetir nueva contraseña</a>
                              <div class="user-div">
                                       <div class="user-img">
                                           <i class="fas fa-key"></i>
                                         </div>
-                                         <input type="password" id="confirmPasswordReg" name="confirmPasswordReg" class="user-menu" ">
+                                         <input type="password" id="confirmNewPassword" name="confirmNewPassword" class="user-menu">
                                          <p class="error"></p>
                              </div>
                        
