@@ -132,10 +132,10 @@ p:hover{
 }
 
 
-[class*=uk-width] {
+/* [class*=uk-width] {
   height: 30vh;
   margin-top: 20px;
-}
+} */
 
 
 @media(min-width:768px){
