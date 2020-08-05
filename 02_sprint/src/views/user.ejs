@@ -7,14 +7,19 @@
       <div class="container">
         <div id="flex" class="row space">
             <div class="col-12 col-md-4 col-lg-2 profile-confg">
-               <div >
+               <div>
+                    <div class="profile-div">
+                      <img class="profile-img" src="/images/users/<%= user.image %>">
+                    </div>
 
-                  <div class="profilediv">
-                    <img class="imgg" src="/images/users/<%= user.image %>">
-                  </div>
-                  <div class="imgdiv">
-                    <button class="w3-button w3-large w3-circle buttcf">+</button>
-                  </div>
+                    <!-- <form action="user/updateImg" method="POST" enctype="multipart/form-data">
+                      <div class="uk-form-custom">
+                        <input type="file">
+                        <button type="button" class="w3-button w3-large w3-circle buttcf">+</button>
+                      </div>
+                    </form> -->
+
+
                   <div class="menu-profile margin">
                     <a class="a-profile" href="/books/create">Cargar Producto</a>
                   </div>
@@ -39,8 +44,7 @@
                            <i class="fas fa-user"></i>
                          </div>
                          <div class="user-menu">
-                            <%= user.userName %> 
-                            <% console.log(user) %> 
+                            <%= user.userName %>                     
                          </div>
                     </div>
                 <a class="a-profile marginpf1">Email</a>
@@ -66,7 +70,7 @@
         
           <div class = "col-12 col-md-5 col-lg-7 user-info-config" style = "display:none">
 
-              <form class="register" action="user/update" method="POST" value="update"> 
+              <form class="register" action="user/update" method="POST" value="update" enctype="multipart/form-data"> 
                      
                        <a class="a-profile marginpf">Usuario</a>
                          <div class="user-div">
@@ -113,12 +117,19 @@
                                          <input type="password" id="confirmNewPassword" name="confirmNewPassword" class="user-menu">
                                          <p class="error"></p>
                              </div>
+                          
+                          <div>
+                          
+                            <input type="file" name="image" class="avatar-input">
+                          </div>
                        
                       <div>
                             <button type="submit">Actualizar</button>
-                     </div>
-               
+                     </div>           
                  </form>
+                 <form action="user/deleteUser">
+                    <button type="submit" class="elm-button">Eliminar cuenta</button>
+                </form>
              </div>
          </div>
      </div>

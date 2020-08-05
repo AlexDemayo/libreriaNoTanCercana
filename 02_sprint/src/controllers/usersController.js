@@ -66,19 +66,17 @@ const usersController = {
 
 	user: function(req, res) {
 		
-		db.User.findByPk({where: {id: req.session.user.id}})
+		db.User.findOne({where: {id: req.session.user.id}})
 		.then(function(user){
 			return res.render('user', {user});
 		})
 		.catch(err => console.log(err));
-
-		res.render('user')
 	},
 
 	update: function(req,res){
 
 		db.User.findOne({where: {id: req.session.user.id}})
-		.then(() => {
+		.then(user => {
 			let passwordN;
 			if(req.body.newPassword){
 				
@@ -91,8 +89,9 @@ const usersController = {
 			return db.User.update({
 				userName: req.body.userName,
 				email: req.body.email,
-				password: passwordN
-			}, {
+				password: passwordN,
+				image: req.file ? req.file.filename : user.image
+			},{
 				where: {
 					id : req.session.user.id
 				}
@@ -100,7 +99,48 @@ const usersController = {
 		})
 		.then(() => res.redirect('/users/user'))
 		.catch(err => console.log(err))
+	},
+
+	deleteUser: function(req,res){
+		
+		db.User.findOne({where: {id: req.session.user.id}})
+		.then(() => {
+			db.User.destroy({
+				where: {
+					id: req.session.user.id
+				}
+			})
+		})
+		.then(() => {
+			return res.redirect('/')
+		})
+		.catch(err => console.log(err))
+		
+		// db.User.destroy({
+		// 	where: {
+		// 		id: req.session.id
+		// 	}
+		// })
+		// console.log(req.session.id)
+		// return res.redirect('/')
+
+
 	}
+
+	// updateImg: function(req,res){
+
+	// 	db.User.findOne({where: {id: req.session.user.id}})
+	// 	.then(()=>{
+	// 		console.log(req.file.filename);
+	// 		return db.User.update({
+	// 			image: req.file.filename
+	// 		},{
+	// 			where: {id : req.session.user.id}
+	// 		})
+	// 	})
+	// 	.then(() => res.redirect('/users/user'))
+	// 	.catch(err => console.log(err))
+	// }
 };
 
 module.exports = usersController;

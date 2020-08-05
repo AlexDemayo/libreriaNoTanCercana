@@ -95,17 +95,7 @@
 .user-div {
 	display: flex;
 }
-.user-img {
-	display: flex;
-	justify-content: center;
-	padding-top: 10px;
-	background-color: #cfcdcd;
-	width: 10%;
-	margin-bottom: 28px;
-	margin-top: 4px;
-	margin-left: 20px;
-	border-radius: 4px;
-}
+
 
 .marginpf {
 	margin-top: 40px;
@@ -228,18 +218,6 @@
 	.user-div {
 		display: flex;
 	}
-	.user-img {
-		display: flex;
-		justify-content: center;
-		padding-top: 10px;
-		background-color: #cfcdcd;
-		margin-bottom: 1px;
-		width: 13%;
-		margin-bottom: 28px;
-		margin-top: 5px;
-		margin-left: 10px;
-		border-radius: 4px;
-	}
 	.marginpf {
 		margin-top: 40px;
 		margin-left: 10px;
@@ -295,18 +273,7 @@
 	.user-div {
 		display: flex;
 	}
-	.user-img {
-		display: flex;
-		justify-content: center;
-		padding-top: 10px;
-		background-color: #cfcdcd;
-		margin-bottom: 1px;
-		width: 5%;
-		margin-bottom: 28px;
-		margin-top: 5px;
-		margin-left: 20px;
-		border-radius: 4px;
-	}
+
 	.marginpf {
 		margin-top: 40px;
 		margin-left: 20px;

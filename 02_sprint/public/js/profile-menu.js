@@ -13,6 +13,13 @@ window.addEventListener('load', function() {
 		}
 	});
 
+
 	let aprofile = document.querySelector('.a-profile');
 	aprofile.classList.add('marginpf');
+
+	// document.getElementById('myfilefield').onchange = function() {
+	// 	this.form.submit();
+	// };
+
+
 });

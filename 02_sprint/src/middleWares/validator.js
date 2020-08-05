@@ -22,12 +22,12 @@ const validator = {
         .bail()
         .custom((value, {req}) => {
             
-            db.User.findOne({where: {email : value}})
+           return db.User.findOne({where: {email : value}})
             .then(function(user){
                 console.log('Este es user: ' + !user);
                 // console.log('Este es user negado: ' + !user)
                 if(user){
-                    return Promise.reject('El usuario ya existe')
+                    return Promise.reject('Usuario ya existente')
                 }
             })
             .catch(error => {
@@ -76,20 +76,20 @@ const validator = {
         body('emailLog')
         .notEmpty()
         .withMessage('Campo obligatorio')
-        .bail(),
-        // .custom((value, {req}) => {
-        //     // const user = usersModel.findBySomething(user => user.email == value);
+        .bail()
+        .custom((value, {req}) => {
             
-        //     db.User.findOne({where: {email : value}})
-        //     .then(function(user){
-        //         if (user) {
-        //             return bcrypt.compareSync(req.body.passwordLog, user.password);
-        //         } else {
-        //             return false;
-        //         }
-        //     })
-        // })
-        // .withMessage('Email o contraseña invalidos'),
+           return db.User.findOne({where: {email : value}})
+            .then(function(user){
+                if (user) {
+                    if(!bcrypt.compareSync(req.body.passwordLog, user.password)){
+                        return Promise.reject('Email o contraseña invalidos')
+                    }   
+                } else {
+                    return Promise.reject('Email o contraseña invalidos')
+                }
+            })
+        }),
         
         body('passwordLog')
         .notEmpty()
