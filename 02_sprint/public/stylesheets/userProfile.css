@@ -53,7 +53,7 @@
 
 .user-info {
 	background-color: rgb(238, 238, 238);
-    /* padding:30px; */
+	/* padding:30px; */
 	border: 1px solid #b9b9b9;
 	border-radius: 10px;
 }
@@ -67,13 +67,13 @@
 }
 .user-info-config {
 	background-color: rgb(238, 238, 238);
-
+	
 	border: 1px solid #b9b9b9;
 	border-radius: 10px;
 }
 .user-info-config {
 	background-color: rgb(238, 238, 238);
-
+	
 	border: 1px solid #b9b9b9;
 	border-radius: 10px;
 	display: flex;
@@ -84,91 +84,208 @@
 	margin-bottom: 100px;
 }
 .user-menu {
-	padding: 1%;
-	background-color: #e5e2e2;
-	margin-bottom: 1px;
-	width: 80%;
-	margin-bottom: 28px;
-	margin-top: 5px;
-	border-radius: 4px;
+    padding: 2%;
+    background-color: #e5e2e2;
+    width: 80%;
+    margin-bottom: 28px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-indent: 5px;
+    height: 31px;
 }
+
+
 .user-div {
 	display: flex;
 }
 
 
 .marginpf {
-	margin-top: 40px;
+	margin-top: 20px;
 	margin-left: 20px;
+	text-transform: capitalize;
 }
 
 .marginpf1 {
 	margin-left: 20px;
 }
 
-.a-profile{
-    margin-left: 0px;
+#cargar-producto{
+	margin-left: 0px;
 }
 
 
 .profile-confg{
-    text-align: center;
-    margin-top:30px;
+	text-align: center;
+	margin-top:30px;
 }
 
 
 .user-img {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-    background-color: #cfcdcd;
-    width: 9%;
-    margin-bottom: 28px;
-    margin-top: 4px;
-    margin-left: 20px;
-    border-radius: 4px;
-    height: 28px;
+	display: flex;
+	justify-content: center;
+	padding-top: 10px;
+	background-color: #cfcdcd;
+	width: 9%;
+	margin-bottom: 28px;
+	margin-top: 4px;
+	margin-left: 20px;
+	border-radius: 4px;
+	height: 32px;
 }
 
 .margin{
-    margin-top: 45px;
+	margin-top: 45px;
 }
 
 
 .profile-div{
-    display: inline-block;
-    position: relative;
-    width: 140px;
-    height: 140px;
-    overflow: hidden;
-    border-radius: 50%;
-  }
-  
-  .profile-img{
-    width: 100%;
-    height: 100%;
-  }
-  
-  .user-div {
-      display: flex;
-  }
+	display: inline-block;
+	position: relative;
+	width: 140px;
+	height: 140px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.profile-img{
+	width: 100%;
+	height: 100%;
+}
+
+.user-div {
+	display: flex;
+}
+
+#userName, #email, #password, #newPassword, #confirmNewPassword{
+	border: none;
+	height: 32px;
+	padding: 1%;
+    width: 80%;
+    margin-bottom: 28px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-indent: 5px;
+}
 
 
-  @media(min-width:992px){
-    .user-img {
-        width: 5%; 
-        height: auto;
-    }
+.edit-pf-form{
+	padding: 20px 0px;
+}
 
-    .profile-div{
-        margin-bottom:20px
-    }
+#avatar-input-edit{
+	width: 80%;
+    margin-left: 20px;
 
-    .margin{
-        margin-top:30px;
-    }
+}
+
+#button-user-form{
+	margin-bottom:10px
+}
+
+@media(min-width:768px){
+	.profile-config {
+		margin-right: 40px;
+	}
+	.margin {
+		margin-top: 20px;
+	}
+	.menu-profile {
+		text-align: unset;
+	}
+	
+	.user-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		border: 1px solid #cccbcb;
+		border-radius: 7px;
+		margin-bottom: 100px;
+	}
+
+	.user-info-config {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		border: 1px solid #cccbcb;
+		border-radius: 7px;
+		margin-bottom: 100px;
+		/* padding: 25px 10px; */
+	}
+	.user-menu {
+		padding: 1%;
+		background-color: #e5e2e2;
+		margin-bottom: 1px;
+		width: 80%;
+		margin-bottom: 28px;
+		margin-top: 5px;
+		border-radius: 4px;
+	}
+	.user-div {
+		display: flex;
+	}
+	.marginpf {
+		margin-top: 40px;
+		margin-left: 10px;
+	}
+	
+	.marginpf1 {
+		margin-left: 10px;
+	}
+}
 
 
-  }
-  
-  
+
+@media(min-width:992px){
+	.user-img {
+		width: 5%; 
+		height: auto;
+	}
+	
+	.profile-div{
+		margin-bottom:20px
+	}
+	
+	.margin{
+		margin-top:30px;
+	}
+	
+	.user-info {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		border: 1px solid #cccbcb;
+		border-radius: 7px;
+		margin-bottom: 100px;
+	}
+	.user-info-config {
+		display: flex;
+		flex-direction: column;
+		justify-content: start;
+		border: 1px solid #cccbcb;
+		border-radius: 7px;
+		margin-bottom: 100px;
+	}
+	.user-menu {
+		padding: 1%;
+		background-color: #e5e2e2;
+		margin-bottom: 1px;
+		width: 40%;
+		margin-bottom: 28px;
+		margin-top: 5px;
+		border-radius: 4px;
+	}
+	.user-div {
+		display: flex;
+	}
+	
+	.marginpf {
+		margin-top: 40px;
+		margin-left: 20px;
+	}
+	
+	.marginpf1 {
+		margin-left: 20px;
+	}
+}
+

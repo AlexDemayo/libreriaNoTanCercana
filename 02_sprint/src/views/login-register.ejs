@@ -35,19 +35,19 @@
                 <form class="register" action="register" method="POST" value="register" enctype="multipart/form-data">
                     <div>
                         <div>
-                            <input type="text" id="userName" name="userName" placeholder="Usuario *" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.userName %>">
+                            <input type="text" name="userName" placeholder="Usuario *" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.userName %>">
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.userName ? errorsRegister.userName.msg : null %></p>
                         </div>
                         <div>
-                            <input type="text" id="email" name="email" placeholder="Email *" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.email %>">
+                            <input type="text" name="email" placeholder="Email *" class="form-input" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.email %>">
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.email ? errorsRegister.email.msg : null %></p>
                         </div>
                         <div>
-                            <input type="password" id="password" name="password" class="form-input" placeholder="Contraseña *">
+                            <input type="password" name="password" class="form-input" placeholder="Contraseña *">
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.password ? errorsRegister.password.msg : null %></p>
                         </div>
                         <div>
-                            <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" placeholder="Repita la contraseña: *">
+                            <input type="password" name="confirmPassword" class="form-input" placeholder="Repita la contraseña: *">
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.confirmPassword ? errorsRegister.confirmPassword.msg : null %></p>
                         </div>
                         <div>

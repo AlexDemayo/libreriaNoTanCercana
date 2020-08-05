@@ -76,7 +76,7 @@ label#quantity {
 }
 
 button.elm-button {
-	width: 99%;
+	width: 100%;
 	padding: 0px 35px 0px 35px;
 	background-color: #fd3e37;
 	/* background-color: #1BAFC7; */
@@ -258,7 +258,6 @@ button.elm-button:hover {
 	}
 
 	button.elm-button {
-		width: 99%;
 		padding: 0px 43px 0px 43px;
 	}
 }
@@ -313,7 +312,6 @@ button.elm-button:hover {
 	}
 
 	button.elm-button {
-		width: 99%;
 		padding: 0px 50px 0px 50px;
 	}
 }

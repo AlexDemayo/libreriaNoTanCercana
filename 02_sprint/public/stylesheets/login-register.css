@@ -10,7 +10,7 @@
 .register input {
 	display: block;
 	width: 100%;
-	height: 6vh;
+	height: 50px;
 	border: 1px solid #b9b9b9;
 	text-indent: 10px;
 	margin-bottom: 15px;
@@ -67,6 +67,7 @@
 }
 
 @media (min-width: 768px) {
+	
 	.space {
 		margin: 37px 0px;
 	}
@@ -81,45 +82,7 @@
 	.form-right {
 		margin-left: 30px;
 	}
-	.menu-profile {
-		text-align: unset;
-	}
-	.user-info {
-		display: flex;
-		flex-direction: column;
-		justify-content: start;
-		border: 1px solid #cccbcb;
-		border-radius: 7px;
-		margin-bottom: 100px;
-	}
-	.user-info-config {
-		display: flex;
-		flex-direction: column;
-		justify-content: start;
-		border: 1px solid #cccbcb;
-		border-radius: 7px;
-		margin-bottom: 100px;
-	}
-	.user-menu {
-		padding: 1%;
-		background-color: #e5e2e2;
-		margin-bottom: 1px;
-		width: 80%;
-		margin-bottom: 28px;
-		margin-top: 5px;
-		border-radius: 4px;
-	}
-	.user-div {
-		display: flex;
-	}
-	.marginpf {
-		margin-top: 40px;
-		margin-left: 10px;
-	}
-
-	.marginpf1 {
-		margin-left: 10px;
-	}
+	
 }
 
 @media (min-width: 992px) {
@@ -130,50 +93,6 @@
 	.login button {
 		margin-top: 36px;
 	}
-	.profile-config {
-		margin-right: 40px;
-	}
-	.margin {
-		margin-top: 20px;
-	}
-	.menu-profile {
-		text-align: unset;
-	}
-	.user-info {
-		display: flex;
-		flex-direction: column;
-		justify-content: start;
-		border: 1px solid #cccbcb;
-		border-radius: 7px;
-		margin-bottom: 100px;
-	}
-	.user-info-config {
-		display: flex;
-		flex-direction: column;
-		justify-content: start;
-		border: 1px solid #cccbcb;
-		border-radius: 7px;
-		margin-bottom: 100px;
-	}
-	.user-menu {
-		padding: 1%;
-		background-color: #e5e2e2;
-		margin-bottom: 1px;
-		width: 40%;
-		margin-bottom: 28px;
-		margin-top: 5px;
-		border-radius: 4px;
-	}
-	.user-div {
-		display: flex;
-	}
-
-	.marginpf {
-		margin-top: 40px;
-		margin-left: 20px;
-	}
-
-	.marginpf1 {
-		margin-left: 20px;
-	}
+	
+	
 }

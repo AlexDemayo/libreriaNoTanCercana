@@ -22,7 +22,7 @@
 
 
                   <div class="menu-profile margin">
-                    <a class="a-profile" href="/books/create">Cargar Producto</a>
+                    <a class="a-profile" id="cargar-producto" href="/books/create">Cargar Producto</a>
                   </div>
                   <div class="menu-profile js-a">
                     <a class="a-profile ">Configuración</a>
@@ -71,7 +71,7 @@
         
           <div class = "col-12 col-md-5 col-lg-7 user-info-config" style = "display:none">
 
-              <form class="register" action="user/update" method="POST" value="update" enctype="multipart/form-data"> 
+              <form class="register edit-pf-form" action="user/update" method="POST" value="update" enctype="multipart/form-data" > 
                       
                        <a class="a-profile marginpf">Usuario</a>
                          <div class="user-div">
@@ -121,11 +121,11 @@
                           
                           <div>
                           
-                            <input type="file" name="image" class="avatar-input">
+                            <input type="file" name="image" class="avatar-input" id="avatar-input-edit">
                           </div>
                        
                       <div>
-                            <button type="submit">Actualizar</button>
+                            <button type="submit" id="button-user-form">Actualizar</button>
                      </div>           
                  </form>
                  <form action="deleteUser/<%= user.id %> " method="POST">
