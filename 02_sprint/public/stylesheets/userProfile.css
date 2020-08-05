@@ -1,0 +1,174 @@
+/* Profile styling */
+.imgg {
+	border-radius: 200px;
+	width: 230px;
+}
+
+.a-profile {
+	color: #7d8180;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-weight: 535;
+}
+
+.a-profile:hover {
+	color: #4fa7e2;
+	text-decoration: underline;
+}
+
+.menu-profile {
+	padding: 13%;
+	background-color: rgb(238, 238, 238);
+	margin-bottom: 1px;
+	text-align: center;
+}
+
+.margin {
+	margin-top: 100px;
+}
+
+.menu-profile:hover {
+	background-color: inherit;
+}
+
+.menu-profile a:hover {
+	background-color: inherit;
+	text-decoration: none;
+}
+
+.profile-confg {
+	padding-bottom: 100px;
+}
+
+.profilediv {
+	display: flex;
+	justify-content: center;
+}
+
+.buttcf {
+	display: flex;
+	background-color: #e3e6e6;
+	z-index: 1;
+}
+
+.user-info {
+	background-color: rgb(238, 238, 238);
+    /* padding:30px; */
+	border: 1px solid #b9b9b9;
+	border-radius: 10px;
+}
+.user-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	border: 1px solid #cccbcb;
+	border-radius: 7px;
+	margin-bottom: 100px;
+}
+.user-info-config {
+	background-color: rgb(238, 238, 238);
+
+	border: 1px solid #b9b9b9;
+	border-radius: 10px;
+}
+.user-info-config {
+	background-color: rgb(238, 238, 238);
+
+	border: 1px solid #b9b9b9;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	border: 1px solid #cccbcb;
+	border-radius: 7px;
+	margin-bottom: 100px;
+}
+.user-menu {
+	padding: 1%;
+	background-color: #e5e2e2;
+	margin-bottom: 1px;
+	width: 80%;
+	margin-bottom: 28px;
+	margin-top: 5px;
+	border-radius: 4px;
+}
+.user-div {
+	display: flex;
+}
+
+
+.marginpf {
+	margin-top: 40px;
+	margin-left: 20px;
+}
+
+.marginpf1 {
+	margin-left: 20px;
+}
+
+.a-profile{
+    margin-left: 0px;
+}
+
+
+.profile-confg{
+    text-align: center;
+    margin-top:30px;
+}
+
+
+.user-img {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    background-color: #cfcdcd;
+    width: 9%;
+    margin-bottom: 28px;
+    margin-top: 4px;
+    margin-left: 20px;
+    border-radius: 4px;
+    height: 28px;
+}
+
+.margin{
+    margin-top: 45px;
+}
+
+
+.profile-div{
+    display: inline-block;
+    position: relative;
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .profile-img{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .user-div {
+      display: flex;
+  }
+
+
+  @media(min-width:992px){
+    .user-img {
+        width: 5%; 
+        height: auto;
+    }
+
+    .profile-div{
+        margin-bottom:20px
+    }
+
+    .margin{
+        margin-top:30px;
+    }
+
+
+  }
+  
+  

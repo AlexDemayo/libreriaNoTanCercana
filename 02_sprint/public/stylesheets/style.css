@@ -132,38 +132,6 @@ p:hover{
 }
 
 
-/* Edición usuario */
-
-.profile-div{
-  display: inline-block;
-  position: relative;
-  width: 140px;
-  height: 140px;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-.profile-img{
-  width: 100%;
-  height: 100%;
-}
-
-.user-div {
-	display: flex;
-}
-.user-img {
-	display: flex;
-	justify-content: center;
-	padding-top: 10px;
-	background-color: #cfcdcd;
-	width: 5%;
-	margin-bottom: 28px;
-	margin-top: 4px;
-	margin-left: 20px;
-	border-radius: 4px;
-}
-
-
 
 
 

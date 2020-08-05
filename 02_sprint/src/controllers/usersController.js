@@ -102,45 +102,61 @@ const usersController = {
 	},
 
 	deleteUser: function(req,res){
+		req.session.destroy();
+
+		if (req.cookies.remember) {
+			res.clearCookie('remember');
+		}
 		
-		db.User.findOne({where: {id: req.session.user.id}})
-		.then(() => {
-			db.User.destroy({
-				where: {
-					id: req.session.user.id
-				}
-			})
-		})
-		.then(() => {
-			return res.redirect('/')
-		})
-		.catch(err => console.log(err))
+        db.User.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        return res.redirect('/')
+    }
+
+
+
+	// deleteUser: function(req,res){
 		
-		// db.User.destroy({
-		// 	where: {
-		// 		id: req.session.id
-		// 	}
-		// })
-		// console.log(req.session.id)
-		// return res.redirect('/')
-
-
-	}
-
-	// updateImg: function(req,res){
-
-	// 	db.User.findOne({where: {id: req.session.user.id}})
-	// 	.then(()=>{
-	// 		console.log(req.file.filename);
-	// 		return db.User.update({
-	// 			image: req.file.filename
-	// 		},{
-	// 			where: {id : req.session.user.id}
-	// 		})
+	// 	// db.User.findOne({where: {id: req.session.user.id}})
+	// 	// .then(() => {
+	// 	// 	db.User.destroy({
+	// 	// 		where: {
+	// 	// 			id: req.session.user.id
+	// 	// 		}
+	// 	// 	})
+	// 	// })
+	// 	// .then(() => {
+	// 	// 	return res.redirect('/')
+	// 	// })
+	// 	// .catch(err => console.log(err))
+		
+	// 	db.User.destroy({
+	// 		where: {
+	// 			id: req.session.id
+	// 		}
 	// 	})
-	// 	.then(() => res.redirect('/users/user'))
-	// 	.catch(err => console.log(err))
+	// 	return res.redirect('/')
+
+
 	// }
+
+	// // updateImg: function(req,res){
+
+	// // 	db.User.findOne({where: {id: req.session.user.id}})
+	// // 	.then(()=>{
+	// // 		console.log(req.file.filename);
+	// // 		return db.User.update({
+	// // 			image: req.file.filename
+	// // 		},{
+	// // 			where: {id : req.session.user.id}
+	// // 		})
+	// // 	})
+	// // 	.then(() => res.redirect('/users/user'))
+	// // 	.catch(err => console.log(err))
+	// // }
 };
 
 module.exports = usersController;

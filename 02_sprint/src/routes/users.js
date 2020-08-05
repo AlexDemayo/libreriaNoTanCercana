@@ -40,7 +40,7 @@ router.post('/register', upload.single('image'), validator.register, usersContro
 router.post('/login', validator.login, usersController.login);
 router.post('/logout', usersController.logout);
 router.post('/user/update', upload.single('image'), usersController.update);
-router.post('/user/deleteUser', usersController.deleteUser);
+router.post('/deleteUser/:id', usersController.deleteUser);
 
 
 

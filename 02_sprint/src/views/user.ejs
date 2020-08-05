@@ -1,5 +1,6 @@
 <html>
       <%- include('partials/head', {title: 'Mi Perfil'}) %>
+      
   <body>
        
       <%- include('partials/header') %>
@@ -7,7 +8,7 @@
       <div class="container">
         <div id="flex" class="row space">
             <div class="col-12 col-md-4 col-lg-2 profile-confg">
-               <div>
+              
                     <div class="profile-div">
                       <img class="profile-img" src="/images/users/<%= user.image %>">
                     </div>
@@ -33,7 +34,7 @@
                     <a class="a-profile" href="#">Favoritos</a>
                   </div>
                 
-               </div>
+             
                   
              </div>
               
@@ -71,7 +72,7 @@
           <div class = "col-12 col-md-5 col-lg-7 user-info-config" style = "display:none">
 
               <form class="register" action="user/update" method="POST" value="update" enctype="multipart/form-data"> 
-                     
+                      
                        <a class="a-profile marginpf">Usuario</a>
                          <div class="user-div">
                                 <div class="div-img user-img"> 
@@ -127,7 +128,7 @@
                             <button type="submit">Actualizar</button>
                      </div>           
                  </form>
-                 <form action="user/deleteUser">
+                 <form action="deleteUser/<%= user.id %> " method="POST">
                     <button type="submit" class="elm-button">Eliminar cuenta</button>
                 </form>
              </div>

@@ -13,6 +13,7 @@ ul {
 
 .a-header {
 	color: #333d39;
+	text-transform: capitalize;
 }
 
 .a-header:hover {
