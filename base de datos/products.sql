@@ -199,3 +199,4 @@ UPDATE `libreriadb`.`products` SET `image` = 'img47.jpg' WHERE (`id` = '97');
 UPDATE `libreriadb`.`products` SET `image` = 'img48.jpg' WHERE (`id` = '98');
 UPDATE `libreriadb`.`products` SET `image` = 'img49.jpg' WHERE (`id` = '99');
 UPDATE `libreriadb`.`products` SET `image` = 'img50.jpg' WHERE (`id` = '100');
+UPDATE `libreriadb`.`users` SET `admin` = '1' WHERE (`id` = '1');
