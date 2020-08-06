@@ -16,6 +16,15 @@
 	text-decoration: underline;
 }
 
+.p-profile {
+	color: #7d8180;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-weight: 535;
+}
+
+
+
 .menu-profile {
 	padding: 13%;
 	background-color: rgb(238, 238, 238);
@@ -103,11 +112,14 @@
 .marginpf {
 	margin-top: 20px;
 	margin-left: 20px;
+	margin-bottom: 1px;
 	text-transform: capitalize;
 }
 
 .marginpf1 {
+	margin-top:1px;
 	margin-left: 20px;
+	margin-bottom: 1px;
 }
 
 #cargar-producto{
@@ -230,6 +242,7 @@
 	}
 	
 	.marginpf1 {
+		margin-top:1px;
 		margin-left: 10px;
 	}
 }
@@ -285,6 +298,7 @@
 	}
 	
 	.marginpf1 {
+		margin-top:1px;
 		margin-left: 20px;
 	}
 }

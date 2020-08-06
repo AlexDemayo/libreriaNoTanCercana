@@ -1,19 +1,19 @@
 <html>
-      <%- include('partials/head', {title: 'Mi Perfil'}) %>
-      
-  <body>
-       
-      <%- include('partials/header') %>
+<%- include('partials/head', {title: 'Mi Perfil'}) %>
 
-      <div class="container">
-        <div id="flex" class="row space">
-            <div class="col-12 col-md-4 col-lg-2 profile-confg">
-              
-                    <div class="profile-div">
-                      <img class="profile-img" src="/images/users/<%= user.image %>">
-                    </div>
+<body>
 
-                    <!-- <form action="user/updateImg" method="POST" enctype="multipart/form-data">
+  <%- include('partials/header') %>
+
+  <div class="container">
+    <div id="flex" class="row space">
+      <div class="col-12 col-md-4 col-lg-2 profile-confg">
+
+        <div class="profile-div">
+          <img class="profile-img" src="/images/users/<%= user.image %>">
+        </div>
+
+        <!-- <form action="user/updateImg" method="POST" enctype="multipart/form-data">
                       <div class="uk-form-custom">
                         <input type="file">
                         <button type="button" class="w3-button w3-large w3-circle buttcf">+</button>
@@ -21,123 +21,124 @@
                     </form> -->
 
 
-                  <div class="menu-profile margin">
-                    <a class="a-profile" id="cargar-producto" href="/books/create">Cargar Producto</a>
-                  </div>
-                  <div class="menu-profile js-a">
-                    <a class="a-profile ">Configuración</a>
-                  </div>
-                  <div class="menu-profile">
-                    <a class="a-profile" href="#">Compras</a>
-                  </div>
-                  <div class="menu-profile">
-                    <a class="a-profile" href="#">Favoritos</a>
-                  </div>
-                
-             
-                  
-             </div>
-              
-             <div class="col-12 col-md-5 col-lg-7 user-info">
-                 <a class="a-profile marginpf">Usuario</a>
-                   <div class="user-div">
-                         <div class="user-img">
-                           <i class="fas fa-user"></i>
-                         </div>
-                         <div class="user-menu">
-                            <%= user.userName %>                     
-                         </div>
-                    </div>
-                <a class="a-profile marginpf1">Email</a>
-                   <div class="user-div">
-                        <div class="user-img">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="user-menu">
-                            <%= user.email %> 
-                        </div>
-                  </div>
-               <a class="a-profile marginpf1">Contraseña</a>
-                   <div class="user-div">
-                        <div class="user-img">
-                           <i class="fas fa-key"></i>
-                        </div>
-                        <div class="user-menu">
-                           ****************
-                        </div>
-                   </div>
-                  
+        <div class="menu-profile margin">
+          <a class="a-profile" id="cargar-producto" href="/books/create">Cargar Producto</a>
+        </div>
+        <div class="menu-profile js-a">
+          <a class="a-profile ">Configuración</a>
+        </div>
+        <div class="menu-profile">
+          <a class="a-profile" href="#">Compras</a>
+        </div>
+        <div class="menu-profile">
+          <a class="a-profile" href="#">Favoritos</a>
+        </div>
+
+
+
+      </div>
+
+      <div class="col-12 col-md-5 col-lg-7 user-info">
+        <p class="p-profile marginpf">Usuario</p>
+        <div class="user-div">
+          <div class="user-img">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="user-menu">
+            <%= user.userName %>
+          </div>
+        </div>
+        <p class="p-profile marginpf1">Email</p>
+        <div class="user-div">
+          <div class="user-img">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="user-menu">
+            <%= user.email %>
+          </div>
+        </div>
+        <p class="p-profile marginpf1">Contraseña</p>
+        <div class="user-div">
+          <div class="user-img">
+            <i class="fas fa-key"></i>
+          </div>
+          <div class="user-menu">
+            ****************
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-12 col-md-5 col-lg-7 user-info-config" style="display:none">
+
+        <form class="register edit-pf-form" action="user/update" method="POST" value="update"
+          enctype="multipart/form-data">
+
+          <a class="a-profile marginpf">Usuario</a>
+          <div class="user-div">
+            <div class="div-img user-img">
+              <i class="fas fa-user"></i>
             </div>
-        
-          <div class = "col-12 col-md-5 col-lg-7 user-info-config" style = "display:none">
+            <input type="text" id="userName" name="userName" class="user-menu" value="<%= user.userName %>">
+            <p class="error">
+          </div>
 
-              <form class="register edit-pf-form" action="user/update" method="POST" value="update" enctype="multipart/form-data" > 
-                      
-                       <a class="a-profile marginpf">Usuario</a>
-                         <div class="user-div">
-                                <div class="div-img user-img"> 
-                                  <i class="fas fa-user"></i>
-                                </div>
-                                  <input type="text" id="userName" name="userName"  class="user-menu" value="<%= user.userName %>"> 
-                                  <p class="error">
-                         </div>
-                     
-                        <a class="a-profile marginpf1">Email</a>
-                          <div class="user-div">
-                                 <div class="user-img"> 
-                                   <i class="fas fa-envelope"></i>
-                                 </div>
-                                   <input type="text" id="email" name="email" class="user-menu" value="<%= user.email %>">
-                                   <p class="error"></p>
-                          </div>
-                     
-                        <a class="a-profile marginpf1">Contraseña</a>
-                           <div class="user-div">
-                                   <div class="user-img">
-                                      <i class="fas fa-key"></i>
-                                   </div>
-                                      <input type="password" id="password" name="password" class="user-menu">
-                                      <p class="error"></p>
-                           </div>
-                         
-                         <a class="a-profile marginpf1">Nueva contraseña</a>
-                             <div class="user-div">
-                                    <div class="user-img">
-                                        <i class="fas fa-key"></i>
-                                    </div>
-                                        <input type="password" id="newPassword" name="newPassword" class="user-menu">
-                                        <p class="error"></p>
-                             </div>
-                      
-                        
-                          <a class="a-profile marginpf1">Repetir nueva contraseña</a>
-                             <div class="user-div">
-                                      <div class="user-img">
-                                          <i class="fas fa-key"></i>
-                                        </div>
-                                         <input type="password" id="confirmNewPassword" name="confirmNewPassword" class="user-menu">
-                                         <p class="error"></p>
-                             </div>
-                          
-                          <div>
-                          
-                            <input type="file" name="image" class="avatar-input" id="avatar-input-edit">
-                          </div>
-                       
-                      <div>
-                            <button type="submit" id="button-user-form">Actualizar</button>
-                     </div>           
-                 </form>
-                 <form action="deleteUser/<%= user.id %> " method="POST">
-                    <button type="submit" class="elm-button">Eliminar cuenta</button>
-                </form>
-             </div>
-         </div>
-     </div>
-    <%- include('partials/footer') %>   
+          <a class="a-profile marginpf1">Email</a>
+          <div class="user-div">
+            <div class="user-img">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <input type="text" id="email" name="email" class="user-menu" value="<%= user.email %>">
+            <p class="error"></p>
+          </div>
+
+          <a class="a-profile marginpf1">Contraseña</a>
+          <div class="user-div">
+            <div class="user-img">
+              <i class="fas fa-key"></i>
+            </div>
+            <input type="password" id="password" name="password" class="user-menu">
+            <p class="error"></p>
+          </div>
+
+          <a class="a-profile marginpf1">Nueva contraseña</a>
+          <div class="user-div">
+            <div class="user-img">
+              <i class="fas fa-key"></i>
+            </div>
+            <input type="password" id="newPassword" name="newPassword" class="user-menu">
+            <p class="error"></p>
+          </div>
 
 
-       <script src="/js/profile-menu.js"></script>
-   </body>
+          <a class="a-profile marginpf1">Repetir nueva contraseña</a>
+          <div class="user-div">
+            <div class="user-img">
+              <i class="fas fa-key"></i>
+            </div>
+            <input type="password" id="confirmNewPassword" name="confirmNewPassword" class="user-menu">
+            <p class="error"></p>
+          </div>
+
+          <div>
+
+            <input type="file" name="image" class="avatar-input" id="avatar-input-edit">
+          </div>
+
+          <div>
+            <button type="submit" id="button-user-form">Actualizar</button>
+          </div>
+        </form>
+        <form action="deleteUser/<%= user.id %> " method="POST">
+          <button type="submit" class="elm-button">Eliminar cuenta</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <%- include('partials/footer') %>
+
+
+  <script src="/js/profile-menu.js"></script>
+</body>
 
 </html>
