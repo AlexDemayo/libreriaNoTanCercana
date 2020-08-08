@@ -14,31 +14,56 @@ const categoryController = {
 		})
 	},
 	category: function(req, res) {
-		const category = req.params.category;
+		let category = req.params.category;
+
+		// let allCategories = db.Category.findAll();
+		let arte = db.Product.findAll({where: {categoryId : 1}});
+		let poesia = db.Product.findAll({where: {categoryId : 2}});
+		let cronica = db.Product.findAll({where: {categoryId : 3}});
+		let ensayo = db.Product.findAll({where: {categoryId : 4}});
+		let infantilYJuvenil = db.Product.findAll({where: {categoryId : 5}});
+		let narrativa = db.Product.findAll({where: {categoryId : 6}});
+		let novGraficasYComics = db.Product.findAll({where: {categoryId : 7}});
 		
-		db.Product.findAll({
-			include : [{association: "category"}]
-		})
-		.then(books => {
-			return res.render('category', {books, category})
+		
+		Promise.all([category, arte, cronica, ensayo, infantilYJuvenil, narrativa, novGraficasYComics, poesia])
+		.then(([category, arte, cronica, ensayo, infantilYJuvenil, narrativa, novGraficasYComics, poesia]) => {
+
+			return res.render('category', {category, arte, cronica, ensayo, infantilYJuvenil, narrativa, novGraficasYComics, poesia})
 		})
 		.catch(error => {
 			console.log(error)
 		})
+
 	},
 	subCategory: function(req, res) {
 		const category = req.params.category;
-		const subCategory = req.params.subCategory; //por qué necesito estas variables?
+		const subCategory = req.params.subCategory; 
 
-		db.Product.findAll({
-			include: [{association: "subCategory"}]
-		})
-		.then(books => {
-			return res.render('subCategory', { category, subCategory, books });
+		let historiaDelArte = db.Product.findAll({where: {subCategoryId : 1}}); 
+		let musica = db.Product.findAll({where: {subCategoryId : 2}});
+		let cineYVideo = db.Product.findAll({where: {subCategoryId : 3}}); 
+		let fotografia = db.Product.findAll({where: {subCategoryId : 4}});
+		let infantil = db.Product.findAll({where: {subCategoryId : 5}});
+		let juvenil = db.Product.findAll({where: {subCategoryId : 6}});
+		let novelas = db.Product.findAll({where: {subCategoryId : 7}}); 
+		let clasicos = db.Product.findAll({where: {subCategoryId : 8}}); 
+		let cienciaFiccion = db.Product.findAll({where: {subCategoryId : 9}});
+		let terror = db.Product.findAll({where: {subCategoryId : 10}}); 
+		let policiales = db.Product.findAll({where: {subCategoryId : 11}}) ;
+		let cuentosORelatos = db.Product.findAll({where: {subCategoryId : 12}});
+		let comics = db.Product.findAll({where: {subCategoryId : 13}});
+		let novelasGraficas  = db.Product.findAll({where: {subCategoryId : 14}});
+
+
+		Promise.all([category, subCategory, historiaDelArte, musica, cineYVideo, fotografia, infantil, juvenil, novelas, clasicos, cienciaFiccion, terror, policiales, cuentosORelatos, comics, novelasGraficas])
+		.then(([category, subCategory, historiaDelArte, musica, cineYVideo, fotografia, infantil, juvenil, novelas, clasicos, cienciaFiccion, terror, policiales, cuentosORelatos, comics, novelasGraficas]) => {
+			return res.render('subCategory', {category, subCategory, historiaDelArte, musica, cineYVideo, fotografia, infantil, juvenil, novelas, clasicos, cienciaFiccion, terror, policiales, cuentosORelatos, comics, novelasGraficas})
 		})
 		.catch(error => {
 			console.log(error)
 		})
+
 	}
 };
 

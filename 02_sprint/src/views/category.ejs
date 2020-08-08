@@ -24,33 +24,7 @@
                         <li><a href="/category/arte/fotografía">Fotografía</a></li>
                     </ul>
                  </section>
-                <% } else if (category == "infantil y juvenil"){ %>
-                    <section class="col-12">
-                        <ul class="categories">
-                            <li><a href="/category/infantil y juvenil/infantil">Infantil</a></li>
-                            <li><a href="/category/infantil y juvenil/juvenil">Juvenil</a></li>
-                        </ul>
-                    </section>
-                <% } else if (category == "narrativa") {%> 
-                    <section class="col-12">
-                        <ul class="categories">
-                            <li><a href="/category/narrativa/novelas">Novelas</a></li>
-                            <li><a href="/category/narrativa/clásicos">Clásicos</a></li>
-                            <li><a href="/category/narrativa/ciencia ficción">Ciencia ficción</a></li>
-                            <li><a href="/category/narrativa/terror">Terror</a></li>
-                            <li><a href="/category/narrativa/policiales">Policiales</a></li>
-                            <li><a href="/category/narrativa/cuentos - relatos">Cuentos-relatos</a></li>
-                        </ul>
-                    </section>
-                <% } else if (category == "novelas gráficas y cómics"){ %>
-                    <section class="col-12">
-                        <ul class="categories">
-                            <li><a href="/category/novelas gráficas y cómics/cómics">Cómics</a></li>
-                            <li><a href="/category/novelas gráficas y cómics/novelas gráficas">Novelas gráficas</a></li>
-                        </ul>
-                    </section>
-                <% } %>
-                <% books.forEach(book => { %>
+                 <% arte.forEach(book => { %>
                     <div class="col-6 col-md-3">
                         <section class="book-container">
                            <figure class="image-container">
@@ -63,6 +37,113 @@
                         </section>
                     </div>       
                 <% }) %>
+                <% } else if (category == "crónica"){ %>
+                    <% cronica.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%= book.image %>" alt="book photo"> 
+                                </a>
+                               </figure>
+                               <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+                <% } else if (category == "ensayo"){ %>
+                    <% ensayo.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%= book.image %>" alt="book photo"> 
+                                </a>
+                               </figure>
+                               <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+                <% } else if (category == "infantil y juvenil"){ %>
+                    <section class="col-12">
+                        <ul class="categories">
+                            <li><a href="/category/infantil y juvenil/infantil">Infantil</a></li>
+                            <li><a href="/category/infantil y juvenil/juvenil">Juvenil</a></li>
+                        </ul>
+                    </section>
+                    <% infantilYJuvenil.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%= book.image %>" alt="book photo"> 
+                                </a>
+                               </figure>
+                               <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+                <% } else if (category == "narrativa") {%> 
+                    <section class="col-12">
+                        <ul class="categories">
+                            <li><a href="/category/narrativa/novelas">Novelas</a></li>
+                            <li><a href="/category/narrativa/clásicos">Clásicos</a></li>
+                            <li><a href="/category/narrativa/ciencia ficción">Ciencia ficción</a></li>
+                            <li><a href="/category/narrativa/terror">Terror</a></li>
+                            <li><a href="/category/narrativa/policiales">Policiales</a></li>
+                            <li><a href="/category/narrativa/cuentos - relatos">Cuentos-relatos</a></li>
+                        </ul>
+                    </section>
+                    <% narrativa.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%= book.image %>" alt="book photo"> 
+                                </a>
+                               </figure>
+                               <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+                <% } else if (category == "novelas gráficas y cómics"){ %>
+                    <section class="col-12">
+                        <ul class="categories">
+                            <li><a href="/category/novelas gráficas y cómics/cómics">Cómics</a></li>
+                            <li><a href="/category/novelas gráficas y cómics/novelas gráficas">Novelas gráficas</a></li>
+                        </ul>
+                    </section>
+                    <% novGraficasYComics.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%= book.image %>" alt="book photo"> 
+                                </a>
+                               </figure>
+                               <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+                <% } else if(category == "poesía") {%>
+                        <% poesia.forEach(book => { %>
+                            <div class="col-6 col-md-3">
+                                <section class="book-container">
+                                   <figure class="image-container">
+                                    <a href="/books/<%=book.id%>">
+                                        <img src="/images/books/<%= book.image %>" alt="book photo"> 
+                                    </a>
+                                   </figure>
+                                   <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                    <p>$<%= book.price %></p>
+                                </section>
+                            </div>       
+                        <% }) %>
+                <% } %> 
             </div>
         </div>
     </main>

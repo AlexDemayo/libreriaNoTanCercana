@@ -14,8 +14,8 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/category">Categorías</a></li>
                         <li><a href="/category/<%= book.category.name %>"><%= book.category.name %></a></li>
-                        <% if (book.subCategory !=null) { %>
-                        <li><a href="/category/<%=book.category.name%>/<%book.subCategory.name%>"><%= book.subCategory.name %>
+                        <% if (book.subCategory) { %>
+                        <li><a href="/category/<%=book.category.name%>/<%= book.subCategory.name%>"><%= book.subCategory.name %>
                             </a></li>
                         <% } %>
                         <li><a href="#"><%= book.title %> </a></li>

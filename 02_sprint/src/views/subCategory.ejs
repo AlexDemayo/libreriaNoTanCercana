@@ -6,7 +6,7 @@
     <%- include('partials/header') %>
     
     <main>
-        <div class="container">
+        <div class="container body-container">
             <div class="row">
                 <section class="col-12">
                     <ul class="route">
@@ -16,19 +16,221 @@
                         <li><a href="/category/<%=category%>/<%=subCategory%>"><%= subCategory %></a></li>
                     </ul>
                 </section>
-                <% books.forEach(book => { %>
-                    <div class="col-6 col-md-3">
-                        <section class="book-container">
-                           <figure class="image-container">
-                            <a href="/books/<%=book.id%>">
-                                <img src="/images/books/<%=book.image %>" alt="book photo"> 
-                            </a>
-                           </figure>
-                            <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
-                            <p>$<%= book.price %></p>
-                        </section>
-                    </div>       
-                <% }) %>
+                <% if (subCategory == "historia del arte") { %>
+                    <% historiaDelArte.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%=book.image %>" alt="book photo"> 
+                                </a>
+                               </figure>
+                                <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+
+                <% } else if (subCategory == "musica") { %>
+                    <% musica.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%=book.image %>" alt="book photo"> 
+                                </a>
+                               </figure>
+                                <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+                <% } else if (subCategory == "música") { %>
+                    <% musica.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%=book.image %>" alt="book photo"> 
+                                </a>
+                                </figure>
+                                <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+                <% } else if (subCategory == "cine y video") { %>
+                    <% cineYVideo.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%=book.image %>" alt="book photo"> 
+                                </a>
+                                </figure>
+                                <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+                <% } else if (subCategory == "fotografía") { %>
+                    <% fotografia.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%=book.image %>" alt="book photo"> 
+                                </a>
+                                </figure>
+                                <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+                <% } else if (subCategory == "infantil") { %>
+                    <% infantil.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%=book.image %>" alt="book photo"> 
+                                </a>
+                                </figure>
+                                <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+                <% } else if (subCategory == "juvenil") { %>
+                    <% juvenil.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%=book.image %>" alt="book photo"> 
+                                </a>
+                                </figure>
+                                <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+
+                <% } else if (subCategory == "novelas") { %>
+                    <% novelas.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%=book.image %>" alt="book photo"> 
+                                </a>
+                                </figure>
+                                <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+
+                <% } else if (subCategory == "clásicos") { %>
+                    <% clasicos.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%=book.image %>" alt="book photo"> 
+                                </a>
+                                </figure>
+                                <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+                <% } else if (subCategory == "ciencia ficción") { %>
+                    <% cienciaFiccion.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%=book.image %>" alt="book photo"> 
+                                </a>
+                                </figure>
+                                <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+                <% } else if (subCategory == "terror") { %>
+                    <% terror.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%=book.image %>" alt="book photo"> 
+                                </a>
+                                </figure>
+                                <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+                <% } else if (subCategory == "policiales") { %>
+                    <% policiales.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%=book.image %>" alt="book photo"> 
+                                </a>
+                                </figure>
+                                <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>              
+                <% } else if (subCategory == "cuentos o relatos") { %>
+                    <% cuentosORelatos.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%=book.image %>" alt="book photo"> 
+                                </a>
+                                </figure>
+                                <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+                <% } else if (subCategory == "cómics") { %>
+                    <% comics.forEach(book => { %>
+                        <div class="col-6 col-md-3">
+                            <section class="book-container">
+                               <figure class="image-container">
+                                <a href="/books/<%=book.id%>">
+                                    <img src="/images/books/<%=book.image %>" alt="book photo"> 
+                                </a>
+                                </figure>
+                                <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                <p>$<%= book.price %></p>
+                            </section>
+                        </div>       
+                    <% }) %>
+                    <% } else if (subCategory == "novleas gráficas") { %>
+                        <% novelasGraficas.forEach(book => { %>
+                            <div class="col-6 col-md-3">
+                                <section class="book-container">
+                                   <figure class="image-container">
+                                    <a href="/books/<%=book.id%>">
+                                        <img src="/images/books/<%=book.image %>" alt="book photo"> 
+                                    </a>
+                                    </figure>
+                                    <h3><a href="/books/<%=book.id%>"><%= book.title %></a></h3>
+                                    <p>$<%= book.price %></p>
+                                </section>
+                            </div>       
+                        <% }) %>
+                <% } %>
+                
             </div>
         </div>
     </main>

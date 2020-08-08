@@ -245,6 +245,10 @@
 		margin-top:1px;
 		margin-left: 10px;
 	}
+
+	.edit-form-p{
+		margin-top: 10px;
+	}
 }
 
 
@@ -300,6 +304,10 @@
 	.marginpf1 {
 		margin-top:1px;
 		margin-left: 20px;
+	}
+
+	.edit-form-p{
+		margin-top: 10px;
 	}
 }
 

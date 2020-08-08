@@ -3,8 +3,6 @@ const router = express.Router();
 const booksController = require('../controllers/booksController');
 const multer = require('multer');
 const path = require('path');
-const logueado = require('../middleWares/estalogueado');
-const nologueado = require('../middleWares/noestalogueado');
 const admin = require('../middleWares/admin');
 
 
