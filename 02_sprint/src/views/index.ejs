@@ -12,7 +12,7 @@
       <span class="span-index">Recomendados</span>
     </div> 
     
-    <div uk-slider>
+    <div uk-slider class="slide-container">
       
       <div class="uk-position-relative">
         
@@ -26,7 +26,7 @@
                     <a href="/books/<%= book.id %>">
                       
                       
-                      <img src="/images/books/<%=book.image %>" alt="book photo">
+                      <img class="slide-img" src="/images/books/<%=book.image %>" alt="book photo">
                       <p class="clase-subtitulo"><%= book.title %></p>
                     </a>
                     
@@ -73,7 +73,7 @@
                       <a href="/books/<%= book.id %>">
                         
                         
-                        <img src="/images/books/<%=book.image %>" alt="book photo">
+                        <img class="slide-img" src="/images/books/<%=book.image %>" alt="book photo">
                         
                       </a>
                       <p class="clase-subtitulo"><%= book.title %></p>

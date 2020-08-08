@@ -28,6 +28,12 @@ body {
 } */
 
 
+.slide-img{
+  max-height: 320px;
+}
+
+
+
 /* PÁGINAS CATEGORÍAS */
 
 .containerDelBody{
@@ -144,6 +150,9 @@ p:hover{
 
 
 @media(min-width:768px){
+
+
+  /* categoría */
   .route li {
     font-size: 12px;
   }
@@ -155,6 +164,10 @@ p:hover{
 
 
 @media(min-width: 992px){
+
+
+
+  /* categoría */
   .route li {
     font-size: 14px;
   }

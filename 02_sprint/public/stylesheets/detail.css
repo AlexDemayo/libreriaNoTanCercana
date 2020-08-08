@@ -177,7 +177,7 @@ button.elm-button:hover {
 	height: 11px;
 	border-bottom: 1px solid #b9b9b9;
 	text-align: center;
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 }
 
 @media (min-width: 768px) {
