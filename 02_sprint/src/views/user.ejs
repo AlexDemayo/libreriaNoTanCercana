@@ -20,12 +20,13 @@
                       </div>
                     </form> -->
 
-
+      <% if (locals.user.admin ) { %>
         <div class="menu-profile margin">
           <a class="a-profile" id="cargar-producto" href="/books/create">Cargar Producto</a>
         </div>
+      <% } %> 
         <div class="menu-profile js-a">
-          <a class="a-profile ">Configuración</a>
+          <a class="a-profile" id="config">Configuración</a>
         </div>
         <div class="menu-profile">
           <a class="a-profile" href="#">Compras</a>
