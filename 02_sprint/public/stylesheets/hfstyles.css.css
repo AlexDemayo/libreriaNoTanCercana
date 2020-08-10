@@ -34,6 +34,24 @@ ul {
 	background-color: inherit;
 	text-decoration: underline;
 }
+
+.logout-mobile {
+	border: none;
+	color: rgb(109, 108, 108);
+	background-color: inherit;
+	font-size: 14px;
+	padding-right: 13px;
+	padding-left: 15px;
+}
+.logout-mobile:hover {
+	color: rgb(109, 108, 108);
+	background-color: inherit;
+	text-decoration: underline;
+}
+
+.logout-btn{
+	padding-right: 10px;
+}
 /*Header main */
 
 .navigation-list-inline {
@@ -345,7 +363,7 @@ input[type="submit"] {
 		display: flex;
 		flex-wrap: nowrap;
 		justify-content: flex-end;
-		width: 41%;
+		width: 46%;
 		padding-top: 20px;
 		padding-right: 45px;
 	}
