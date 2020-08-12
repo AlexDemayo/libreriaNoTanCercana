@@ -14,13 +14,15 @@
                     <div>
                         <label for="emailLog"></label>
                         <input type="email" id="emailLog" name="emailLog" class="form-input log-email" value="<%= typeof oldLogin == "undefined" ? null : oldLogin.emailLog %>" placeholder="Email">
-                       
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
                         <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.emailLog ? errorsLogin.emailLog.msg : null %></p>
                     </div>
                     <div>
                         <label for="password"></label>
                         <input type="password" id="passwordLog" name="passwordLog" class="form-input log-pass" value="" placeholder="Contraseña">
-                       
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
                         <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.passwordLog ? errorsLogin.passwordLog.msg : null %></p>
                     </div>
                     <div>
@@ -42,19 +44,27 @@
                 <form class="register regformulario-js" action="register" method="POST" value="register" enctype="multipart/form-data">
                     <div>
                         <div>
-                            <input type="text" name="userName" placeholder="Usuario *" class="form-input reg-user" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.userName %>">
+                            <input type="text" id="userReg" name="userName" placeholder="Usuario *" class="form-input reg-user" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.userName %>">
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.userName ? errorsRegister.userName.msg : null %></p>
                         </div>
                         <div>
-                            <input type="text" name="email" placeholder="Email *" class="form-input reg-email" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.email %>">
+                            <input type="text" id="emailReg" name="email" placeholder="Email *" class="form-input reg-email" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.email %>">
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.email ? errorsRegister.email.msg : null %></p>
                         </div>
                         <div>
-                            <input type="password" name="password" class="form-input reg-pass" placeholder="Contraseña *">
+                            <input type="password" id="passwordReg" name="password" class="form-input reg-pass" placeholder="Contraseña *">
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.password ? errorsRegister.password.msg : null %></p>
                         </div>
                         <div>
-                            <input type="password" name="confirmPassword" class="form-input reg-repass" placeholder="Repita la contraseña: *">
+                            <input type="password" id="rePasswordReg" name="confirmPassword" class="form-input reg-repass" placeholder="Repita la contraseña: *">
+                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-exclamation-circle"></i>
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.confirmPassword ? errorsRegister.confirmPassword.msg : null %></p>
                         </div>
                         <div>

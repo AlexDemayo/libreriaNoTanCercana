@@ -3,11 +3,48 @@
 
 /*validations css */
 .errores{
-    color:red;
+    color:#db2814;
 }
 
 .erroresR{
-    color:red;
+    color:#db2814;
+}
+
+
+.login i.fa-exclamation-circle{
+    position: absolute;
+    top: 85px;
+    right: 30px;
+    font-size: 16px;
+    color: #db2814;
+    visibility: hidden;
+}
+
+.login i.fa-check-circle{
+    position: absolute;
+    top: 85px;
+    right: 30px;
+    font-size: 16px;
+    color: green;
+    visibility: hidden;
+}
+
+.register i.fa-exclamation-circle{
+    position: absolute;
+    top: 85px;
+    right: 30px;
+    font-size: 16px;
+    color: #db2814;
+    visibility: hidden;
+}
+
+.register i.fa-check-circle{
+    position: absolute;
+    top: 85px;
+    right: 30px;
+    font-size: 16px;
+    color: green;
+    visibility: hidden;
 }
 /*validations css */
 .space {

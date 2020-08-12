@@ -9,15 +9,24 @@ window.addEventListener('load', function() {
 
         if(emaillog.value == ""){
             errores.push("El campo de email no puede estar vacio");
-            
-        }/* else if   falta validar que sea un email existente en la base de datos;*/
+            let bordercrl = document.querySelector("#emailLog");
+            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+
+            bordercrl.style.border = "2px solid #e74c3c" ;
+            hiddenicon.style.visibility = "visible";
+        }
     
 
         let passwordlog = document.querySelector("input.log-pass");
 
         if(passwordlog.value == ""){
             errores.push("El campo de contraseña no puede estar vacio");
-        } /* else if   falta validar que la contraseña matchee con usuario en la base de datos;*/
+            let bordercrl = document.querySelector("#passwordLog");
+            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+         
+            bordercrl.style.border = "2px solid #e74c3c" ;
+            hiddenicon.style.visibility = "visible";
+        } 
 
 
 

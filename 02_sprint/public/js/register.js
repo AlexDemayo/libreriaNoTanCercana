@@ -5,48 +5,116 @@ window.addEventListener('load', function() {
          let erroresR = [];
 
 
+        /* validacion de user*/
         let userreg = document.querySelector("input.reg-user");
-
+        
         if(userreg.value == ""){
             erroresR.push("El campo de usuario no puede estar vacio");
+
+            let bordercrl = document.querySelector("#userReg");
+            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+
+            bordercrl.style.border = "2px solid #e74c3c" ;
+            hiddenicon.style.visibility = "visible";
+
+
         }else if (userreg.value.length < 5 ){
             erroresR.push("El campo debe tener almenos 5 caracteres");
-        }
 
+            let bordercrl = document.querySelector("#userReg");
+            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
 
+            bordercrl.style.border = "2px solid #e74c3c" ;
+            hiddenicon.style.visibility = "visible";
+        }else if (userreg.value){
+            let bordercrl = document.querySelector("#userReg");
+            let hiddenicon = document.querySelector("i.fa-check-circle");
 
+            bordercrl.style.border = "2px solid green" ;
+            hiddenicon.style.visibility = "visible";
+        };
+
+         /* validacion de email*/
 
         let emailreg = document.querySelector("input.reg-email");
         
 
         if(emailreg.value == ""){
             erroresR.push("El campo de email no puede estar vacio");
-        }  /* else if   falta validar que sea un dato tipo email  y falta validar que no sea un email existente ya en la base de datos
-                                 Y EN LAS VALIDACIONES DEL BACK TAMBIEN FALTA*/
+            let bordercrl = document.querySelector("#emailReg");
+            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+
+            bordercrl.style.border = "2px solid #e74c3c" ;
+            hiddenicon.style.visibility = "visible";
+
+        }else if(emailreg.value.includes("@")){
+            let bordercrl = document.querySelector("#emailReg");
+            let hiddenicon = document.querySelector("i.fa-check-circle");
+
+            bordercrl.style.border = "2px solid green" ;
+            hiddenicon.style.visibility = "visible";
+        };
 
 
 
-
+          /* validacion de user*/
 
         let passwordreg = document.querySelector("input.reg-pass");
 
         if(passwordreg.value == ""){
             erroresR.push("El campo de contraseña no puede estar vacio");
+
+            let bordercrl = document.querySelector("#passwordReg");
+            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+
+            bordercrl.style.border = "2px solid #e74c3c" ;
+            hiddenicon.style.visibility = "visible";
+
         }else if (passwordreg.value.length < 8){
             erroresR.push("El campo debe tener almenos 8 caracteres");
-        }
+            let bordercrl = document.querySelector("#passwordReg");
+            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+
+            bordercrl.style.border = "2px solid #e74c3c" ;
+            hiddenicon.style.visibility = "visible";
+        }else if(passwordreg.value){
+            let bordercrl = document.querySelector("#passwordReg");
+            let hiddenicon = document.querySelector("i.fa-check-circle");
+
+            bordercrl.style.border = "2px solid green" ;
+            hiddenicon.style.visibility = "visible";
+        };
 
 
-
-
+         /* validacion de user*/
 
         let passwordrereg = document.querySelector("input.reg-repass");
 
         if(passwordrereg.value == ""){
             erroresR.push("El campo de repetir contraseña no puede estar vacio");
+
+            let bordercrl = document.querySelector("#rePasswordReg");
+            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+
+            bordercrl.style.border = "2px solid #e74c3c" ;
+            hiddenicon.style.visibility = "visible";
+
+
         }else if (passwordreg.value != passwordrereg.value){
             erroresR.push("Las contraseñas no coinciden");
-        }
+            let bordercrl = document.querySelector("#rePasswordReg");
+            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+
+            bordercrl.style.border = "2px solid #e74c3c" ;
+            hiddenicon.style.visibility = "visible";
+
+        }else if (passwordrereg.value){
+            let bordercrl = document.querySelector("#rePasswordReg");
+            let hiddenicon = document.querySelector("i.fa-check-circle");
+
+            bordercrl.style.border = "2px solid green" ;
+            hiddenicon.style.visibility = "visible";
+        };
 
 
 
