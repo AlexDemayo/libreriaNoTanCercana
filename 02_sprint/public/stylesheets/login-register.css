@@ -1,9 +1,19 @@
 
 /* Profile styling */
 
+/*validations css */
+.errores{
+    color:red;
+}
+
+.erroresR{
+    color:red;
+}
+/*validations css */
 .space {
 	padding: 30px 0;
 }
+
 
 .login input[type=email],
 .login input[type=password],
