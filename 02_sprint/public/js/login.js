@@ -4,6 +4,7 @@ window.addEventListener('load', function() {
     formulariolog.addEventListener("submit", function(event){
          let errores = [];
 
+         /* validacion de email */
         let emaillog = document.querySelector("input.log-email");
         
 
@@ -17,6 +18,7 @@ window.addEventListener('load', function() {
         }
     
 
+         /* validacion de password */
         let passwordlog = document.querySelector("input.log-pass");
 
         if(passwordlog.value == ""){

@@ -57,7 +57,7 @@ window.addEventListener('load', function() {
 
 
 
-          /* validacion de user*/
+          /* validacion de password*/
 
         let passwordreg = document.querySelector("input.reg-pass");
 
@@ -86,7 +86,7 @@ window.addEventListener('load', function() {
         };
 
 
-         /* validacion de user*/
+         /* validacion de repassword*/
 
         let passwordrereg = document.querySelector("input.reg-repass");
 
