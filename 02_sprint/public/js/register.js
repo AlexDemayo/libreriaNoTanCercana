@@ -136,6 +136,8 @@ window.addEventListener('load', function() {
 
             let ulErrores = document.querySelector("div.erroresR ul");
 
+            ulErrores.innerHTML = "";
+            
             for(let i = 0; i < erroresR.length; i++) {
 
                 ulErrores.innerHTML += "<li>" + erroresR[i] + "</li>"

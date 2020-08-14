@@ -78,10 +78,11 @@ const usersController = {
 		db.User.findOne({where: {id: req.session.user.id}})
 		.then(user => {
 			let passwordN;
+			
 			if(req.body.newPassword){
-				
 				passwordN = bcrypt.hashSync(req.body.newPassword, 10);
-			}else{
+
+			} else {
 				
 				passwordN = bcrypt.hashSync(req.body.password, 10);
 			};

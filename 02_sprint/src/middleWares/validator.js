@@ -18,7 +18,7 @@ const validator = {
         .withMessage('Campo obligatorio')
         .bail()
         .isEmail()
-        .withMessage('Email invalido')
+        .withMessage('Email inválido')
         .bail()
         .custom((value, {req}) => {
             
@@ -70,7 +70,7 @@ const validator = {
                 return false
             }
         })
-        .withMessage('Extensión invalida')
+        .withMessage('Extensión inválida')
     ],
     login: [
         body('emailLog')
@@ -83,10 +83,10 @@ const validator = {
             .then(function(user){
                 if (user) {
                     if(!bcrypt.compareSync(req.body.passwordLog, user.password)){
-                        return Promise.reject('Email o contraseña invalidos')
+                        return Promise.reject('Email o contraseña inválidos')
                     }   
                 } else {
-                    return Promise.reject('Email o contraseña invalidos')
+                    return Promise.reject('Email o contraseña inválidos')
                 }
             })
         }),
@@ -94,6 +94,63 @@ const validator = {
         body('passwordLog')
         .notEmpty()
         .withMessage('Campo obligatorio'),
+    ],
+    
+    edit: [
+        body('userName')
+        .notEmpty()
+        .withMessage('Campo obligatorio')
+        .bail()
+        .isLength({min:5})
+        .withMessage('El campo debe tener un mínimo de cinco caracteres'),
+
+        body('email')
+        .notEmpty()
+        .withMessage('Campo obligatorio')
+        .bail()
+        .isEmail()
+        .withMessage('Email inválido')
+        .bail()
+        .custom((value, {req}) => {
+ 
+            return db.User.findOne({where: {email : value}})
+             .then(function(user){
+                 console.log('Este es user: ' + !user);
+                 // console.log('Este es user negado: ' + !user)
+                 if(user){
+                     return Promise.reject('Usuario ya existente')
+                 }
+             })
+             .catch(error => {
+                 console.log(error)
+             })
+             
+         }),
+        
+        body('password')
+        .notEmpty()
+        .withMessage('Campo obligatorio')
+        .bail()
+        .isLength({ min: 8 })
+        .withMessage('La contraseña debe tener un mínimo de ocho caracteres'),
+        
+        body('newPassword')
+        .isLength({ min: 8 })
+        .withMessage('La contraseña debe tener un mínimo de ocho caracteres'),
+
+        body('confirmNewPassword')
+        .custom((value, {req}) => {
+            if(req.newPassword){
+                [ body(value).notEmpty().withMessage('Campo o') ]
+            } else {
+                return true 
+            }
+        })
+        .withMessage('Campo obligatorio')
+        .bail()
+        .custom((value, {req}) => req.body.newPassword === value)
+        .withMessage('Las contraseñas no coinciden'),
+
     ]
 }
 

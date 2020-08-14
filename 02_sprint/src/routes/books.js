@@ -4,6 +4,7 @@ const booksController = require('../controllers/booksController');
 const multer = require('multer');
 const path = require('path');
 const admin = require('../middleWares/admin');
+const bookValidator = require('../middleWares/bookValidator')
 
 
 
@@ -24,6 +25,10 @@ var upload = multer({
 
 		const ext = path.extname(file.originalname);
 
+		if (!acceptedExtensions.includes(ext)) {
+			req.file = file;
+		}
+
 		cb(null, acceptedExtensions.includes(ext));
 	}
 });
@@ -32,13 +37,13 @@ var upload = multer({
 /* Crear libro */
 
 router.get('/create', admin, booksController.createForm);
-router.post('/create', upload.single('image') ,booksController.createBook);
+router.post('/create', upload.single('image'), bookValidator.create, booksController.createBook);
 
 
 /* Editar libro */
 
 router.get('/edit/:id', admin, booksController.updateForm);
-router.post('/edit/:id', upload.single('image'), booksController.updateBook);
+router.post('/edit/:id', upload.single('image'), bookValidator.edit, booksController.updateBook);
 
 
 /* Editar libro */
