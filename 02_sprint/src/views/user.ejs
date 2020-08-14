@@ -72,7 +72,7 @@
 
       <div class="col-12 col-md-5 col-lg-7 user-info-config" style="display:none">
 
-        <form class="register edit-pf-form" action="user/update" method="POST" value="update"
+        <form class="update register edit-pf-form userform-js" action="user/update" method="POST" value="update"
           enctype="multipart/form-data">
 
           <p class="p-profile marginpf edit-form-p">Usuario</p>
@@ -80,7 +80,9 @@
             <div class="div-img user-img">
               <i class="fas fa-user"></i>
             </div>
-            <input type="text" id="userName" name="userName" class="user-menu" value="<%= user.userName %>">
+            <input type="text" id="userName" name="userName" class="user-menu user-cf" value="<%= user.userName %>">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
             <p class="error">
           </div>
 
@@ -89,7 +91,9 @@
             <div class="user-img">
               <i class="fas fa-envelope"></i>
             </div>
-            <input type="text" id="email" name="email" class="user-menu" value="<%= user.email %>">
+            <input type="text" id="email" name="email" class="user-menu email-cf" value="<%= user.email %>">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
             <p class="error"></p>
           </div>
 
@@ -98,7 +102,9 @@
             <div class="user-img">
               <i class="fas fa-key"></i>
             </div>
-            <input type="password" id="password" name="password" class="user-menu">
+            <input type="password" id="password" name="password" class="user-menu password-cf">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
             <p class="error"></p>
           </div>
 
@@ -107,7 +113,9 @@
             <div class="user-img">
               <i class="fas fa-key"></i>
             </div>
-            <input type="password" id="newPassword" name="newPassword" class="user-menu">
+            <input type="password" id="newPassword" name="newPassword" class="user-menu newpassword-cf">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
             <p class="error"></p>
           </div>
 
@@ -117,15 +125,24 @@
             <div class="user-img">
               <i class="fas fa-key"></i>
             </div>
-            <input type="password" id="confirmNewPassword" name="confirmNewPassword" class="user-menu">
+            <input type="password" id="confirmNewPassword" name="confirmNewPassword" class="user-menu repassword-cf">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
             <p class="error"></p>
           </div>
 
           <div>
 
-            <input type="file" name="image" class="avatar-input" id="avatar-input-edit">
+            <input type="file" name="image" class="avatar-input img-cf" id="avatar-input-edit">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            
           </div>
+          <div class= erroresCf>
+            <ul>
 
+            </ul>
+        </div>
           <div>
             <button type="submit" id="button-user-form">Actualizar</button>
           </div>
@@ -140,6 +157,7 @@
 
 
   <script src="/js/profile-menu.js"></script>
+  <script src="/js/userconfig.js"></script>
 </body>
 
 </html>
