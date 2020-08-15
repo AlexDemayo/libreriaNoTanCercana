@@ -14,15 +14,15 @@
                     <div>
                         <label for="emailLog"></label>
                         <input type="email" id="emailLog" name="emailLog" class="form-input log-email" value="<%= typeof oldLogin == "undefined" ? null : oldLogin.emailLog %>" placeholder="Email">
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle fa-check-emailLog"></i>
+                        <i class="fas fa-exclamation-circle fa-exclamation-emailLog"></i>
                         <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.emailLog ? errorsLogin.emailLog.msg : null %></p>
                     </div>
                     <div>
                         <label for="password"></label>
                         <input type="password" id="passwordLog" name="passwordLog" class="form-input log-pass" value="" placeholder="Contraseña">
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
+                        <i class="fas fa-check-circle fa-check-02 fa-check-passwodLog"></i>
+                        <i class="fas fa-exclamation-circle fa-exclamation-passwordLog"></i>
                         <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.passwordLog ? errorsLogin.passwordLog.msg : null %></p>
                     </div>
                     <div>
@@ -46,7 +46,7 @@
                         <div>
                             <input type="text" id="userReg" name="userName" placeholder="Usuario *" class="form-input reg-user" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.userName %>">
                             <i class="fas fa-check-circle"></i>
-                            <i class="fas fa-exclamation-circle"></i>
+                            <i class="fas fa-exclamation-circle "></i>
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.userName ? errorsRegister.userName.msg : null %></p>
                         </div>
                         <div>

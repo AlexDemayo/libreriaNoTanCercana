@@ -78,7 +78,7 @@ window.addEventListener('load', function() {
             hiddenicon.style.visibility = "visible";
 
         }else if (passwordconfig.value.length < 8){
-            erroresCf.push("El campo debe tener almenos 8 caracteres");
+            erroresCf.push("El campo debe tener al menos 8 caracteres");
             let bordercrl = document.querySelector("#newPassword");
             let hiddenicon = document.querySelector("i.fa-exclamation-circle");
 

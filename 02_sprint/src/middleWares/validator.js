@@ -140,7 +140,7 @@ const validator = {
 
         body('confirmNewPassword')
         .custom((value, {req}) => {
-            if(req.newPassword){
+            if(req.newPassword != 'undefined'){
                 [ body(value).notEmpty().withMessage('Campo o') ]
             } else {
                 return true 

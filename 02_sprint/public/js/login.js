@@ -24,7 +24,7 @@ window.addEventListener('load', function() {
         if(passwordlog.value == ""){
             errores.push("El campo de contraseña no puede estar vacio");
             let bordercrl = document.querySelector("#passwordLog");
-            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+            let hiddenicon = document.querySelector("fa-exclamation-passwordLog");
          
             bordercrl.style.border = "2px solid #e74c3c" ;
             hiddenicon.style.visibility = "visible";
@@ -37,6 +37,8 @@ window.addEventListener('load', function() {
             event.preventDefault();
 
             let ulErrores = document.querySelector("div.errores ul");
+
+            ulErrores.innerHTML = "";
 
             for(let i = 0; i < errores.length; i++) {
 

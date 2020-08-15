@@ -156,9 +156,12 @@ const productValidator = {
                 } else {
                     return false
                 }
-            } else {
+
+            } else {
                 return true
             }
+                
+        
         })
         .withMessage('Extensión inválida')
     ]
