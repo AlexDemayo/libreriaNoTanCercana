@@ -61,11 +61,30 @@ window.addEventListener('load', function() {
             hiddenicon.style.visibility = "visible";
         
         };
+
+
+
+
+
+
+
+        
         /* FALTA VALIDACION DEL BACK END QUE LA PASSWORD INGRESADA SEA 
         LA MISMA QUE LA DE LA BASE DE DATOS */
              
-        /* validacion de  New password */
 
+
+
+
+
+
+
+
+
+        /* validacion de  New password */
+       
+
+        /*     COMENTADO
         let passwordconfig = document.querySelector("input.newpassword-cf");
 
         if(passwordconfig.value == ""){
@@ -91,11 +110,16 @@ window.addEventListener('load', function() {
             bordercrl.style.border = "2px solid green" ;
             hiddenicon.style.visibility = "visible";
         };
+        */
+
+
+
+
 
         /* validaciones de New Repassword */
-
+        let passwordconfig = document.querySelector("input.newpassword-cf");
         let passwordreconfig = document.querySelector("input.repassword-cf");
-
+          /*
         if(passwordreconfig.value == ""){
             erroresCf.push("El campo de repetir contraseña no puede estar vacio");
 
@@ -105,8 +129,8 @@ window.addEventListener('load', function() {
             bordercrl.style.border = "2px solid #e74c3c" ;
             hiddenicon.style.visibility = "visible";
 
-
-        }else if (passwordconfig.value != passwordreconfig.value){
+*/
+         if (passwordconfig.value != passwordreconfig.value){
             erroresCf.push("Las contraseñas no coinciden");
             let bordercrl = document.querySelector("#confirmNewPassword");
             let hiddenicon = document.querySelector("i.fa-exclamation-circle");
@@ -126,6 +150,8 @@ window.addEventListener('load', function() {
             event.preventDefault();
 
             let ulErrores = document.querySelector("div.erroresCf ul");
+
+            ulErrores.innerHTML = "";
 
             for(let i = 0; i < erroresCf.length; i++) {
 
