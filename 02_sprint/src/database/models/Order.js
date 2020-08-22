@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
 	let Order = sequelize.define('Order', {
-		number: {
+		orderNumber: {
 			type: DataTypes.INTEGER
 		},
 		total: {

@@ -3,23 +3,26 @@ module.exports = (sequelize, DataTypes) => {
 		userId: {
 			type: DataTypes.INTEGER
 		},
-		productName: {
+		title: {
 			type: DataTypes.STRING
 		},
-		description: {
+		price: {
+			type: DataTypes.INTEGER
+		},
+		isbn: {
+			type: DataTypes.STRING
+		},
+		publisherId: {
+			type: DataTypes.INTEGER
+		},
+		image: {
 			type: DataTypes.STRING
 		},
 		quantity: {
 			type: DataTypes.INTEGER
 		},
-		price: {
-			type: DataTypes.INTEGER
-		},
 		total: {
 			type: DataTypes.INTEGER
-		},
-		image: {
-			type: DataTypes.STRING
 		},
 		status: {
 			type: DataTypes.INTEGER
