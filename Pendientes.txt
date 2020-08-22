@@ -1,0 +1,45 @@
+           *Prioridad*
+
+             sprint 05
+   --------------------
+
+backend
+validator = custom de REGISTER. revisa si el usuario ya esta registrado
+                 custom de EDIT. revisa si el email del usuario ya esta en la base
+                 custom de EDIT2 . newPassword. Si newpassword y confirmnewpassword vienen nulos seguimos con el edit.
+                 custom de EDIT3. SI NO VIENEN NULOS validar minimo de 8 caracteres en newpassword y que confirm password sea igual a newpassword
+                 custom a hacer EDIT4, agregar validacion de imagen.
+      
+front  =  iconos no estan bien llamados en el front //icono de validacion aparece solo en el primer input
+
+
+MODELO DEL CARRITO
+LOGICA DE CARRITO      (  FINDESEMANA SABADO 15:00HS  )
+API DASH BOARD
+API PARA EL FRONT .
+
+
+               sprint 06
+    --------------------
+APIS DASH BOARD
+
+API CON REACT
+
+
+             *extras*
+
+     --------------------
+
+
+LOGICAS EN LA HOME
+* NOVEDADES
+* RECOMENDADOS
+* AUTOR DEL MES
+* CATEGORIAS RECOMENDADAS
+* ESTRELLITAS EN EL DETALLE DEL PRODUCTO 
+
+
+ANCLAR ITEMS DE NAVBAR A SLIDERS DE LA HOME
+
+API PARA EL FRONT 
+
