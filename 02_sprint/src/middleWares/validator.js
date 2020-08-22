@@ -1,4 +1,4 @@
-const { body } = require('express-validator');
+const { body, oneOf } = require('express-validator');
 const path = require('path');
 const bcrypt = require('bcryptjs');
 const db = require('../database/models');
@@ -22,20 +22,15 @@ const validator = {
         .bail()
         .custom((value, {req}) => {
             
-           return db.User.findOne({where: {email : value}})
-            .then(function(user){
-                console.log('Este es user: ' + !user);
-                // console.log('Este es user negado: ' + !user)
+            return db.User.findOne({where: {email : value}})
+            .then(user => {
                 if(user){
                     return Promise.reject('Usuario ya existente')
                 }
             })
-            .catch(error => {
-                console.log(error)
-            })
             
         }),
-        
+
         body('password')
         .notEmpty()
         .withMessage('Campo obligatorio')
@@ -79,7 +74,7 @@ const validator = {
         .bail()
         .custom((value, {req}) => {
             
-           return db.User.findOne({where: {email : value}})
+            return db.User.findOne({where: {email : value}})
             .then(function(user){
                 if (user) {
                     if(!bcrypt.compareSync(req.body.passwordLog, user.password)){
@@ -96,14 +91,14 @@ const validator = {
         .withMessage('Campo obligatorio'),
     ],
     
-    edit: [
+    update: [
         body('userName')
         .notEmpty()
         .withMessage('Campo obligatorio')
         .bail()
         .isLength({min:5})
         .withMessage('El campo debe tener un mínimo de cinco caracteres'),
-
+        
         body('email')
         .notEmpty()
         .withMessage('Campo obligatorio')
@@ -112,19 +107,16 @@ const validator = {
         .withMessage('Email inválido')
         .bail()
         .custom((value, {req}) => {
- 
+        
             return db.User.findOne({where: {email : value}})
              .then(function(user){
-                 console.log('Este es user: ' + !user);
+                //  console.log('Este es user: ' + !user);
                  // console.log('Este es user negado: ' + !user)
-                 if(user){
+                 if(user && user.email != req.session.user.email){
                      return Promise.reject('Usuario ya existente')
                  }
              })
-             .catch(error => {
-                 console.log(error)
-             })
-             
+        
          }),
         
         body('password')
@@ -132,25 +124,58 @@ const validator = {
         .withMessage('Campo obligatorio')
         .bail()
         .isLength({ min: 8 })
-        .withMessage('La contraseña debe tener un mínimo de ocho caracteres'),
-        
-        body('newPassword')
-        .isLength({ min: 8 })
-        .withMessage('La contraseña debe tener un mínimo de ocho caracteres'),
-
-        body('confirmNewPassword')
+        .withMessage('La contraseña debe tener un mínimo de ocho caracteres')
         .custom((value, {req}) => {
-            if(req.newPassword != 'undefined'){
-                [ body(value).notEmpty().withMessage('Campo o') ]
-            } else {
-                return true 
-            }
-        })
-        .withMessage('Campo obligatorio')
-        .bail()
-        .custom((value, {req}) => req.body.newPassword === value)
-        .withMessage('Las contraseñas no coinciden'),
+            return db.User.findByPk(req.session.user.id)
+            .then(user => {
+                if(!bcrypt.compareSync(value, user.password)){
+                    return Promise.reject("Contraseña incorrecta");
+                }
+            })
+        }),
+        
+        body('image')
+        .custom((value, {req}) => {
+            
+            if(req.file){
+                const acceptedExtensions = ['.jpg', '.png', '.jpeg'];
+                const ext = path.extname(req.file.originalname);
+                
+                if(acceptedExtensions.includes(ext)){
+                    return true
+                } else {
+                    return false
+                }
 
+            } else {
+                return true
+            }
+                
+        
+        })
+        .withMessage('Extensión inválida')
+
+        // body('newPassword')
+        // .custom((value, {req}) => {
+        //     if(value !== 'undefined'){
+        //         body(value).notEmpty()
+        //         .withMessage('Campo obligatorio')
+        //         .bail()
+        //         body(value).isLength({ min: 8 })
+        //         .withMessage('La contraseña debe tener un mínimo de ocho caracteres')
+        //     } else {
+        //         true
+        //     }
+        // }),
+
+        // body('confirmNewPassword')
+        // .custom((value, {req}) => {
+        //     if(value !== req.body.newPassword){
+        //         throw new Error('Las contraseñas no coinciden')
+        //     }
+        // })
+        
+        
     ]
 }
 

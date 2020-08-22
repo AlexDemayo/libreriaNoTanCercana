@@ -117,8 +117,8 @@ window.addEventListener('load', function() {
 
 
         /* validaciones de New Repassword */
-        let passwordconfig = document.querySelector("input.newpassword-cf");
-        let passwordreconfig = document.querySelector("input.repassword-cf");
+        // let passwordconfig = document.querySelector("input.newpassword-cf");
+        // let passwordreconfig = document.querySelector("input.repassword-cf");
           /*
         if(passwordreconfig.value == ""){
             erroresCf.push("El campo de repetir contraseña no puede estar vacio");
@@ -130,21 +130,21 @@ window.addEventListener('load', function() {
             hiddenicon.style.visibility = "visible";
 
 */
-         if (passwordconfig.value != passwordreconfig.value){
-            erroresCf.push("Las contraseñas no coinciden");
-            let bordercrl = document.querySelector("#confirmNewPassword");
-            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+        //  if (passwordconfig.value != passwordreconfig.value){
+        //     erroresCf.push("Las contraseñas no coinciden");
+        //     let bordercrl = document.querySelector("#confirmNewPassword");
+        //     let hiddenicon = document.querySelector("i.fa-exclamation-circle");
 
-            bordercrl.style.border = "2px solid #e74c3c" ;
-            hiddenicon.style.visibility = "visible";
+        //     bordercrl.style.border = "2px solid #e74c3c" ;
+        //     hiddenicon.style.visibility = "visible";
 
-        }else if (passwordreconfig.value){
-            let bordercrl = document.querySelector("#confirmNewPassword");
-            let hiddenicon = document.querySelector("i.fa-check-circle");
+        // }else if (passwordreconfig.value){
+        //     let bordercrl = document.querySelector("#confirmNewPassword");
+        //     let hiddenicon = document.querySelector("i.fa-check-circle");
 
-            bordercrl.style.border = "2px solid green" ;
-            hiddenicon.style.visibility = "visible";
-        };
+        //     bordercrl.style.border = "2px solid green" ;
+        //     hiddenicon.style.visibility = "visible";
+        // };
 
         if (erroresCf.length > 0) {
             event.preventDefault();

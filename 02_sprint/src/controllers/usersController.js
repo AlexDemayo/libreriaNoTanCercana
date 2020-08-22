@@ -9,6 +9,8 @@ const usersController = {
 	register: function(req,res){
 		const errors = validationResult(req);
 
+		// return res.send(errors.mapped());
+
         if(errors.isEmpty()){
             req.body.password = bcrypt.hashSync(req.body.password, 10);
 
@@ -21,9 +23,10 @@ const usersController = {
 				orderId: null,
 				image: req.file.filename
 				
-			});
+			})
+			.then(() => res.redirect('/'));
 			
-            return res.redirect('/')
+            
         } else {
 			return res.render('login-register', { errorsRegister: errors.mapped(), oldRegister: req.body});
 		}
@@ -74,32 +77,43 @@ const usersController = {
 	},
 
 	update: function(req,res){
+		
+		const errors = validationResult(req);
+		// return res.send(errors.mapped());
 
-		db.User.findOne({where: {id: req.session.user.id}})
-		.then(user => {
-			let passwordN;
-			
-			if(req.body.newPassword){
-				passwordN = bcrypt.hashSync(req.body.newPassword, 10);
-
-			} else {
+		if (errors.isEmpty()){
+			db.User.findOne({where: {id: req.session.user.id}})
+			.then(user => {
+				let passwordN;
 				
-				passwordN = bcrypt.hashSync(req.body.password, 10);
-			};
+				if(req.body.newPassword){
+					passwordN = bcrypt.hashSync(req.body.newPassword, 10);
+				} else {
+					passwordN = bcrypt.hashSync(req.body.password, 10);
+				};
+	
+				return db.User.update({
+					userName: req.body.userName,
+					email: req.body.email,
+					password: passwordN,
+					image: req.file ? req.file.filename : user.image
+				},{
+					where: {
+						id : req.session.user.id
+					}
+				});
+			})
+			.then(() => res.redirect('/users/user'))
+			.catch(err => console.log(err))
 
-			return db.User.update({
-				userName: req.body.userName,
-				email: req.body.email,
-				password: passwordN,
-				image: req.file ? req.file.filename : user.image
-			},{
-				where: {
-					id : req.session.user.id
-				}
-			});
-		})
-		.then(() => res.redirect('/users/user'))
-		.catch(err => console.log(err))
+		} else {
+			db.User.findOne({where: {id: req.session.user.id}})
+			.then((user) => {
+				return res.render('user', {user, errors: errors.mapped(), old: req.body});
+			})
+		};
+		
+		
 	},
 
 	deleteUser: function(req,res){
@@ -116,8 +130,6 @@ const usersController = {
         })
         return res.redirect('/')
     }
-
-
 
 
 };

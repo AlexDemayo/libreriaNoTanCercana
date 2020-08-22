@@ -34,14 +34,13 @@ var upload = multer({
 
 router.get('/login-register', loggedIn.logged ,usersController.logYreg);
 router.get('/user', loggedIn.noLogged, usersController.user);
+
 router.post('/register', upload.single('image'), validator.register, usersController.register);
 router.post('/login', validator.login, usersController.login);
 router.post('/logout', usersController.logout);
-router.post('/user/update', upload.single('image'), usersController.update);
+router.post('/user', upload.single('image'), validator.update, usersController.update);
 router.post('/deleteUser/:id', usersController.deleteUser);
 
 
-
-// router.post('/user/updateImg', upload.single('image'), usersController.updateImg);
 
 module.exports = router;

@@ -43,7 +43,7 @@ router.post('/create', upload.single('image'), bookValidator.create, booksContro
 /* Editar libro */
 
 router.get('/edit/:id', admin, booksController.updateForm);
-router.post('/edit/:id', upload.single('image'), bookValidator.edit, booksController.updateBook);
+router.post('/edit/:id', upload.single('image'), bookValidator.update, booksController.updateBook);
 
 
 /* Editar libro */

@@ -72,7 +72,7 @@
 
       <div class="col-12 col-md-5 col-lg-7 user-info-config" style="display:none">
 
-        <form class="update register edit-pf-form userform-js" action="user/update" method="POST" value="update"
+        <form class="update register edit-pf-form userform-js" action="/users/user" method="POST" value="update"
           enctype="multipart/form-data">
 
           <p class="p-profile marginpf edit-form-p">Usuario</p>
@@ -80,22 +80,24 @@
             <div class="div-img user-img">
               <i class="fas fa-user"></i>
             </div>
-            <input type="text" id="userName" name="userName" class="user-menu user-cf" value="<%= user.userName %>">
+            <input type="text" id="userName" name="userName" class="user-menu user-cf" value="<%= typeof old == "undefined" ? user.userName : old.userName %>">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <p class="error">
           </div>
+          <p class="error"><%= typeof errors == 'undefined' ? null : errors.userName ? errors.userName.msg : null %></p>
 
           <p class="p-profile marginpf edit-form-p">Email</p>
           <div class="user-div">
             <div class="user-img">
               <i class="fas fa-envelope"></i>
             </div>
-            <input type="text" id="email" name="email" class="user-menu email-cf" value="<%= user.email %>">
+            <input type="text" id="email" name="email" class="user-menu email-cf" value="<%= typeof old == "undefined" ? user.email : old.email %>">
             <i class="fas fa-check-circle"></i>
             <i class="fas fa-exclamation-circle"></i>
             <p class="error"></p>
           </div>
+          <p class="error"><%= typeof errors == 'undefined' ? null : errors.email ? errors.email.msg : null %></p>
 
           <p class="p-profile marginpf edit-form-p">Contraseña</p>     
           <div class="user-div">
@@ -107,8 +109,9 @@
             <i class="fas fa-exclamation-circle"></i>
             <p class="error"></p>
           </div>
+          <p class="error"><%= typeof errors == 'undefined' ? null : errors.password ? errors.password.msg : null %></p>
 
-          <p class="p-profile marginpf edit-form-p">Nueva contraseña</p>
+          <!-- <p class="p-profile marginpf edit-form-p">Nueva contraseña</p>
           <div class="user-div">
             <div class="user-img">
               <i class="fas fa-key"></i>
@@ -118,6 +121,7 @@
             <i class="fas fa-exclamation-circle"></i>
             <p class="error"></p>
           </div>
+          <p class="error"><%= //typeof errors == 'undefined' ? null : errors.newPassword ? errors.newPassword.msg : null %></p>
 
 
           <p class="p-profile marginpf edit-form-p">Repetir nueva contraseña</p>
@@ -130,7 +134,8 @@
             <i class="fas fa-exclamation-circle"></i>
             <p class="error"></p>
           </div>
-
+          <p class="error"><%= //typeof errors == 'undefined' ? null : errors.confirmNewPassword ? errors.confirmNewPassword.msg : null %></p> -->
+          
           <div>
 
             <input type="file" name="image" class="avatar-input img-cf" id="avatar-input-edit">

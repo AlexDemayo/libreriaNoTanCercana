@@ -87,7 +87,7 @@ const productValidator = {
         
     ],
 
-    edit: [
+    update: [
         body('title')
         .notEmpty()
         .withMessage('Campo obligatorio'),
@@ -147,7 +147,7 @@ const productValidator = {
         body('image')
         .custom((value, {req}) => {
             
-            if(value){
+            if(req.file){
                 const acceptedExtensions = ['.jpg', '.png', '.jpeg'];
                 const ext = path.extname(req.file.originalname);
                 
