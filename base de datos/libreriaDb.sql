@@ -45,12 +45,12 @@ CREATE table publishers(
 CREATE table items(
 	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     userId INT UNSIGNED,
-    productName VARCHAR(50),
-    description VARCHAR(50),
-    quantity SMALLINT UNSIGNED,
-    price INT UNSIGNED,
-    total INT UNSIGNED,
+	title VARCHAR(100) NOT NULL,
+    price FLOAT UNSIGNED,
+    isbn VARCHAR(100),
     image VARCHAR(50),
+    quantity SMALLINT UNSIGNED,
+    total FLOAT UNSIGNED,
     status INT UNSIGNED,
     orderId INT UNSIGNED,
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -60,8 +60,8 @@ CREATE table items(
 
 CREATE table orders(
 	id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    number INT UNSIGNED,
-    total INT UNSIGNED,
+    orderNumber INT UNSIGNED,
+    total FLOAT UNSIGNED,
     userId INT UNSIGNED,
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
     updatedAt DATETIME ON UPDATE CURRENT_TIMESTAMP, 
@@ -120,3 +120,10 @@ AFTER orderId;
 
 ALTER TABLE `libreriadb`.`users` 
 CHANGE COLUMN `password` `password` VARCHAR(200) NOT NULL ;
+
+ALTER TABLE items
+ADD publisherId INT UNSIGNED NOT NULL
+AFTER isbn;
+
+ALTER TABLE items
+ADD FOREIGN KEY (publisherId) REFERENCES publishers(id);

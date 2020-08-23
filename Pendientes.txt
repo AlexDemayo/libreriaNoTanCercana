@@ -4,11 +4,7 @@
    --------------------
 
 backend
-validator = custom de REGISTER. revisa si el usuario ya esta registrado
-                 custom de EDIT. revisa si el email del usuario ya esta en la base
-                 custom de EDIT2 . newPassword. Si newpassword y confirmnewpassword vienen nulos seguimos con el edit.
-                 custom de EDIT3. SI NO VIENEN NULOS validar minimo de 8 caracteres en newpassword y que confirm password sea igual a newpassword
-                 custom a hacer EDIT4, agregar validacion de imagen.
+Formulario cambiar contraseña: vista + ruta + controlador + validator
       
 front  =  iconos no estan bien llamados en el front //icono de validacion aparece solo en el primer input
 
