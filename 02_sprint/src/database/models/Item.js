@@ -43,12 +43,16 @@ module.exports = (sequelize, DataTypes) => {
     
 	Item.associate = function(models) {
 		Item.belongsTo(models.User, {
-			as: 'User',
+			as: 'user',
 			foreignKey: 'userId'
 		}),
 		Item.belongsTo(models.Order, {
 			as: 'order',
 			foreignKey: 'orderId'
+		}),
+		Item.belongsTo(models.Publisher, {
+			as: 'publisher',
+			foreignKey: 'publisherId'
 		});
 	};
 

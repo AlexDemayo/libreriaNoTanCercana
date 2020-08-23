@@ -1,6 +1,7 @@
 const db = require('../database/models');
 const bcrypt = require('bcryptjs');
 const { validationResult } = require('express-validator');
+const { response } = require('express');
 
 const usersController = {
 	logYreg: function(req, res) {
@@ -129,7 +130,59 @@ const usersController = {
             }
         })
         return res.redirect('/')
-    }
+	},
+	
+	cart: function(req,res){
+        db.Item.findAll({
+			where: {
+				status: 1,
+				userId: req.session.user.id
+			},
+			include: ['publisher']
+		})
+		.then(items => {
+			return res.render('cart', {items})
+		})
+		.catch(error => console.log(error))
+	},
+	
+	addToCart: function(req,res){
+		
+		db.Product.findByPk(req.body.productId,{
+			include: ['publisher']
+		})
+		.then(product => {
+			return db.Item.create({
+				userId: req.session.user.id,
+				title: product.title,
+				price: product.price,
+				isbn: product.isbn,
+				publisherId: product.publisher.id,
+				image: product.image,
+				quantity: req.body.quantity,
+				total: product.price * req.body.quantity,
+				status: 1,
+				orderId: null,
+			})
+		})
+		.then(item => {
+			return res.redirect('/users/cart');
+		})
+		.catch(error => console.log(error))
+		
+	},
+
+	deleteFromCart: function(req,res){
+		db.Item.destroy({
+			where: {
+				id: req.body.itemId,
+			},
+			force: true
+		})
+		.then(() => {
+			return res.redirect('cart')
+		})
+	}
 
 
 };

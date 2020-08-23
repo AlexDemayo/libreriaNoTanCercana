@@ -8,7 +8,7 @@ const session = require('express-session');
 const indexRouter = require('./routes/index');
 const booksController = require('./routes/books');
 const categoryRouter = require('./routes/category')
-const cartRouter = require('./routes/cart');
+// const cartRouter = require('./routes/cart');
 const usersRouter = require('./routes/users');
 
 const log = require('./middleWares/log');
@@ -34,7 +34,7 @@ app.use(log);
 app.use('/', indexRouter);
 app.use('/books', booksController);
 app.use('/category', categoryRouter);
-app.use('/cart', cartRouter);
+// app.use('/cart', cartRouter);
 app.use('/users', usersRouter);
 
 

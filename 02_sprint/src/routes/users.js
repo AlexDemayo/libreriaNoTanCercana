@@ -34,12 +34,16 @@ var upload = multer({
 
 router.get('/login-register', loggedIn.logged ,usersController.logYreg);
 router.get('/user', loggedIn.noLogged, usersController.user);
+router.get('/cart', usersController.cart);
+
 
 router.post('/register', upload.single('image'), validator.register, usersController.register);
 router.post('/login', validator.login, usersController.login);
 router.post('/logout', usersController.logout);
 router.post('/user', upload.single('image'), validator.update, usersController.update);
 router.post('/deleteUser/:id', usersController.deleteUser);
+router.post('/cart', usersController.addToCart);
+router.post('/cart/delete', usersController.deleteFromCart);
 
 
 

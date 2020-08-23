@@ -39,9 +39,12 @@
                     </div>
                     <% if (!locals.user.admin ) { %>
                     <div class="book-buy">
-                        <label for="quantity" id="quantity">Cantidad</label>
-                        <input type="number" name="quantity" value="1" min="1">
-                        <button type="submit">Agregar al carrito</button>
+                        <form action="/users/cart" method="POST">
+                            <label for="quantity" id="quantity">Cantidad</label>
+                            <input type="number" name="quantity" value="1" min="1">
+                            <input type="hidden" name="productId" value=<%= book.id %> >
+                            <button type="submit">Agregar al carrito</button>
+                        </form>
                     </div>
                     <% } else { %>
                     <div class="book-adm">

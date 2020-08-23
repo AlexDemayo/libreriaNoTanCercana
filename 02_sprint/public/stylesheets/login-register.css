@@ -64,6 +64,7 @@
 	text-indent: 10px;
 	margin-bottom: 15px;
 	padding: 0px;
+	margin-top: 0px;
 }
 
 .login input[type=checkbox] {
