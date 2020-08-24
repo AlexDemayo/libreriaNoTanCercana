@@ -36,7 +36,6 @@ router.get('/login-register', loggedIn.logged ,usersController.logYreg);
 router.get('/user', loggedIn.noLogged, usersController.user);
 router.get('/cart', usersController.cart);
 
-
 router.post('/register', upload.single('image'), validator.register, usersController.register);
 router.post('/login', validator.login, usersController.login);
 router.post('/logout', usersController.logout);

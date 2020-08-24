@@ -127,3 +127,10 @@ AFTER isbn;
 
 ALTER TABLE items
 ADD FOREIGN KEY (publisherId) REFERENCES publishers(id);
+
+ALTER TABLE orders
+ADD itemId INT UNSIGNED NOT NULL
+AFTER userId;
+
+ALTER TABLE orders
+ADD FOREIGN KEY (itemId) REFERENCES items(id)

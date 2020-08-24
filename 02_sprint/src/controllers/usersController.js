@@ -133,7 +133,7 @@ const usersController = {
 	},
 	
 	cart: function(req,res){
-        db.Item.findAll({
+         db.Item.findAll({
 			where: {
 				status: 1,
 				userId: req.session.user.id
@@ -182,8 +182,7 @@ const usersController = {
 		.then(() => {
 			return res.redirect('cart')
 		})
-	}
-
+	},
 
 };
 
