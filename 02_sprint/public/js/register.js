@@ -6,13 +6,13 @@ window.addEventListener('load', function() {
 
 
         /* validacion de user*/
-        let userreg = document.querySelector("input.reg-user");
+        let userreg = document.querySelector("form.regformulario-js input.reg-user");
         
         if(userreg.value == ""){
             erroresR.push("El campo de usuario no puede estar vacio");
 
-            let bordercrl = document.querySelector("#userReg");
-            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+            let bordercrl = document.querySelector("form.regformulario-js #userReg");
+            let hiddenicon = document.querySelector("form.regformulario-js i.fa-exclamation-circle");
 
             bordercrl.style.border = "2px solid #e74c3c" ;
             hiddenicon.style.visibility = "visible";
@@ -21,14 +21,14 @@ window.addEventListener('load', function() {
         }else if (userreg.value.length < 5 ){
             erroresR.push("El campo debe tener almenos 5 caracteres");
 
-            let bordercrl = document.querySelector("#userReg");
-            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+            let bordercrl = document.querySelector("form.regformulario-js #userReg");
+            let hiddenicon = document.querySelector("form.regformulario-js  i.fa-exclamation-circle");
 
             bordercrl.style.border = "2px solid #e74c3c" ;
             hiddenicon.style.visibility = "visible";
         }else if (userreg.value){
-            let bordercrl = document.querySelector("#userReg");
-            let hiddenicon = document.querySelector("i.fa-check-circle");
+            let bordercrl = document.querySelector("form.regformulario-js #userReg");
+            let hiddenicon = document.querySelector("form.regformulario-js i.fa-check-circle");
 
             bordercrl.style.border = "2px solid green" ;
             hiddenicon.style.visibility = "visible";
@@ -36,20 +36,20 @@ window.addEventListener('load', function() {
 
          /* validacion de email*/
 
-        let emailreg = document.querySelector("input.reg-email");
+        let emailreg = document.querySelector("form.regformulario-js input.reg-email");
         
 
         if(emailreg.value == ""){
             erroresR.push("El campo de email no puede estar vacio");
-            let bordercrl = document.querySelector("#emailReg");
-            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+            let bordercrl = document.querySelector("form.regformulario-js #emailReg");
+            let hiddenicon = document.querySelector("form.regformulario-js i.fa-exclamation-circle");
 
             bordercrl.style.border = "2px solid #e74c3c" ;
             hiddenicon.style.visibility = "visible";
 
         }else if(emailreg.value.includes("@")){
-            let bordercrl = document.querySelector("#emailReg");
-            let hiddenicon = document.querySelector("i.fa-check-circle");
+            let bordercrl = document.querySelector("form.regformulario-js #emailReg");
+            let hiddenicon = document.querySelector("form.regformulario-js i.fa-check-circle");
 
             bordercrl.style.border = "2px solid green" ;
             hiddenicon.style.visibility = "visible";
@@ -59,27 +59,27 @@ window.addEventListener('load', function() {
 
           /* validacion de password*/
 
-        let passwordreg = document.querySelector("input.reg-pass");
+        let passwordreg = document.querySelector("form.regformulario-js input.reg-pass");
 
         if(passwordreg.value == ""){
             erroresR.push("El campo de contraseña no puede estar vacio");
 
-            let bordercrl = document.querySelector("#passwordReg");
-            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+            let bordercrl = document.querySelector("form.regformulario-js #passwordReg");
+            let hiddenicon = document.querySelector("form.regformulario-js i.fa-exclamation-circle");
 
             bordercrl.style.border = "2px solid #e74c3c" ;
             hiddenicon.style.visibility = "visible";
 
         }else if (passwordreg.value.length < 8){
             erroresR.push("El campo debe tener almenos 8 caracteres");
-            let bordercrl = document.querySelector("#passwordReg");
-            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+            let bordercrl = document.querySelector("form.regformulario-js #passwordReg");
+            let hiddenicon = document.querySelector("form.regformulario-js i.fa-exclamation-circle");
 
             bordercrl.style.border = "2px solid #e74c3c" ;
             hiddenicon.style.visibility = "visible";
         }else if(passwordreg.value){
-            let bordercrl = document.querySelector("#passwordReg");
-            let hiddenicon = document.querySelector("i.fa-check-circle");
+            let bordercrl = document.querySelector("form.regformulario-js #passwordReg");
+            let hiddenicon = document.querySelector("form.regformulario-js i.fa-check-circle");
 
             bordercrl.style.border = "2px solid green" ;
             hiddenicon.style.visibility = "visible";
@@ -88,13 +88,13 @@ window.addEventListener('load', function() {
 
          /* validacion de repassword*/
 
-        let passwordrereg = document.querySelector("input.reg-repass");
+        let passwordrereg = document.querySelector("form.regformulario-js input.reg-repass");
 
         if(passwordrereg.value == ""){
             erroresR.push("El campo de repetir contraseña no puede estar vacio");
 
-            let bordercrl = document.querySelector("#rePasswordReg");
-            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+            let bordercrl = document.querySelector("form.regformulario-js #rePasswordReg");
+            let hiddenicon = document.querySelector("form.regformulario-js i.fa-exclamation-circle");
 
             bordercrl.style.border = "2px solid #e74c3c" ;
             hiddenicon.style.visibility = "visible";
@@ -102,15 +102,15 @@ window.addEventListener('load', function() {
 
         }else if (passwordreg.value != passwordrereg.value){
             erroresR.push("Las contraseñas no coinciden");
-            let bordercrl = document.querySelector("#rePasswordReg");
-            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+            let bordercrl = document.querySelector("form.regformulario-js #rePasswordReg");
+            let hiddenicon = document.querySelector("form.regformulario-js i.fa-exclamation-circle");
 
             bordercrl.style.border = "2px solid #e74c3c" ;
             hiddenicon.style.visibility = "visible";
 
         }else if (passwordrereg.value){
-            let bordercrl = document.querySelector("#rePasswordReg");
-            let hiddenicon = document.querySelector("i.fa-check-circle");
+            let bordercrl = document.querySelector("form.regformulario-js #rePasswordReg");
+            let hiddenicon = document.querySelector("form.regformulario-js i.fa-check-circle");
 
             bordercrl.style.border = "2px solid green" ;
             hiddenicon.style.visibility = "visible";
@@ -120,7 +120,7 @@ window.addEventListener('load', function() {
 
 
 
-        let imagereg = document.querySelector("input.reg-img");
+        let imagereg = document.querySelector("form.regformulario-js input.reg-img");
 
         if(imagereg.value == ""){
             erroresR.push("Imagen de perfil obligatoria ");
