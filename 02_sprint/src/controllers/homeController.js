@@ -5,9 +5,12 @@ const db = require('../database/models');
 
 const homeController = {
 	root: function(req, res) {
-		db.Product.findAll()
-		.then(books => {
-			return res.render('index', {books})
+		let books = db.Product.findAll();
+		let lastBooks = db.Product.findAll({ order: [['id', 'DESC']] });
+
+		Promise.all([books, lastBooks])
+		.then(([books, lastBooks]) => {
+			return res.render('index', {books, lastBooks})
 		})
 		.catch(error => {
 			console.log(error)

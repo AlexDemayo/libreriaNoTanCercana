@@ -155,6 +155,7 @@ const usersController = {
 			return db.Item.create({
 				userId: req.session.user.id,
 				title: product.title,
+				author: product.author,
 				price: product.price,
 				isbn: product.isbn,
 				publisherId: product.publisher.id,
@@ -180,9 +181,52 @@ const usersController = {
 			force: true
 		})
 		.then(() => {
-			return res.redirect('cart')
+			return res.redirect('/users/cart')
 		})
 	},
+
+	shop: function(req,res){
+
+		let totalPrice = 0;
+
+		db.Item.findAll({
+			where:{
+				status: 1,
+				userId: req.session.user.id
+			}
+		})
+		.then(items => {
+			items.forEach(item => {
+				totalPrice = totalPrice + item.price
+			})
+
+			return db.Order.findOne({
+				order: [['createdAt', 'DESC']]
+			})
+		})
+		.then(order => {
+			return db.Order.create({
+				orderNumber: order ? order.orderNumber + 1 : 1000,
+				total: totalPrice,
+				userId: req.session.user.id 
+			})
+		})
+		.then(order => {
+			return db.Item.update({
+				status: 0,
+				orderId: order.id
+			},{
+				where: {
+					status: 1,
+					userId: req.session.user.id
+				}
+			})
+		})
+		.then(() => {
+			return res.redirect('/users/user')
+		})
+		.catch(err => console.log(err));
+	}
 
 };
 

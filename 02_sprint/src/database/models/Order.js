@@ -9,9 +9,6 @@ module.exports = (sequelize, DataTypes) => {
 		userId: {
 			type: DataTypes.INTEGER
 		},
-		itemId: {
-			type: DataTypes.INTEGER
-		},
 		createdAt: {
 			type: DataTypes.DATE
 		},
@@ -30,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
 		}),
 		Order.hasMany(models.Item, {
 			as: 'items',
-			foreignKey: 'itemId'
+			foreignKey: 'orderId'
 		});
 	};
 
