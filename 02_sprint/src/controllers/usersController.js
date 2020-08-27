@@ -226,7 +226,22 @@ const usersController = {
 			return res.redirect('/users/user')
 		})
 		.catch(err => console.log(err));
-	}
+    },
+    
+
+    shoppingHistory: function(req,res){
+        db.Item.findAll({
+           where: {
+               status: 0,
+               userId: req.session.user.id
+           },
+           include: ['publisher']
+       })
+       .then(items => {
+           return res.render('shoppingHistory', {items})
+       })
+       .catch(error => console.log(error))
+   }
 
 };
 

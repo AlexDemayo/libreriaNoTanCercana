@@ -10,8 +10,8 @@ window.addEventListener('load', function() {
 
         if(emaillog.value == ""){
             errores.push("El campo de email no puede estar vacio");
-            let bordercrl = document.querySelector("#emailLog");
-            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+            let bordercrl = document.querySelector("#emailLog input");
+            let hiddenicon = document.querySelector("#emailLog i.fa-exclamation-circle");
 
             bordercrl.style.border = "2px solid #e74c3c" ;
             hiddenicon.style.visibility = "visible";
@@ -23,8 +23,8 @@ window.addEventListener('load', function() {
 
         if(passwordlog.value == ""){
             errores.push("El campo de contraseña no puede estar vacio");
-            let bordercrl = document.querySelector("#passwordLog");
-            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+            let bordercrl = document.querySelector("#passwordLog input");
+            let hiddenicon = document.querySelector("#passwordLog i.fa-exclamation-circle");
          
             bordercrl.style.border = "2px solid #e74c3c" ;
             hiddenicon.style.visibility = "visible";

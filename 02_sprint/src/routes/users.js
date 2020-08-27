@@ -35,6 +35,7 @@ var upload = multer({
 router.get('/login-register', loggedIn.logged ,usersController.logYreg);
 router.get('/user', loggedIn.noLogged, usersController.user);
 router.get('/cart', loggedIn.noLogged, usersController.cart);
+router.get('/shoppingHistory', loggedIn.noLogged, usersController.shoppingHistory);
 
 router.post('/register', upload.single('image'), validator.register, usersController.register);
 router.post('/login', validator.login, usersController.login);
@@ -44,6 +45,5 @@ router.post('/deleteUser/:id', usersController.deleteUser);
 router.post('/cart', usersController.addToCart);
 router.post('/cart/delete', usersController.deleteFromCart);
 router.post('/shop', usersController.shop);
-
 
 module.exports = router;
