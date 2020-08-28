@@ -160,91 +160,64 @@
         </form>
 
 
-        <div class="col-12 col-md-5 col-lg-7 user-password-config" style="display:none">
-
-            <form class="update register edit-pf-form userform-js" action="/users/user" method="POST" value="update"
-              enctype="multipart/form-data">
-    
-              <p class="p-profile marginpf edit-form-p">Usuario</p>
-              <div class="user-div">
-                <div class="div-img user-img">
-                  <i class="fas fa-user"></i>
-                </div>
-                <input type="text" id="userName" name="userName" class="user-menu user-cf" value="<%= typeof old == "undefined" ? user.userName : old.userName %>">
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <p class="error">
-              </div>
-              <p class="error"><%= typeof errors == 'undefined' ? null : errors.userName ? errors.userName.msg : null %></p>
-    
-              <p class="p-profile marginpf edit-form-p">Email</p>
-              <div class="user-div">
-                <div class="user-img">
-                  <i class="fas fa-envelope"></i>
-                </div>
-                <input type="text" id="email" name="email" class="user-menu email-cf" value="<%= typeof old == "undefined" ? user.email : old.email %>">
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <p class="error"></p>
-              </div>
-              <p class="error"><%= typeof errors == 'undefined' ? null : errors.email ? errors.email.msg : null %></p>
-    
-              <p class="p-profile marginpf edit-form-p">Contraseña</p>     
-              <div class="user-div">
-                <div class="user-img">
-                  <i class="fas fa-key"></i>
-                </div>
-                <input type="password" id="password" name="password" class="user-menu password-cf">
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <p class="error"></p>
-              </div>
-              <p class="error"><%= typeof errors == 'undefined' ? null : errors.password ? errors.password.msg : null %></p>
-    
-              <!-- <p class="p-profile marginpf edit-form-p">Nueva contraseña</p>
-              <div class="user-div">
-                <div class="user-img">
-                  <i class="fas fa-key"></i>
-                </div>
-                <input type="password" id="newPassword" name="newPassword" class="user-menu newpassword-cf">
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <p class="error"></p>
-              </div>
-              <p class="error"><%= //typeof errors == 'undefined' ? null : errors.newPassword ? errors.newPassword.msg : null %></p>
-    
-    
-              <p class="p-profile marginpf edit-form-p">Repetir nueva contraseña</p>
-              <div class="user-div">
-                <div class="user-img">
-                  <i class="fas fa-key"></i>
-                </div>
-                <input type="password" id="confirmNewPassword" name="confirmNewPassword" class="user-menu repassword-cf">
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                <p class="error"></p>
-              </div>
-              <p class="error"><%= //typeof errors == 'undefined' ? null : errors.confirmNewPassword ? errors.confirmNewPassword.msg : null %></p> -->
-              
-              <div>
-    
-                <input type="file" name="image" class="avatar-input img-cf" id="avatar-input-edit">
-                <i class="fas fa-check-circle"></i>
-                <i class="fas fa-exclamation-circle"></i>
-                
-              </div>
-              <div class= erroresCf>
-                <ul>
-    
-                </ul>
-            </div>
-              <div>
-                <button type="submit" id="button-user-form">Actualizar</button>
-              </div>
-            </form>
-           
-      </div>
+        
     </div>
+       
+
+    <div class="col-12 col-md-5 col-lg-7 user-password-config" style="display:none">
+
+        <form class="update register edit-pf-form userform-js" action="/users/user" method="POST" value="update">
+
+        
+          <p class="p-profile marginpf edit-form-p">Contraseña</p>     
+          <div class="user-div">
+            <div class="user-img">
+              <i class="fas fa-key"></i>
+            </div>
+            <input type="password" id="password" name="password" class="user-menu password-cf">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <p class="error"></p>
+          </div>
+          <p class="error"><%= typeof errors == 'undefined' ? null : errors.password ? errors.password.msg : null %></p>
+
+          <p class="p-profile marginpf edit-form-p">Nueva contraseña</p>
+          <div class="user-div">
+            <div class="user-img">
+              <i class="fas fa-key"></i>
+            </div>
+            <input type="password" id="newPassword" name="newPassword" class="user-menu newpassword-cf">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <p class="error"></p>
+          </div>
+          <p class="error"><%= typeof errors == 'undefined' ? null : errors.newPassword ? errors.newPassword.msg : null %></p>
+
+
+          <p class="p-profile marginpf edit-form-p">Repetir nueva contraseña</p>
+          <div class="user-div">
+            <div class="user-img">
+              <i class="fas fa-key"></i>
+            </div>
+            <input type="password" id="confirmNewPassword" name="confirmNewPassword" class="user-menu repassword-cf">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <p class="error"></p>
+          </div>
+          <p class="error"><%= typeof errors == 'undefined' ? null : errors.confirmNewPassword ? errors.confirmNewPassword.msg : null %></p> 
+          
+
+          <div class= erroresCf>
+            <ul>
+
+            </ul>
+        </div>
+          <div>
+            <button type="submit" id="button-user-form">Actualizar</button>
+          </div>
+        </form>
+       
+  </div>
   </div>
   <%- include('partials/footer') %>
 
