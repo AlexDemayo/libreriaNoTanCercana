@@ -227,11 +227,16 @@
 #avatar-input-edit{
 	width: 80%;
     margin-left: 20px;
-
+	margin-top:20px
 }
 
 #button-user-form{
 	margin-bottom:10px
+}
+
+.error-back{
+	margin:0px;
+	margin-left:21px
 }
 
 @media(min-width:768px){

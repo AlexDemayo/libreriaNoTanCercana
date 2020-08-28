@@ -40,7 +40,8 @@ router.get('/shoppingHistory', loggedIn.noLogged, usersController.shoppingHistor
 router.post('/register', upload.single('image'), validator.register, usersController.register);
 router.post('/login', validator.login, usersController.login);
 router.post('/logout', usersController.logout);
-router.post('/user', upload.single('image'), validator.update, usersController.update);
+router.post('/updateUser', upload.single('image'), validator.update, usersController.update);
+router.post('/updatePassword', validator.updatePassword, usersController.updatePassword);
 router.post('/deleteUser/:id', usersController.deleteUser);
 router.post('/cart', usersController.addToCart);
 router.post('/cart/delete', usersController.deleteFromCart);

@@ -11,14 +11,14 @@
             <thead>
                 <tr>
                     <th style="width:40%">Producto</th>
-                    <th style="width:10%">Precio</th>
-                    <th style="width:15%">Isbn</th>
-                    <th style="width:8%">Cantidad</th>
+                    <th style="width:10%" class="text-center">Precio</th>
+                    <th style="width:15%" class="text-center">ISBN</th>
+                    <th style="width:8%" class="text-center">Cantidad</th>
                     <th style="width:22%" class="text-center">Subtotal</th>
                     <th style="width:5%"></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody> 
                 <% let total = 0 %> 
                 <% items.forEach(item => { %>
                     <tr>
@@ -32,9 +32,9 @@
                                 </div>
                             </div>
                         </td>
-                        <td data-th="Price">$<%= item.price %> </td>
-                        <td data-th="Isbn"><%= item.isbn %> </td>
-                        <td data-th="Quantity"><%= item.quantity %> </td>
+                        <td data-th="Price" class="text-center">$<%= item.price %> </td>
+                        <td data-th="Isbn" class="text-center"><%= item.isbn %> </td>
+                        <td data-th="Quantity" class="text-center"><%= item.quantity %> </td>
                         <td data-th="Subtotal" class="text-center">$<%= item.total %> </td>
                         <td class="actions" data-th="">
                             <!-- <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button> -->

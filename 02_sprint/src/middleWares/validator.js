@@ -155,27 +155,36 @@ const validator = {
         })
         .withMessage('Extensión inválida')
 
-        // body('newPassword')
-        // .custom((value, {req}) => {
-        //     if(value !== 'undefined'){
-        //         body(value).notEmpty()
-        //         .withMessage('Campo obligatorio')
-        //         .bail()
-        //         body(value).isLength({ min: 8 })
-        //         .withMessage('La contraseña debe tener un mínimo de ocho caracteres')
-        //     } else {
-        //         true
-        //     }
-        // }),
+    ],
+    
+    updatePassword: [
 
-        // body('confirmNewPassword')
-        // .custom((value, {req}) => {
-        //     if(value !== req.body.newPassword){
-        //         throw new Error('Las contraseñas no coinciden')
-        //     }
-        // })
-        
-        
+        body('password')
+        .notEmpty()
+        .withMessage('Campo obligatorio')
+        .bail()
+        .custom((value, {req}) => {
+            return db.User.findByPk(req.session.user.id)
+            .then(user => {
+                if(!bcrypt.compareSync(value, user.password)){
+                    return Promise.reject("Contraseña incorrecta");
+                }
+            })
+        }),
+
+        body('newPassword')
+        .notEmpty()
+        .withMessage('Campo obligatorio')
+        .bail()
+        .isLength({ min: 8 })
+        .withMessage('La contraseña debe tener un mínimo de ocho caracteres'),
+
+        body('confirmNewPassword')
+        .notEmpty()
+        .withMessage('Campo obligatorio')
+        .bail()
+        .custom((value, {req}) => req.body.newPassword === value)
+        .withMessage('Las contraseñas no coinciden')       
     ]
 }
 

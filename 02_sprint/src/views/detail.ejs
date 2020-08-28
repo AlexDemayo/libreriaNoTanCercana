@@ -39,12 +39,21 @@
                     </div>
                     <% if (!locals.user.admin ) { %>
                     <div class="book-buy">
-                        <form action="/users/cart" method="POST">
+                        <% if (locals.user) { %>
+                            <form action="/users/cart" method="POST">
+                                <label for="quantity" id="quantity">Cantidad</label>
+                                <input type="number" name="quantity" value="1" min="1">
+                                <input type="hidden" name="productId" value=<%= book.id %> >
+                                
+                                <button type="submit">Agregar al carrito</button>
+                            </form>
+                        <% } else { %>
                             <label for="quantity" id="quantity">Cantidad</label>
                             <input type="number" name="quantity" value="1" min="1">
-                            <input type="hidden" name="productId" value=<%= book.id %> >
-                            <button type="submit">Agregar al carrito</button>
-                        </form>
+                            <button class="no-loggued-button">Agregar al carrito</button>
+                            <p class="js-message" style="color:red"></p>
+                        <% } %> 
+                       
                     </div>
                     <% } else { %>
                     <div class="book-adm">
@@ -125,6 +134,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit-icons.min.js"></script>
+    <!-- <script src="/js/detail.js"></script> -->
 </body>
 
 </html>

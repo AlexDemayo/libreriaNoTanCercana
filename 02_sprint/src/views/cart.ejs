@@ -9,11 +9,11 @@
         <table id="cart" class="table table-hover table-condensed">
             <thead>
                 <tr>
-                    <th style="width:50%">Producto</th>
-                    <th style="width:10%">Precio</th>
-                    <th style="width:8%">Cantidad</th>
-                    <th style="width:22%" class="text-center">Subtotal</th>
-                    <th style="width:10%"></th>
+                    <th style="width:50%" >Producto</th>
+                    <th style="width:12%" class="text-center">Precio</th>
+                    <th style="width:10%" class="text-center">Cantidad</th>
+                    <th style="width:18%" class="text-center">Subtotal</th>
+                    <th style="width:10%" class="text-center"></th>
                 </tr>
             </thead>
             <tbody>
@@ -30,8 +30,8 @@
                                 </div>
                             </div>
                         </td>
-                        <td data-th="Price">$<%= item.price %> </td>
-                        <td data-th="Quantity"><%= item.quantity %> </td>
+                        <td data-th="Price" class="text-center">$<%= item.price %> </td>
+                        <td data-th="Quantity" class="text-center"><%= item.quantity %> </td>
                         <td data-th="Subtotal" class="text-center">$<%= item.total %> </td>
                         <td class="actions" data-th="">
                             <!-- <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button> -->

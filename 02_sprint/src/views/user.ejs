@@ -30,10 +30,12 @@
         </div>
         <div class="menu-profile js-b">
             <a class="a-profile" id="config">Cambiar contraseña</a>
-          </div>
+        </div>
+        <% if (!locals.user.admin ) { %>
         <div class="menu-profile">
           <a class="a-profile" href="/users/shoppingHistory">Compras</a>
         </div>
+        <% } %> 
         <div class="menu-profile">
           <a class="a-profile" href="#">Favoritos</a>
         </div>
@@ -75,7 +77,7 @@
 
       <div class="col-12 col-md-5 col-lg-7 user-info-config" style="display:none">
 
-        <form class="update register edit-pf-form userform-js" action="/users/user" method="POST" value="update"
+        <form class="update register edit-pf-form userform-js" action="/users/updateUser" method="POST" value="update"
           enctype="multipart/form-data">
 
           <p class="p-profile marginpf edit-form-p">Usuario</p>
@@ -88,7 +90,7 @@
             <i class="fas fa-exclamation-circle"></i>
             <p class="error">
           </div>
-          <p class="error"><%= typeof errors == 'undefined' ? null : errors.userName ? errors.userName.msg : null %></p>
+          <p class="error-back"><%= typeof errors == 'undefined' ? null : errors.userName ? errors.userName.msg : null %></p>
 
           <p class="p-profile marginpf edit-form-p">Email</p>
           <div class="user-div">
@@ -100,7 +102,7 @@
             <i class="fas fa-exclamation-circle"></i>
             <p class="error"></p>
           </div>
-          <p class="error"><%= typeof errors == 'undefined' ? null : errors.email ? errors.email.msg : null %></p>
+          <p class="error-back"><%= typeof errors == 'undefined' ? null : errors.email ? errors.email.msg : null %></p>
 
           <p class="p-profile marginpf edit-form-p">Contraseña</p>     
           <div class="user-div">
@@ -112,7 +114,7 @@
             <i class="fas fa-exclamation-circle"></i>
             <p class="error"></p>
           </div>
-          <p class="error"><%= typeof errors == 'undefined' ? null : errors.password ? errors.password.msg : null %></p>
+          <p class="error-back"><%= typeof errors == 'undefined' ? null : errors.password ? errors.password.msg : null %></p>
 
           <!-- <p class="p-profile marginpf edit-form-p">Nueva contraseña</p>
           <div class="user-div">
@@ -166,7 +168,7 @@
 
     <div class="col-12 col-md-5 col-lg-7 user-password-config" style="display:none">
 
-        <form class="update register edit-pf-form userform-js" action="/users/user" method="POST" value="update">
+        <form class="update register edit-pf-form userform-js" action="/users/updatePassword" method="POST" value="update">
 
         
           <p class="p-profile marginpf edit-form-p">Contraseña</p>     
@@ -179,7 +181,7 @@
             <i class="fas fa-exclamation-circle"></i>
             <p class="error"></p>
           </div>
-          <p class="error"><%= typeof errors == 'undefined' ? null : errors.password ? errors.password.msg : null %></p>
+          <p class="error-back"><%= typeof errors == 'undefined' ? null : errors.password ? errors.password.msg : null %></p>
 
           <p class="p-profile marginpf edit-form-p">Nueva contraseña</p>
           <div class="user-div">
@@ -191,7 +193,7 @@
             <i class="fas fa-exclamation-circle"></i>
             <p class="error"></p>
           </div>
-          <p class="error"><%= typeof errors == 'undefined' ? null : errors.newPassword ? errors.newPassword.msg : null %></p>
+          <p class="error-back"><%= typeof errors == 'undefined' ? null : errors.newPassword ? errors.newPassword.msg : null %></p>
 
 
           <p class="p-profile marginpf edit-form-p">Repetir nueva contraseña</p>
@@ -204,9 +206,8 @@
             <i class="fas fa-exclamation-circle"></i>
             <p class="error"></p>
           </div>
-          <p class="error"><%= typeof errors == 'undefined' ? null : errors.confirmNewPassword ? errors.confirmNewPassword.msg : null %></p> 
+          <p class="error-back"><%= typeof errors == 'undefined' ? null : errors.confirmNewPassword ? errors.confirmNewPassword.msg : null %></p> 
           
-
           <div class= erroresCf>
             <ul>
 

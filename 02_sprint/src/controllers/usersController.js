@@ -85,18 +85,18 @@ const usersController = {
 		if (errors.isEmpty()){
 			db.User.findOne({where: {id: req.session.user.id}})
 			.then(user => {
-				let passwordN;
+				// let passwordN;
 				
-				if(req.body.newPassword){
-					passwordN = bcrypt.hashSync(req.body.newPassword, 10);
-				} else {
-					passwordN = bcrypt.hashSync(req.body.password, 10);
-				};
+				// if(req.body.newPassword){
+				// 	passwordN = bcrypt.hashSync(req.body.newPassword, 10);
+				// } else {
+				// 	passwordN = bcrypt.hashSync(req.body.password, 10);
+				// };
 	
 				return db.User.update({
 					userName: req.body.userName,
 					email: req.body.email,
-					password: passwordN,
+					// password: passwordN,
 					image: req.file ? req.file.filename : user.image
 				},{
 					where: {
@@ -116,6 +116,36 @@ const usersController = {
 		
 		
 	},
+
+	updatePassword: function(req,res){
+
+		const errors = validationResult(req);
+
+		const newPassword = bcrypt.hashSync(req.body.newPassword, 10);
+
+		if (errors.isEmpty()){
+			db.User.findOne({where: {id: req.session.user.id}})
+			.then(() => {
+				return db.User.update({
+					password: newPassword
+				}, {
+					where: {
+						id: req.session.user.id
+					}
+				})
+			})
+			.then(() => {
+				return res.redirect('/users/user')
+			})
+			.catch(error => console.log(error))
+
+		} else {
+			db.User.findOne({where: {id: req.session.user.id}})
+			.then((user) => {
+				return res.render('user', {user, errors: errors.mapped(), old: req.body});
+			})
+		}
+	},	
 
 	deleteUser: function(req,res){
 		req.session.destroy();
@@ -223,7 +253,7 @@ const usersController = {
 			})
 		})
 		.then(() => {
-			return res.redirect('/users/user')
+			return res.redirect('/users/shoppingHistory')
 		})
 		.catch(err => console.log(err));
     },
