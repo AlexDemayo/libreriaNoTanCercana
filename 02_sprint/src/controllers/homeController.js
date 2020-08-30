@@ -7,10 +7,11 @@ const homeController = {
 	root: function(req, res) {
 		let books = db.Product.findAll();
 		let lastBooks = db.Product.findAll({ order: [['id', 'DESC']] });
+		let bestSellers = db.Product.findAll({order: [['author', 'ASC']]})
 
-		Promise.all([books, lastBooks])
-		.then(([books, lastBooks]) => {
-			return res.render('index', {books, lastBooks})
+		Promise.all([books, lastBooks, bestSellers])
+		.then(([books, lastBooks, bestSellers]) => {
+			return res.render('index', {books, lastBooks, bestSellers})
 		})
 		.catch(error => {
 			console.log(error)
