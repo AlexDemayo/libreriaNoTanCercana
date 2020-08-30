@@ -41,7 +41,8 @@ const usersController = {
 			.then(user => {
 				delete user.password;
 
-				req.session.user = user; //lo guarda en sesión
+                req.session.user = user; //lo guarda en sesión
+                
 				
 				// si el usuario puso remember, guardamos el mail por un día
 				if (req.body.remember) {

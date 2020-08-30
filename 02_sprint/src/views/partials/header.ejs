@@ -12,7 +12,7 @@
       <a type="submit" class="search-form_button mobile-icon a-header"><i id="search" class="fa fa-search"></i></a>
       <% if (locals.user) { %>
       <a href="/users/user" class="search-form_button mobile-icon mobile-hide a-header"><%= locals.user.userName %> </a>
-      <form action="/users/logout" method="POST">
+      <form class="clear-storage" action="/users/logout" method="POST">
 
         <button class="logout mobile-hide" type="submit"><i class="fas fa-sign-out-alt logout-btn"></i>Cerrar
           sesión</button>
@@ -33,7 +33,7 @@
           <a class="a-header" href="/">Mas vendidos</a>
           <a class="a-header" href="/"><span>En oferta</span></a>
           <% if (locals.user) { %>
-          <form action="/users/logout" method="POST">
+          <form  class="clear-storage" action="/users/logout" method="POST">
             <button class="logout-mobile" type="submit">Cerrar sesión</button>
           </form>
           <% } %>

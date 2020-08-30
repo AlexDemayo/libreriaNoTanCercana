@@ -39,20 +39,15 @@
                     </div>
                     <% if (!locals.user.admin ) { %>
                     <div class="book-buy">
-                        <% if (locals.user) { %>
                             <form action="/users/cart" method="POST">
                                 <label for="quantity" id="quantity">Cantidad</label>
                                 <input type="number" name="quantity" value="1" min="1">
                                 <input type="hidden" name="productId" value=<%= book.id %> >
-                                
-                                <button type="submit">Agregar al carrito</button>
+                            <div class="alert-event">
+                                <button  id="js-modal-alert" class="uk-button uk-button-default"type="submit">Agregar al carrito</button>
+                               
+                            </div>
                             </form>
-                        <% } else { %>
-                            <label for="quantity" id="quantity">Cantidad</label>
-                            <input type="number" name="quantity" value="1" min="1">
-                            <button class="no-loggued-button">Agregar al carrito</button>
-                            <p class="js-message" style="color:red"></p>
-                        <% } %> 
                        
                     </div>
                     <% } else { %>
@@ -134,7 +129,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit-icons.min.js"></script>
-    <!-- <script src="/js/detail.js"></script> -->
+    <script src="/js/alert.js"></script>
+    <script src="sweetalert2.min.js"></script>
 </body>
 
 </html>

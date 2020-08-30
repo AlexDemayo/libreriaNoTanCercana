@@ -10,7 +10,7 @@
         <div id="flex" class="row space">
             <div class="col-12 col-md-5 col-lg-5 form-left">
                 <h2>Iniciar sesión</h2>
-                <form  class="login formulario-js"  action="login" method="POST" value="login">
+                <form  class="login formulario-js session-save"  action="login" method="POST" value="login">
                     <div id="emailLog">
                         <label for="emailLog"></label>
                         <input type="email"  name="emailLog" class="form-input log-email" value="<%= typeof oldLogin == "undefined" ? null : oldLogin.emailLog %>" placeholder="Email">
@@ -92,6 +92,7 @@
     <%- include('partials/footer') %>
     <script src="/js/register.js"></script>
     <script src="/js/login.js"></script>
+    <script src="/js/sessionStorage.js"></script>
   </body>
 
 </html>
