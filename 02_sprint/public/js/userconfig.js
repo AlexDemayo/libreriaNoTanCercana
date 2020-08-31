@@ -62,90 +62,7 @@ window.addEventListener('load', function() {
         
         };
 
-
-
-
-
-
-
         
-        /* FALTA VALIDACION DEL BACK END QUE LA PASSWORD INGRESADA SEA 
-        LA MISMA QUE LA DE LA BASE DE DATOS */
-             
-
-
-
-
-
-
-
-
-
-        /* validacion de  New password */
-       
-
-        /*     COMENTADO
-        let passwordconfig = document.querySelector("input.newpassword-cf");
-
-        if(passwordconfig.value == ""){
-            erroresCf.push("El campo de contraseña no puede estar vacio");
-
-            let bordercrl = document.querySelector("#newPassword");
-            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
-
-            bordercrl.style.border = "2px solid #e74c3c" ;
-            hiddenicon.style.visibility = "visible";
-
-        }else if (passwordconfig.value.length < 8){
-            erroresCf.push("El campo debe tener al menos 8 caracteres");
-            let bordercrl = document.querySelector("#newPassword");
-            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
-
-            bordercrl.style.border = "2px solid #e74c3c" ;
-            hiddenicon.style.visibility = "visible";
-        }else if(passwordconfig.value){
-            let bordercrl = document.querySelector("#newPassword");
-            let hiddenicon = document.querySelector("i.fa-check-circle");
-
-            bordercrl.style.border = "2px solid green" ;
-            hiddenicon.style.visibility = "visible";
-        };
-        */
-
-
-
-
-
-        /* validaciones de New Repassword */
-        // let passwordconfig = document.querySelector("input.newpassword-cf");
-        // let passwordreconfig = document.querySelector("input.repassword-cf");
-          /*
-        if(passwordreconfig.value == ""){
-            erroresCf.push("El campo de repetir contraseña no puede estar vacio");
-
-            let bordercrl = document.querySelector("#confirmNewPassword");
-            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
-
-            bordercrl.style.border = "2px solid #e74c3c" ;
-            hiddenicon.style.visibility = "visible";
-
-*/
-        //  if (passwordconfig.value != passwordreconfig.value){
-        //     erroresCf.push("Las contraseñas no coinciden");
-        //     let bordercrl = document.querySelector("#confirmNewPassword");
-        //     let hiddenicon = document.querySelector("i.fa-exclamation-circle");
-
-        //     bordercrl.style.border = "2px solid #e74c3c" ;
-        //     hiddenicon.style.visibility = "visible";
-
-        // }else if (passwordreconfig.value){
-        //     let bordercrl = document.querySelector("#confirmNewPassword");
-        //     let hiddenicon = document.querySelector("i.fa-check-circle");
-
-        //     bordercrl.style.border = "2px solid green" ;
-        //     hiddenicon.style.visibility = "visible";
-        // };
-
         if (erroresCf.length > 0) {
             event.preventDefault();
 
@@ -160,5 +77,7 @@ window.addEventListener('load', function() {
 
         }
        
-    })
+
+    });
+
 });

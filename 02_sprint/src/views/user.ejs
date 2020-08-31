@@ -168,7 +168,7 @@
 
     <div class="col-12 col-md-5 col-lg-7 user-password-config" style="display:none">
 
-        <form class="update register edit-pf-form userform-js" action="/users/updatePassword" method="POST" value="update">
+        <form class="update register edit-pf-form passwordform-js" action="/users/updatePassword" method="POST" value="update">
 
         
           <p class="p-profile marginpf edit-form-p">Contraseña</p>     
@@ -208,7 +208,7 @@
           </div>
           <p class="error-back"><%= typeof errors == 'undefined' ? null : errors.confirmNewPassword ? errors.confirmNewPassword.msg : null %></p> 
           
-          <div class= erroresCf>
+          <div class= erroresPcf>
             <ul>
 
             </ul>
@@ -225,7 +225,8 @@
 
   <script src="/js/profile-menu.js"></script>
   <script src="/js/userconfig.js"></script>
-  <script src="/js/passwordChange.js"></script>
+  <script src="/js/toggleButton.js"></script>
+  <script src="/js/passwordConfig.js"></script>
 </body>
 
 </html>
