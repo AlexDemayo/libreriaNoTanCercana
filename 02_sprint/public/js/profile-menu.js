@@ -10,7 +10,8 @@ window.addEventListener('load', function() {
 			userCompleto.style.display = 'block';
             userform.style.display = 'none';
 			passwordForm.style.display = 'none';
-			monthlyAuthor.style.display = 'none';
+            monthlyAuthor.style.display = 'none';
+            
 		} else {
 			userCompleto.style.display = 'none';
             userform.style.display = 'block';

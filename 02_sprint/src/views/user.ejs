@@ -25,7 +25,7 @@
           <a class="a-profile" id="cargar-producto" href="/books/create">Cargar Producto</a>
         </div>
         <div class="menu-profile js-c">
-          <a class="a-profile" id="autor">Autor del mes</a>
+          <a class="a-profile" id="config">Autor del mes</a>
         </div>
       <% } %> 
         <div class="menu-profile js-a">
@@ -225,15 +225,15 @@
 
   <div class="col-12 col-md-5 col-lg-7 monthy-author-div" style="display:none">
 
-    <form class="update register edit-pf-form monthly-author-form" action="/" method="POST">
+    <form class="update register edit-pf-form monthly-author-form" action="/" method="POST" >
 
     
       <p class="p-profile marginpf edit-form-p">Nombre del autor</p>     
       <div class="user-div">
         <div class="user-img">
-          <i class="fas fa-key"></i>
+          <i class="fas fa-user"></i>
         </div>
-        <input type="text" id="name" name="name" class="user-menu">
+        <input type="text" id="userName" name="name" class="user-menu">
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
         <p class="error"></p>
@@ -242,10 +242,8 @@
 
       <p class="p-profile marginpf edit-form-p">Imagen</p>
       <div class="user-div">
-        <div class="user-img">
-          <i class="fas fa-key"></i>
-        </div>
-        <input type="file" id="image" name="image" class="user-menu">
+        
+        <input class="margin-img"type="file" id="image" name="image">
         <i class="fas fa-check-circle"></i>
         <i class="fas fa-exclamation-circle"></i>
         <p class="error"></p>
@@ -262,8 +260,9 @@
       </div>
     </form>
    
-</div>
   </div>
+ </div>
+</div>
   <%- include('partials/footer') %>
 
 
@@ -271,7 +270,7 @@
   <script src="/js/userconfig.js"></script>
   <script src="/js/toggleButton.js"></script>
   <script src="/js/passwordConfig.js"></script>
-  <script src="'/js/monthlyAuthor.js'"></script>
+  <script src="/js/monthlyAuthor.js"></script>
 </body>
 
 </html>

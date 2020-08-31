@@ -1,18 +1,16 @@
-           *Prioridad*
+﻿           *Prioridad*
 
              sprint 05
    --------------------
 
-backend
-Formulario cambiar contraseña: vista + ruta + controlador + validator
+CLEAR STORAGE
+LOGICAS EN LA HOME
+ARREGLAR URL CATEGORIAS, QUE VENGA POR HIDDEN ID
       
 front  =  iconos no estan bien llamados en el front //icono de validacion aparece solo en el primer input
 
-
-MODELO DEL CARRITO
-LOGICA DE CARRITO      (  FINDESEMANA SABADO 15:00HS  )
 API DASH BOARD
-API PARA EL FRONT .
+
 
 
                sprint 06
@@ -26,16 +24,6 @@ API CON REACT
 
      --------------------
 
-
+CLEAR STORAGE
 LOGICAS EN LA HOME
-* NOVEDADES
-* RECOMENDADOS
-* AUTOR DEL MES
-* CATEGORIAS RECOMENDADAS
-* ESTRELLITAS EN EL DETALLE DEL PRODUCTO 
-
-
-ANCLAR ITEMS DE NAVBAR A SLIDERS DE LA HOME
-
-API PARA EL FRONT 
-
+ARREGLAR URL CATEGORIAS, QUE VENGA POR HIDDEN ID
