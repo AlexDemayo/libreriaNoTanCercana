@@ -8,6 +8,7 @@ const homeController = {
 		let books = db.Product.findAll();
 		let lastBooks = db.Product.findAll({ order: [['id', 'DESC']] });
 		let bestSellers = db.Product.findAll({order: [['author', 'ASC']]})
+		// let monthlyAuthor = db.Product.findAll({where: {author: }})
 
 		Promise.all([books, lastBooks, bestSellers])
 		.then(([books, lastBooks, bestSellers]) => {

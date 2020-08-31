@@ -1,41 +1,18 @@
 const db = require('../../database/models')
 
 const categoryController = {
-/*
-    category: function(req, res) {
-		let category = req.params.category;
 
-		// let allCategories = db.Category.findAll();
-		let arte = db.Product.findAll({where: {categoryId : 1}});
-		let poesia = db.Product.findAll({where: {categoryId : 2}});
-		let cronica = db.Product.findAll({where: {categoryId : 3}});
-		let ensayo = db.Product.findAll({where: {categoryId : 4}});
-		let infantilYJuvenil = db.Product.findAll({where: {categoryId : 5}});
-		let narrativa = db.Product.findAll({where: {categoryId : 6}});
-		let novGraficasYComics = db.Product.findAll({where: {categoryId : 7}});
+	subCategory: function(req, res) {
 		
-		
-		Promise.all([category, arte, cronica, ensayo, infantilYJuvenil, narrativa, novGraficasYComics, poesia])
-		.then(([category, arte, cronica, ensayo, infantilYJuvenil, narrativa, novGraficasYComics, poesia]) => {
-
-			res.send('category', {category, arte, cronica, ensayo, infantilYJuvenil, narrativa, novGraficasYComics, poesia})
-		})
-		.catch(error => {
-			console.log(error)
-		})
-
-    },
-*/
-	list: function(req, res) {
-		db.Product.findAll()
-		.then(function(products) {
-            let respuesta = {
+		db.SubCategory.findAll({where: {categoryId: req.params.id}})
+		.then(subCategories => {
+			let respuesta = {
                 meta: {
-                    url: "api/category",
+                    url: "api/category/" + req.params.id,
                     status: 200,
-                    total: products.length
+                    total: subCategories.length
                 }, 
-                data: products
+                data: subCategories.length > 0 ? subCategories : null
                 
             }
             
@@ -45,6 +22,7 @@ const categoryController = {
 		.catch(error => {
 			console.log(error)
 		})
+
 	}
 	
 };

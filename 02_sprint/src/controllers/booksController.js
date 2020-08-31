@@ -41,7 +41,7 @@ module.exports = {
                 publisherId: req.body.publisher,
                 datePublished: req.body.datePublished,
                 categoryId: req.body.category, 
-                subCategoryId: req.body.subCategory,
+                subCategoryId: req.body.subCategory ? req.body.subCategory : null,
                 pages: req.body.pages,
                 cover: req.body.cover, 
                 isbn: req.body.isbn, 

@@ -46,5 +46,6 @@ router.post('/deleteUser/:id', usersController.deleteUser);
 router.post('/cart', usersController.addToCart);
 router.post('/cart/delete', usersController.deleteFromCart);
 router.post('/shop', usersController.shop);
+router.post('/monthyAuthor', upload.single('image'), usersController.monthlyAuthor)
 
 module.exports = router;

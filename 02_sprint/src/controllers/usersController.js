@@ -272,7 +272,17 @@ const usersController = {
            return res.render('shoppingHistory', {items})
        })
        .catch(error => console.log(error))
-   }
+   },
+
+   	monthlyAuthor: function(req,res){
+		db.monthlyAuthor.create({
+			name: req.body.name,
+			image: req.file.filename
+		})
+		.then(() => {
+			return res.redirect('/#AUTHOR')
+		})
+	}
 
 };
 

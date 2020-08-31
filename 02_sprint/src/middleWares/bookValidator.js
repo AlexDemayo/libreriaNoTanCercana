@@ -29,9 +29,9 @@ const productValidator = {
         .withMessage('Campo obligatorio'),
 
 
-        body('subCategory')
-        .notEmpty()
-        .withMessage('Campo obligatorio'),
+        // body('subCategory')
+        // .notEmpty()
+        // .withMessage('Campo obligatorio'),
 
 
 

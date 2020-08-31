@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const cors = require('cors')
 const session = require('express-session');
 
 const indexRouter = require('./routes/index');
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static("public"));
 app.use(session({secret:'secreto',resave: false,
 saveUninitialized: true}));
+app.use(cors());
 
 app.use(log);
 

@@ -48,7 +48,7 @@
                         </div>
                         <div class="section col-12 col-md-6">
                             <label for="category">Categoría:</label>
-                            <select name="category" class="input">
+                            <select name="category" class="input selectCategory">
                                 <% categories.forEach(category => { %>
                                     <% if(typeof old != 'undefined') { %>
                                         <% if (old.category == category.id) { %>
@@ -69,7 +69,7 @@
                         </div>
                         <div class="section col-12 col-md-6">
                             <label for="subCategory">Sub categoría:</label>
-                            <select name="subCategory" class="input">
+                            <select name="subCategory" class="input selectSubCategories">
                                 <% subCategories.forEach(subCategory => { %>
                                     <% if(typeof old != 'undefined') { %>
                                         <% if (old.subCategory == subCategory.id) { %>
@@ -128,6 +128,7 @@
     </div>
     
     <%- include('partials/footer') %>
+    <script src="/js/api.js"></script>
     
 </body>
 </html>

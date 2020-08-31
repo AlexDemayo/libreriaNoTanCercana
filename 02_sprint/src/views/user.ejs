@@ -24,6 +24,9 @@
         <div class="menu-profile margin">
           <a class="a-profile" id="cargar-producto" href="/books/create">Cargar Producto</a>
         </div>
+        <div class="menu-profile js-c">
+          <a class="a-profile" id="autor">Autor del mes</a>
+        </div>
       <% } %> 
         <div class="menu-profile js-a">
           <a class="a-profile" id="config">Configuración</a>
@@ -219,6 +222,47 @@
         </form>
        
   </div>
+
+  <div class="col-12 col-md-5 col-lg-7 monthy-author-div" style="display:none">
+
+    <form class="update register edit-pf-form monthly-author-form" action="/" method="POST">
+
+    
+      <p class="p-profile marginpf edit-form-p">Nombre del autor</p>     
+      <div class="user-div">
+        <div class="user-img">
+          <i class="fas fa-key"></i>
+        </div>
+        <input type="text" id="name" name="name" class="user-menu">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <p class="error"></p>
+      </div>
+      <p class="error-back"><%= typeof errors == 'undefined' ? null : errors.name ? errors.name.msg : null %></p>
+
+      <p class="p-profile marginpf edit-form-p">Imagen</p>
+      <div class="user-div">
+        <div class="user-img">
+          <i class="fas fa-key"></i>
+        </div>
+        <input type="file" id="image" name="image" class="user-menu">
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <p class="error"></p>
+      </div>
+      <p class="error-back"><%= typeof errors == 'undefined' ? null : errors.newPassword ? errors.newPassword.msg : null %></p>
+
+      <div class= erroresPcf>
+        <ul>
+
+        </ul>
+    </div>
+      <div>
+        <button type="submit" id="button-user-form">Actualizar</button>
+      </div>
+    </form>
+   
+</div>
   </div>
   <%- include('partials/footer') %>
 
@@ -227,6 +271,7 @@
   <script src="/js/userconfig.js"></script>
   <script src="/js/toggleButton.js"></script>
   <script src="/js/passwordConfig.js"></script>
+  <script src="'/js/monthlyAuthor.js'"></script>
 </body>
 
 </html>
