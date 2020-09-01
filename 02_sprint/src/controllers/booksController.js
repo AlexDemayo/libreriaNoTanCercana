@@ -4,11 +4,26 @@ const { validationResult } = require('express-validator');
 
 module.exports = {
     detail : function(req,res){
+        
         db.Product.findByPk(req.params.id, {
             include: ['category', 'subCategory', 'publisher']
         })
         .then(book => {
-           return res.render('detail', {book});
+            let categoryUrl = book.category.name;
+
+            for(let i = 0; i < categoryUrl.length; i++){
+                categoryUrl = categoryUrl.replace(' ','+');
+                
+            }
+
+            let subCategoryUrl = book.category.name;
+
+            for(let i = 0; i < subCategoryUrl.length; i++){
+                subCategoryUrl = subCategoryUrl.replace(' ','+');
+                
+            }
+
+           return res.render('detail', {book, categoryUrl, subCategoryUrl});
         })
         .catch(error => {
 			console.log(error)

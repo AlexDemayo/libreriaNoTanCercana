@@ -16,6 +16,10 @@ const categoryController = {
 	category: function(req, res) {
 		let category = req.params.category;
 
+		for(let i = 0; i < category.length; i++){
+			category = category.replace('+',' ')
+		}
+
 		// let allCategories = db.Category.findAll();
 		let arte = db.Product.findAll({where: {categoryId : 1}});
 		let poesia = db.Product.findAll({where: {categoryId : 2}});
@@ -37,8 +41,19 @@ const categoryController = {
 
 	},
 	subCategory: function(req, res) {
-		const category = req.params.category;
-		const subCategory = req.params.subCategory; 
+		let categoryUrl = req.params.category;
+		let subCategoryUrl = req.params.subCategory; 
+		let category = categoryUrl;
+		let subCategory = subCategoryUrl;
+
+		for(let i = 0; i < category.length; i++){
+			category = category.replace('+',' ')
+		}
+
+		for(let i = 0; i < subCategoryUrl.length; i++){
+			subCategory = subCategory.replace('+',' ')
+		}
+
 
 		let historiaDelArte = db.Product.findAll({where: {subCategoryId : 1}}); 
 		let musica = db.Product.findAll({where: {subCategoryId : 2}});
@@ -56,9 +71,9 @@ const categoryController = {
 		let novelasGraficas  = db.Product.findAll({where: {subCategoryId : 14}});
 
 
-		Promise.all([category, subCategory, historiaDelArte, musica, cineYVideo, fotografia, infantil, juvenil, novelas, clasicos, cienciaFiccion, terror, policiales, cuentosORelatos, comics, novelasGraficas])
-		.then(([category, subCategory, historiaDelArte, musica, cineYVideo, fotografia, infantil, juvenil, novelas, clasicos, cienciaFiccion, terror, policiales, cuentosORelatos, comics, novelasGraficas]) => {
-			return res.render('subCategory', {category, subCategory, historiaDelArte, musica, cineYVideo, fotografia, infantil, juvenil, novelas, clasicos, cienciaFiccion, terror, policiales, cuentosORelatos, comics, novelasGraficas})
+		Promise.all([category, subCategory, categoryUrl, subCategoryUrl, historiaDelArte, musica, cineYVideo, fotografia, infantil, juvenil, novelas, clasicos, cienciaFiccion, terror, policiales, cuentosORelatos, comics, novelasGraficas])
+		.then(([category, subCategory, categoryUrl, subCategoryUrl, historiaDelArte, musica, cineYVideo, fotografia, infantil, juvenil, novelas, clasicos, cienciaFiccion, terror, policiales, cuentosORelatos, comics, novelasGraficas]) => {
+			return res.render('subCategory', {category, subCategory, categoryUrl, subCategoryUrl, historiaDelArte, musica, cineYVideo, fotografia, infantil, juvenil, novelas, clasicos, cienciaFiccion, terror, policiales, cuentosORelatos, comics, novelasGraficas})
 		})
 		.catch(error => {
 			console.log(error)
