@@ -16,7 +16,7 @@ module.exports = {
                 
             }
 
-            let subCategoryUrl = book.category.name;
+            let subCategoryUrl = book.subCategory.name;
 
             for(let i = 0; i < subCategoryUrl.length; i++){
                 subCategoryUrl = subCategoryUrl.replace(' ','+');

@@ -15,8 +15,8 @@
                         <li><a href="/category">Categorías</a></li>
                         <li><a href="/category/<%= categoryUrl %>"><%= book.category.name %></a></li>
                         <% if (book.subCategory) { %>
-                        <li><a href="/category/<%= categoryUrl%>/<%= subCategoryUrl%>"><%= book.subCategory.name %>
-                            </a></li>
+                        <li><a href="/category/<%= categoryUrl%>/<%= subCategoryUrl%>"><%= book.subCategory.name %></a></li>
+                        <% console.log(subCategoryUrl + ' ' + book.subCategory.name) %>
                         <% } %>
                         <li><a href="#"><%= book.title %> </a></li>
                     </ul>
