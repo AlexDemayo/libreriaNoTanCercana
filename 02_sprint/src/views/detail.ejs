@@ -39,12 +39,12 @@
                     </div>
                     <% if (!locals.user.admin ) { %>
                     <div class="book-buy">
-                            <form action="/users/cart" method="POST">
+                            <form class="js-buyEvent" action="/users/cart" method="POST">
                                 <label for="quantity" id="quantity">Cantidad</label>
                                 <input type="number" name="quantity" value="1" min="1">
                                 <input type="hidden" name="productId" value=<%= book.id %> >
                             <div class="alert-event">
-                                <button  id="js-modal-alert" class="uk-button uk-button-default"type="submit">Agregar al carrito</button>
+                                <button  id="js-modal-alert" class="uk-button uk-button-default "type="submit">Agregar al carrito</button>
                                
                             </div>
                             </form>
@@ -130,6 +130,7 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit-icons.min.js"></script>
     <script src="/js/alert.js"></script>
+    <script src="/js/sweetAlerts.js"></script>
 </body>
 
 </html>
