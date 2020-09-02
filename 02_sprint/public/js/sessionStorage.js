@@ -5,26 +5,29 @@ window.addEventListener("load", function(){
 
      let loginform = document.querySelector("form.session-save");
 
-     loginform.addEventListener("submit", function(e) {
-        
-       
-      localStorage.setItem("userName", "Smith")
-
-     });
+     if(loginform){
+          loginform.addEventListener("submit", function(e) {
+             
+               localStorage.setItem("userName", "Smith")
+     
+          });
+     }
 
     
      /* borra locals */
-/*
-     let logoutButton = document.querySelector("form.clear-storage")
-         console.log(logoutButton + "este es el error");
 
-     logoutButton.addEventListener("submit", function(e){
-        
-        localStorage.clear()
+     let logoutButton = document.querySelectorAll("form.clear-storage")
+     
+     for (const elem of logoutButton) {
+          elem.addEventListener("submit", function(e){
+               
+               localStorage.clear()
+               
+            })
+     }
 
-     })
 
-*/
+
 
 
 })

@@ -70,10 +70,15 @@ const usersController = {
 	},
 
 	user: function(req, res) {
-		
-		db.User.findOne({where: {id: req.session.user.id}})
-		.then(function(user){
-			return res.render('user', {user});
+
+		let user = db.User.findOne({where: {id: req.session.user.id}})
+		let categories = db.Category.findAll();
+
+
+		Promise.all([user, categories])
+		.then(([user, categories]) => {
+			return res.render('user', {user, categories});
+			
 		})
 		.catch(err => console.log(err));
 	},

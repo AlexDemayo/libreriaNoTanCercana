@@ -1,6 +1,6 @@
 window.addEventListener("load", function(){
     
-   const enviarButton = document.querySelector(".js-event");
+   const enviarButton = document.querySelector(".js-alert");
    const registerButton = document.querySelector(".js-registerEvent");
    const buyButton = document.querySelector(".js-buyEvent");
    
@@ -23,7 +23,6 @@ window.addEventListener("load", function(){
 
 
    registerButton.addEventListener("click", function(e){
-   
 
  
      swal({

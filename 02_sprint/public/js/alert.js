@@ -7,7 +7,7 @@ window.addEventListener("load", function(){
      
                 e.preventDefault();
                 e.target.blur();
-                UIkit.modal.alert('Logueate primero!').then(function () {
+                UIkit.modal.alert('Logueate para comprar').then(function () {
                     
                     console.log('Alert closed.')
                 });

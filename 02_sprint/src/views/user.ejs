@@ -25,7 +25,10 @@
           <a class="a-profile" id="cargar-producto" href="/books/create">Cargar Producto</a>
         </div>
         <div class="menu-profile js-c">
-          <a class="a-profile" id="config">Autor del mes</a>
+          <a class="a-profile">Autor del mes</a>
+        </div>
+        <div class="menu-profile js-d">
+          <a class="a-profile" id="recommended-categories-bttn">Categorías recomendadas</a>
         </div>
       <% } %> 
         <div class="menu-profile js-a">
@@ -39,9 +42,9 @@
           <a class="a-profile" href="/users/shoppingHistory">Compras</a>
         </div>
         <% } %> 
-        <div class="menu-profile">
+        <!-- <div class="menu-profile">
           <a class="a-profile" href="#">Favoritos</a>
-        </div>
+        </div> -->
 
 
 
@@ -221,6 +224,33 @@
     </form>
    
   </div>
+
+  <div class="col-12 col-md-5 col-lg-7 recommended-categories-div" style="display:none">
+
+    <form class="update register edit-pf-form recommended-categories-form" action="/" method="POST" name="recommended">
+
+    
+      <p class="p-profile marginpf edit-form-p">Elegí las categorías recomendadas</p>     
+        
+
+      <div class="categories-div">
+      
+        <% categories.forEach(elem => { %>
+          <input class="category-input" type="checkbox" name="categoria" id="<%= elem.id %>" value="<%= elem.id %>">
+          <label for="categoria"><%= elem.name %> </label>
+        <% }) %>
+        
+      </div>
+      <!-- <p class="error-back"><%= typeof errors == 'undefined' ? null : errors.newPassword ? errors.newPassword.msg : null %></p> -->
+
+      
+      <div>
+        <button type="submit" id="button-categories-form">Actualizar</button>
+      </div>
+    </form>
+   
+  </div>
+
  </div>
 </div>
   <%- include('partials/footer') %>
@@ -231,6 +261,7 @@
   <script src="/js/passwordEvent.js"></script>
   <script src="/js/passwordValidations.js"></script>
   <script src="/js/updateAuthorEvent.js"></script>
+  <script src="/js/recommendedCategories.js"></script>
 </body>
 
 </html>

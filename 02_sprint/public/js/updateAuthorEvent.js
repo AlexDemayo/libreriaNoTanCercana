@@ -6,6 +6,7 @@ window.addEventListener('load', function() {
     let passwordForm = document.querySelector(".user-password-config");
 	let userCompleto = document.querySelector('.user-info-config');
 	let monthlyAuthor = document.querySelector('.monthy-author-div');
+	let recommendedCategories = document.querySelector('.recommended-categories-div')
 
 	updateButton.addEventListener('click', function() {
 		if (monthlyAuthor.style.display === 'none') {
@@ -13,11 +14,13 @@ window.addEventListener('load', function() {
             userform.style.display = 'none';
 			userCompleto.style.display = 'none';
 			passwordForm.style.display = "none";
+			recommendedCategories.style.display = 'none';
 		} else {
 			monthlyAuthor.style.display = 'none';
             userform.style.display = 'block';
 			userCompleto.style.display = 'none';
 			passwordForm.style.display = "none";
+			recommendedCategories.style.display = 'none';
 		}
     });
     
