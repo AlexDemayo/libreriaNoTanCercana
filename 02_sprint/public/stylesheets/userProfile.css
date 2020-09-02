@@ -332,6 +332,30 @@ small{
 	margin:0px;
 	margin-left:21px
 }
+.marginR{
+    margin-bottom: 25px;
+}
+.categories-div{
+    display:flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(212, 212, 212);
+    height: 70px;
+    margin-bottom: 10px;
+}
+.style-label{
+    margin-top:20px;
+    margin-left: 55px;
+
+ }
+
+
+.categories-div input[type=checkbox] {
+    width: 3%;
+    margin-right: 100px;
+	
+	
+}
+
 
 @media(min-width:768px){
 	.profile-config {

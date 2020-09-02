@@ -8,8 +8,10 @@ window.addEventListener('load', function() {
 
         /*if (small.length !== ""){
             e.preventDefault()*/
-        
-        checkInputs();
+        if(!checkInputs()){
+            e.preventDefault();
+        }
+       
         
     });
     
@@ -20,21 +22,28 @@ window.addEventListener('load', function() {
         const passwordValue = password.value.trim();
        
         
-        
+        let contador = 0;
         
         if(emailValue === '') {
             setErrorFor(email, 'El campo email no puede estar vacio');
+            contador ++;
         } else if (!isEmail(emailValue)) {
             setErrorFor(email, 'Email invalido');
+            contador ++;
         } else {
             setSuccessFor(email);
         }
         
         if(passwordValue === '') {
             setErrorFor(password, 'El campo de contraseña no puede estar vacio');
+            contador ++
         } else {
             setSuccessFor(password);
         }
+
+        if (contador < 1){
+            return true
+        }else return false
         
        
     }

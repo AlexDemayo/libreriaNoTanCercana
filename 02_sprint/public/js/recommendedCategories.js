@@ -29,18 +29,28 @@ window.addEventListener('load', function() {
 	let aprofile = document.querySelector('.a-profile');
 	aprofile.classList.add('marginpf');
 	
-	let category = document.querySelectorAll('.category-input')
 
+
+
+    
+    let checkEvent = document.querySelector(".category-input");
+
+    checkEvent.addEventListener("click", function(){
+        chkcontrol(i);
+    })
 
 	function chkcontrol(j) {
 		var total=0;
-		for(var i=0; i < document.form1.ckb.length; i++){
-		if(document.form1.ckb[i].checked){
-		total =total +1;}
+		for(var i=0; i < document.form1.categoria.length; i++){
+		if(document.form1.categoria[i].checked){
+		total =total ++;}
 		if(total > 3){
 		alert("Please Select only three") 
-		document.form1.ckb[j].checked = false ;
+		document.form1.categoria[j].checked = false ;
 		return false;
-	
-	
-});
+	    }
+      }
+    }	
+
+    
+}); 

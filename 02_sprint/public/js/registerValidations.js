@@ -10,29 +10,23 @@ window.addEventListener('load', function() {
    
     
     form.addEventListener('submit', e => {
-        e.preventDefault();
        
-        
-
-        checkInputs()/*.then(function(){
-           
-         if(small.length === ""){
-                 swal({
-                     title: "Tu cuenta ha sido creada con exito!",
-                     text: "",
-                     type: "success",
-                     showConfirmButton: false,
-                     confirmButtonText: "Ok",
-                     timer: 5000
-                 });
-                }else {
-                    e.preventDefault();
-                }
-                 
-             
+       
+        if(!checkInputs()){
+            e.preventDefault();
+        }else {
+            swal({
+                title: "Tu cuenta ha sido creada con exito!",
+                text: "",
+                type: "success",
+                showConfirmButton: false,
+                confirmButtonText: "Ok",
+                timer: 5000
+            });
+        }
             
             
-        })*/
+     
 
     });
     
@@ -44,38 +38,46 @@ window.addEventListener('load', function() {
 	    const passwordValue = password.value.trim();
         const password2Value = password2.value.trim();
        
-       
+       let contador = 0;
         
         
         
         if(usernameValue === '') {
             setErrorFor(username, 'El campo de usuario no puede estar vacio');
+            contador ++;
         } else if(usernameValue.length < 5) {
             setErrorFor(username, 'El campo de usuario debe tener almenos 5 caracteres');
+            contador ++;
         } else {
             setSuccessFor(username);
         }
         
         if(emailValue === '') {
             setErrorFor(email, 'El campo email no puede estar vacio');
+            contador ++;
         } else if (!isEmail(emailValue)) {
             setErrorFor(email, 'Email invalido');
+            contador ++;
         } else {
             setSuccessFor(email);
         }
         
         if(passwordValue === '') {
             setErrorFor(password, 'El campo de contraseña no puede estar vacio');
+            contador ++;
         } else if (passwordValue.length < 8){
             setErrorFor(password, 'El campo de contraseña debe tener almenos 8 caracteres');
+            contador ++;
         } else{    
             setSuccessFor(password);
         }
         
         if(password2Value === '') {
             setErrorFor(password2, 'Repetir contraseña no puede estar vacio');
+            contador ++;
         } else if(passwordValue !== password2Value) {
             setErrorFor(password2, 'Las contraseñas no coinciden');
+            contador ++;
         } else{
             setSuccessFor(password2);
         }
@@ -83,9 +85,16 @@ window.addEventListener('load', function() {
 
         if(image.value == "") {
             setErrorFor(image, 'Imagen obligatoria');
+            contador ++;
         } else{
             setSuccessFor(image);
         }
+
+
+        if (contador < 1){
+            return true
+        }else return false
+        
 
         
        
