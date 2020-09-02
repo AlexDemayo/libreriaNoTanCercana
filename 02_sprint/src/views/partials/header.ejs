@@ -9,7 +9,10 @@
     </div>
 
     <div class="shop-menu">
-      <a type="submit" class="search-form_button mobile-icon a-header"><i id="search" class="fa fa-search"></i></a>
+
+    
+        <input type="text" id="search">       
+       <i id="searchIcon" class="fa fa-search"></i>
       <% if (locals.user) { %>
       <a href="/users/user" class="search-form_button mobile-icon mobile-hide a-header"><%= locals.user.userName %> </a>
       <form class="clear-storage" action="/users/logout" method="POST">
@@ -36,7 +39,9 @@
           <form  class="clear-storage" action="/users/logout" method="POST">
             <button class="logout-mobile" type="submit">Cerrar sesión</button>
           </form>
-          <% } %>
+          <% }else {%>
+            <a class="a-header" href="/users/login-register">Ingresar</a> 
+            <% } %>
         </div>
 
       </div>
@@ -65,5 +70,7 @@
     </ul>
     </div>
   </nav>
+
+  <script src="/js/searchIcon.js"></script>
 
 </header>

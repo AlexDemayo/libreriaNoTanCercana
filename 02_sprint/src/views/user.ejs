@@ -119,30 +119,6 @@
           </div>
           <p class="error-back"><%= typeof errors == 'undefined' ? null : errors.password ? errors.password.msg : null %></p>
 
-          <!-- <p class="p-profile marginpf edit-form-p">Nueva contraseña</p>
-          <div class="user-div">
-            <div class="user-img">
-              <i class="fas fa-key"></i>
-            </div>
-            <input type="password" id="newPassword" name="newPassword" class="user-menu newpassword-cf">
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
-            <p class="error"></p>
-          </div>
-          <p class="error"><%= //typeof errors == 'undefined' ? null : errors.newPassword ? errors.newPassword.msg : null %></p>
-
-
-          <p class="p-profile marginpf edit-form-p">Repetir nueva contraseña</p>
-          <div class="user-div">
-            <div class="user-img">
-              <i class="fas fa-key"></i>
-            </div>
-            <input type="password" id="confirmNewPassword" name="confirmNewPassword" class="user-menu repassword-cf">
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
-            <p class="error"></p>
-          </div>
-          <p class="error"><%= //typeof errors == 'undefined' ? null : errors.confirmNewPassword ? errors.confirmNewPassword.msg : null %></p> -->
           
           <div>
 
@@ -266,11 +242,11 @@
   <%- include('partials/footer') %>
 
 
-  <script src="/js/profile-menu.js"></script>
-  <script src="/js/userconfig.js"></script>
-  <script src="/js/toggleButton.js"></script>
-  <script src="/js/passwordConfig.js"></script>
-  <script src="/js/monthlyAuthor.js"></script>
+  <script src="/js/userEvent.js"></script>
+  <script src="/js/userValidations.js"></script>
+  <script src="/js/passwordEvent.js"></script>
+  <script src="/js/passwordValidations.js"></script>
+  <script src="/js/updateAuthorEvent.js"></script>
 </body>
 
 </html>

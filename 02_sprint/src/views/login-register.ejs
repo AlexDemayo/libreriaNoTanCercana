@@ -13,16 +13,16 @@
                 <form  class="login formulario-js session-save"  action="login" method="POST" value="login">
                     <div id="emailLog">
                         <label for="emailLog"></label>
-                        <input type="email"  name="emailLog" class="form-input log-email" value="<%= typeof oldLogin == "undefined" ? null : oldLogin.emailLog %>" placeholder="Email">
+                        <input type="email"   name="emailLog" class="form-input log-email" value="<%= typeof oldLogin == "undefined" ? null : oldLogin.emailLog %>" placeholder="Email">
                         <i class="fas fa-check-circle " ></i>
-                        <i class="fas fa-exclamation-circle" ></i>
+                        <i  class="fas fa-exclamation-circle" ></i>
                         <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.emailLog ? errorsLogin.emailLog.msg : null %></p>
                     </div>
                     <div id="passwordLog">
                         <label for="password"></label>
-                        <input type="password"  name="passwordLog" class="form-input log-pass" value="" placeholder="Contraseña">
+                        <input type="password"   name="passwordLog" class="form-input log-pass " value="" placeholder="Contraseña">
                         <i class="fas fa-check-circle" ></i>
-                        <i class="fas fa-exclamation-circle" ></i>
+                        <i  class="fas fa-exclamation-circle" ></i>
                         <p class="error"><%= typeof errorsLogin == 'undefined' ? null : errorsLogin.passwordLog ? errorsLogin.passwordLog.msg : null %></p>
                     </div>
                     <div>
@@ -43,25 +43,25 @@
                 <h2>Registrate</h2>
                 <form class="register regformulario-js" action="register" method="POST" value="register" enctype="multipart/form-data">
                     <div>
-                        <div>
+                        <div id="userR">
                             <input type="text" id="userReg" name="userName" placeholder="Usuario *" class="form-input reg-user" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.userName %>">
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle "></i>
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.userName ? errorsRegister.userName.msg : null %></p>
                         </div>
-                        <div>
+                        <div id="emailR">
                             <input type="text" id="emailReg" name="email" placeholder="Email *" class="form-input reg-email" value="<%= typeof oldRegister == "undefined" ? null : oldRegister.email %>">
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.email ? errorsRegister.email.msg : null %></p>
                         </div>
-                        <div>
+                        <div id="passwordR">
                             <input type="password" id="passwordReg" name="password" class="form-input reg-pass" placeholder="Contraseña *">
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
                             <p class="error"><%= typeof errorsRegister == 'undefined' ? null : errorsRegister.password ? errorsRegister.password.msg : null %></p>
                         </div>
-                        <div>
+                        <div id="repasswordR">
                             <input type="password" id="rePasswordReg" name="confirmPassword" class="form-input reg-repass" placeholder="Repita la contraseña: *">
                             <i class="fas fa-check-circle"></i>
                             <i class="fas fa-exclamation-circle"></i>
@@ -90,8 +90,9 @@
     </div>
 
     <%- include('partials/footer') %>
-    <script src="/js/register.js"></script>
-    <script src="/js/login.js"></script>
+   
+    <script src="/js/registerValidations.js"></script>
+    <script src="/js/loginValidations.js"></script>
     <script src="/js/sessionStorage.js"></script>
   </body>
 

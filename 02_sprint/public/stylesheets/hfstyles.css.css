@@ -73,13 +73,17 @@ ul {
 .shop-menu {
 	display: flex;
 	flex-wrap: nowrap;
-	justify-content: start;
+	justify-content: flex-end;
 	text-align: right;
 	/* padding: 9px; */
 	padding-top: 20px;
-	/* float: right; */
+    /* float: right; */
+    margin-right: 11px;
+    width: 60%;
 }
-
+.logoheader{
+    width: 40%;
+}
 .header-container {
 	display: flex;
 	justify-content: space-between;
@@ -172,6 +176,39 @@ label#togglex {
 	display: block;
 }
 
+/* SEARCH ICON BAR STYLES */
+
+
+  #searchIcon {
+    font-size: 1.4em;
+    top: 0px;
+  }
+  #searchIcon.hide{
+    display:none;
+  }
+  #search {
+    color: rgb(46, 46, 46);
+    background-color: rgb(239, 237, 243);
+    border: solid 1px rgb(214, 209, 209);
+    border-radius: 9px;
+    width: 0%;
+    font-size: 2.2em;
+    margin-left: 2.5%;
+    outline: none;
+    cursor: text;
+    visibility: hidden;
+    transition: 0.7s;
+    
+    margin-right: 14px; 
+  }
+  #search.visible{
+    width:27%;
+    height: 43%;
+    visibility: visible;
+    font-size:16px;
+    text-indent: 14px;
+  }
+ 
 /* Sticks footer to bottom */
 body {
 	display: flex;
@@ -313,18 +350,23 @@ input[type="submit"] {
 	}
 
 	#logoh img {
-		width: 100%;
+		width: 60%;
 		margin-left: 69px;
 	}
 
 	.shop-menu a {
 		font-size: 15px;
+    }
+    .shop-menu {
+		justify-content: flex-end;
+		
 	}
 }
 @media (min-width: 992px) {
 	.ft-main {
 		justify-content: space-evenly;
-	}
+    }
+    
 
 	.header-container {
 		display: flex;
@@ -377,7 +419,7 @@ input[type="submit"] {
 	}
 
 	#logoh img {
-		width: 85%;
+		width: 35%;
 		margin-left: 120px;
 	}
 }

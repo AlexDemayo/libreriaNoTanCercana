@@ -14,7 +14,7 @@
 
 
 .login i.fa-exclamation-circle{
-    position: absolute;
+    
     top: 85px;
     right: 30px;
     font-size: 16px;
@@ -23,7 +23,7 @@
 }
 
 .login i.fa-check-circle{
-    position: absolute;
+   
     top: 85px;
     right: 30px;
     font-size: 16px;
@@ -32,7 +32,7 @@
 }
 
 .register i.fa-exclamation-circle{
-    position: absolute;
+    
     top: 85px;
     right: 30px;
     font-size: 16px;
@@ -41,7 +41,7 @@
 }
 
 .register i.fa-check-circle{
-    position: absolute;
+   
     top: 85px;
     right: 30px;
     font-size: 16px;

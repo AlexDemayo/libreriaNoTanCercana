@@ -18,6 +18,10 @@ window.addEventListener('load', function() {
         }
     
 
+
+
+        
+
          /* validacion de password */
         let passwordlog = document.querySelector("input.log-pass");
 
