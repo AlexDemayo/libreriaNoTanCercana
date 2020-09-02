@@ -1,148 +1,89 @@
 window.addEventListener('load', function() {
-    let formularioreg = document.querySelector("form.regformulario-js")
-
-    formularioreg.addEventListener("submit", function(event){
-         let erroresR = [];
-
-
-        /* validacion de user*/
-        let userreg = document.querySelector("form.regformulario-js input.reg-user");
+    const form = document.getElementById('registerForm-js');
+    const username = document.getElementById('user-R');
+    const email = document.getElementById('email-R');
+    const password = document.getElementById('password-R');
+    const password2 = document.getElementById('password2-R');
+    const image = document.querySelector("form.regformulario-js input.reg-img");
+ 
+    
+   
+    
+    form.addEventListener('submit', e => {
+        e.preventDefault();
         
-        if(userreg.value == ""){
-            erroresR.push("El campo de usuario no puede estar vacio");
-
-            let bordercrl = document.querySelector("#userR input");
-            let hiddenicon = document.querySelector("#userR i.fa-exclamation-circle");
-
-            bordercrl.style.border = "2px solid #e74c3c" ;
-            hiddenicon.style.visibility = "visible";
-
-
-        }else if (userreg.value.length < 5 ){
-            erroresR.push("El campo debe tener almenos 5 caracteres");
-
-            let bordercrl = document.querySelector("#userR input");
-            let hiddenicon = document.querySelector("#userR  i.fa-exclamation-circle");
-
-            bordercrl.style.border = "2px solid #e74c3c" ;
-            hiddenicon.style.visibility = "visible";
-        }else if (userreg.value){
-            let bordercrl = document.querySelector("#userR input");
-            let hiddenicon = document.querySelector("#userR i.fa-check-circle");
-
-            bordercrl.style.border = "2px solid green" ;
-            hiddenicon.style.visibility = "visible";
-        };
-
-         /* validacion de email*/
-
-        let emailreg = document.querySelector("form.regformulario-js input.reg-email");
-        
-
-        if(emailreg.value == ""){
-            erroresR.push("El campo de email no puede estar vacio");
-            let bordercrl = document.querySelector("#emailR input");
-            let hiddenicon = document.querySelector("#emailR i.fa-exclamation-circle");
-
-            bordercrl.style.border = "2px solid #e74c3c" ;
-            hiddenicon.style.visibility = "visible";
-
-        }else if(emailreg.value.includes("@")){
-            let bordercrl = document.querySelector("#emailR input");
-            let hiddenicon = document.querySelector("#emailR i.fa-check-circle");
-
-            bordercrl.style.border = "2px solid green" ;
-            hiddenicon.style.visibility = "visible";
-        };
-
-
-
-          /* validacion de password*/
-
-        let passwordreg = document.querySelector("form.regformulario-js input.reg-pass");
-
-        if(passwordreg.value == ""){
-            erroresR.push("El campo de contraseña no puede estar vacio");
-
-            let bordercrl = document.querySelector("#passwordR input");
-            let hiddenicon = document.querySelector("#passwordR i.fa-exclamation-circle");
-
-            bordercrl.style.border = "2px solid #e74c3c" ;
-            hiddenicon.style.visibility = "visible";
-
-        }else if (passwordreg.value.length < 8){
-            erroresR.push("El campo debe tener almenos 8 caracteres");
-            let bordercrl = document.querySelector("#passwordR input");
-            let hiddenicon = document.querySelector("#passwordR i.fa-exclamation-circle");
-
-            bordercrl.style.border = "2px solid #e74c3c" ;
-            hiddenicon.style.visibility = "visible";
-        }else if(passwordreg.value){
-            let bordercrl = document.querySelector("#passwordR input");
-            let hiddenicon = document.querySelector("#passwordR i.fa-check-circle");
-
-            bordercrl.style.border = "2px solid green" ;
-            hiddenicon.style.visibility = "visible";
-        };
-
-
-         /* validacion de repassword*/
-
-        let passwordrereg = document.querySelector("form.regformulario-js input.reg-repass");
-
-        if(passwordrereg.value == ""){
-            erroresR.push("El campo de repetir contraseña no puede estar vacio");
-
-            let bordercrl = document.querySelector("#repasswordR input");
-            let hiddenicon = document.querySelector("#repasswordR i.fa-exclamation-circle");
-
-            bordercrl.style.border = "2px solid #e74c3c" ;
-            hiddenicon.style.visibility = "visible";
-
-
-        }else if (passwordreg.value != passwordrereg.value){
-            erroresR.push("Las contraseñas no coinciden");
-            let bordercrl = document.querySelector("#repasswordR input");
-            let hiddenicon = document.querySelector("#repasswordR i.fa-exclamation-circle");
-
-            bordercrl.style.border = "2px solid #e74c3c" ;
-            hiddenicon.style.visibility = "visible";
-
-        }else if (passwordrereg.value){
-            let bordercrl = document.querySelector("#repasswordR input");
-            let hiddenicon = document.querySelector("#repasswordR i.fa-check-circle");
-
-            bordercrl.style.border = "2px solid green" ;
-            hiddenicon.style.visibility = "visible";
-        };
-
-
-
-
-
-        let imagereg = document.querySelector("form.regformulario-js input.reg-img");
-
-        if(imagereg.value == ""){
-            erroresR.push("Imagen de perfil obligatoria ");
-        }/* else if   falta chequear que la imagen sea de una extension valida 
-            Y VALIDAR EN EL BACK Y FRONT QUE NO SOBREPASE CIERTO TAMAÑO*/
-
-
-
-
-
-        if (erroresR.length > 0) {
-            event.preventDefault();
-
-            let ulErrores = document.querySelector("div.erroresR ul");
-
-            ulErrores.innerHTML = "";
-            
-            for(let i = 0; i < erroresR.length; i++) {
-
-                ulErrores.innerHTML += "<li>" + erroresR[i] + "</li>"
-            }
-
-        }
+        checkInputs();
     });
+    
+    function checkInputs() {
+      
+       
+        const usernameValue = username.value.trim();
+	    const emailValue = email.value.trim();
+	    const passwordValue = password.value.trim();
+        const password2Value = password2.value.trim();
+       
+       
+        
+        
+        
+        if(usernameValue === '') {
+            setErrorFor(username, 'El campo de usuario no puede estar vacio');
+        } else if(usernameValue.length < 5) {
+            setErrorFor(username, 'El campo de usuario debe tener almenos 5 caracteres');
+        } else {
+            setSuccessFor(username);
+        }
+        
+        if(emailValue === '') {
+            setErrorFor(email, 'El campo email no puede estar vacio');
+        } else if (!isEmail(emailValue)) {
+            setErrorFor(email, 'Email invalido');
+        } else {
+            setSuccessFor(email);
+        }
+        
+        if(passwordValue === '') {
+            setErrorFor(password, 'El campo de contraseña no puede estar vacio');
+        } else if (passwordValue.length < 8){
+            setErrorFor(password, 'El campo de contraseña debe tener almenos 8 caracteres');
+        } else{    
+            setSuccessFor(password);
+        }
+        
+        if(password2Value === '') {
+            setErrorFor(password2, 'Repetir contraseña no puede estar vacio');
+        } else if(passwordValue !== password2Value) {
+            setErrorFor(password2, 'Las contraseñas no coinciden');
+        } else{
+            setSuccessFor(password2);
+        }
+         
+
+        if(image.value == "") {
+            setErrorFor(image, 'Imagen obligatoria');
+        } else{
+            setSuccessFor(image);
+        }
+
+        
+       
+    }
+    
+    function setErrorFor(input, message) {
+        const formControl = input.parentElement;
+        const small = formControl.querySelector('small');
+        formControl.className = 'form-L error';
+        small.innerText = message;
+    }
+    
+    function setSuccessFor(input) {
+        const formControl = input.parentElement;
+        formControl.className = 'form-L success';
+    }
+        
+    function isEmail(email) {
+        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    }
+    
 });

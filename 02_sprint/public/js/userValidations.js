@@ -1,83 +1,76 @@
 window.addEventListener('load', function() {
-    let userform = document.querySelector("form.userform-js")
-
-    userform.addEventListener("submit", function(event){
-
-        let erroresCf =[];
-
-        /*validacion de user */
-
-        let userconfig = document.querySelector("input.user-cf");
-
-        if(userconfig.value == ""){
-               erroresCf.push("El campo de usuario no puede estar vacio");
-               let bordercrl = document.querySelector("#userName");
-               let hiddenicon = document.querySelector("i.fa-exclamation-circle");
-
-               bordercrl.style.border = "2px solid #e74c3c" ;
-               hiddenicon.style.visibility = "visible";
-        }else if (userconfig.value.length < 5 ){
-                erroresCf.push("El campo debe tener almenos 5 caracteres");
+    const form = document.getElementById('configForm-js');
+    const username = document.getElementById('user-C');
+    const email = document.getElementById('email-C');
+    const password = document.getElementById('password-C');
+    const image = document.querySelector("form.img-js input.img-cf");
+ 
     
-                let bordercrl = document.querySelector("#userName");
-                let hiddenicon = document.querySelector("i.fa-exclamation-circle");
+   
     
-                bordercrl.style.border = "2px solid #e74c3c" ;
-                hiddenicon.style.visibility = "visible";
-        }else if (userconfig.value){
-                let bordercrl = document.querySelector("#userName");
-                let hiddenicon = document.querySelector("i.fa-check-circle");
-    
-                bordercrl.style.border = "2px solid green" ;
-                hiddenicon.style.visibility = "visible";
-        };
-        /* FALTA VALIDAR QUE EL USUARIO A CAMBIAR NO ESTE EXISTENTE YA EN LA BASE DE DATOS EN EL BACKEND */
+    form.addEventListener('submit', e => {
+        e.preventDefault();
         
-
-        /* Validacion de email */
-        let emailconfig = document.querySelector("input.email-cf");
-        
-
-        if(emailconfig.value == ""){
-            erroresCf.push("El campo de email no puede estar vacio");
-            let bordercrl = document.querySelector("#email");
-            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
-
-            bordercrl.style.border = "2px solid #e74c3c" ;
-            hiddenicon.style.visibility = "visible";
-
-        }else if(!emailconfig.value.includes("@")){
-            erroresCf.push("El dato ingresado no es valido ");
-            let bordercrl = document.querySelector("#email");
-            let hiddenicon = document.querySelector("i.fa-exclamation-circle");
-
-            bordercrl.style.border = "2px solid #e74c3c" ;
-            hiddenicon.style.visibility = "visible";
-        }else if(emailconfig.value.includes("@")){
-            let bordercrl = document.querySelector("#email");
-            let hiddenicon = document.querySelector("i.fa-check-circle");
-
-            bordercrl.style.border = "2px solid green" ;
-            hiddenicon.style.visibility = "visible";
-        
-        };
-
-        
-        if (erroresCf.length > 0) {
-            event.preventDefault();
-
-            let ulErrores = document.querySelector("div.erroresCf ul");
-
-            ulErrores.innerHTML = "";
-
-            for(let i = 0; i < erroresCf.length; i++) {
-
-                ulErrores.innerHTML += "<li>" + erroresCf[i] + "</li>"
-            }
-
-        }
-       
-
+        checkInputs();
     });
-
+    
+    function checkInputs() {
+      
+       
+        const usernameValue = username.value.trim();
+	    const emailValue = email.value.trim();
+	    const passwordValue = password.value.trim();
+	    
+       
+        
+        
+        
+        if(usernameValue === '') {
+            setErrorFor(username, 'El campo de usuario no puede estar vacio');
+        } else if(usernameValue.length < 5) {
+            setErrorFor(username, 'El campo de usuario debe tener almenos 5 caracteres');
+        } else {
+            setSuccessFor(username);
+        }
+        
+        if(emailValue === '') {
+            setErrorFor(email, 'El campo email no puede estar vacio');
+        } else if (!isEmail(emailValue)) {
+            setErrorFor(email, 'Email invalido');
+        } else {
+            setSuccessFor(email);
+        }
+        
+        if(passwordValue === '') {
+            setErrorFor(password, 'El campo de contraseña no puede estar vacio');
+        } else{    
+            setSuccessFor(password);
+        }
+        
+        if(image.value == "") {
+            setErrorFor(image, 'Imagen obligatoria');
+        } else{
+            setSuccessFor(image);
+        }
+        
+        
+       
+    }
+    
+    function setErrorFor(input, message) {
+        const formControl = input.parentElement;
+        const small = formControl.querySelector('small');
+        formControl.className = 'user-div form-C error';
+        small.innerText = message;
+    }
+    
+    function setSuccessFor(input) {
+        const formControl = input.parentElement;
+        formControl.className = 'user-div form-C success';
+    }
+        
+    function isEmail(email) {
+        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    }
+    
 });

@@ -1,54 +1,59 @@
 window.addEventListener('load', function() {
-    let formulariolog = document.querySelector("form.formulario-js")
-
-    formulariolog.addEventListener("submit", function(event){
-         let errores = [];
-
-         /* validacion de email */
-        let emaillog = document.querySelector("input.log-email");
-        
-
-        if(emaillog.value == ""){
-            errores.push("El campo de email no puede estar vacio");
-            let bordercrl = document.querySelector("#emailLog input");
-            let hiddenicon = document.querySelector("#emailLog i.fa-exclamation-circle");
-
-            bordercrl.style.border = "2px solid #e74c3c" ;
-            hiddenicon.style.visibility = "visible";
-        }
+    const form = document.getElementById('loginForm-js');
+    const email = document.getElementById('email-L');
+    const password = document.getElementById('password-L');
+   
     
+    form.addEventListener('submit', e => {
 
-
-
+        /*if (small.length !== ""){
+            e.preventDefault()*/
         
-
-         /* validacion de password */
-        let passwordlog = document.querySelector("input.log-pass");
-
-        if(passwordlog.value == ""){
-            errores.push("El campo de contraseña no puede estar vacio");
-            let bordercrl = document.querySelector("#passwordLog input");
-            let hiddenicon = document.querySelector("#passwordLog i.fa-exclamation-circle");
-         
-            bordercrl.style.border = "2px solid #e74c3c" ;
-            hiddenicon.style.visibility = "visible";
-        } 
-
-
-
-
-        if (errores.length > 0) {
-            event.preventDefault();
-
-            let ulErrores = document.querySelector("div.errores ul");
-
-            ulErrores.innerHTML = "";
-
-            for(let i = 0; i < errores.length; i++) {
-
-                ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
-            }
-
-        }
+        checkInputs();
+        
     });
+    
+    function checkInputs() {
+      
+       
+        const emailValue = email.value.trim();
+        const passwordValue = password.value.trim();
+       
+        
+        
+        
+        if(emailValue === '') {
+            setErrorFor(email, 'El campo email no puede estar vacio');
+        } else if (!isEmail(emailValue)) {
+            setErrorFor(email, 'Email invalido');
+        } else {
+            setSuccessFor(email);
+        }
+        
+        if(passwordValue === '') {
+            setErrorFor(password, 'El campo de contraseña no puede estar vacio');
+        } else {
+            setSuccessFor(password);
+        }
+        
+       
+    }
+    
+    function setErrorFor(input, message) {
+        const formControl = input.parentElement;
+        const small = formControl.querySelector('small');
+        formControl.className = 'form-L error';
+        small.innerText = message;
+    }
+    
+    function setSuccessFor(input) {
+        const formControl = input.parentElement;
+        formControl.className = 'form-L success';
+    }
+        
+    function isEmail(email) {
+        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    }
+    
+    
 });

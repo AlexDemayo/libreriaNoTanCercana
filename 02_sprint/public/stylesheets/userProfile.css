@@ -1,11 +1,5 @@
 /* Profile styling */
-.erroresCf li{
-    color:#db2814;
-}
 
-.erroresPcf li{
-    color:#db2814;
-}
 
 
 .imgg {
@@ -32,23 +26,6 @@
 	font-weight: 535;
 }
 
-.update i.fa-exclamation-circle{
-    position: absolute;
-    top: 67px;
-    right: 60px;
-    font-size: 16px;
-    color: #db2814;
-    visibility: hidden;
-}
-
-.update i.fa-check-circle{
-    position: absolute;
-    top: 67px;
-    right: 60px;
-    font-size: 16px;
-    color: green;
-    visibility: hidden;
-}
 
 .menu-profile {
 	padding: 13%;
@@ -216,6 +193,73 @@ input.margin-img{
 	margin-top: 45px;
 } */
 
+/* styling de CONFIG FORM */
+
+.form-C {
+  
+    position: relative;
+}
+
+.form-C label {
+	display: inline-block;
+}
+
+.form-C input {
+	display: block;
+}
+
+.form-C input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.user-div.form-C.success input {
+    border-color: #2bbe68;
+    border-width: 2px;
+}
+
+.user-div.form-C.error input {
+    border-color: #e74c3c;
+    border-width: 2px;
+}
+
+.form-C i.config {
+    font-size:15px;
+	visibility: hidden;
+	position: absolute;
+	top: 14px;
+	right: 47px;
+}
+
+.form-C.success i.fa-check-circle {
+	color: #2bbe68;
+	visibility: visible;
+}
+
+.form-C.error i.fa-exclamation-circle {
+	color: #e74c3c;
+    visibility: visible;  
+}
+
+small{
+    font-size: 14px;
+}
+
+.form-C small {
+	color: #e74c3c;
+	position: absolute;
+	bottom: 0px;
+	left: 23px;
+	visibility: hidden;
+}
+
+
+.form-C.error small {
+	visibility: visible;
+}
+
+/* styling de CONFIG FORM */
+
 
 .profile-div{
 	display: inline-block;
@@ -236,8 +280,30 @@ input.margin-img{
 	display: flex;
 }
 
-#userName, #email, #password, #newPassword, #confirmNewPassword{
+#user-C, #email-C, #password-C{
 	border: none;
+	height: 32px;
+	padding: 1%;
+    width: 80%;
+    margin-bottom: 28px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-indent: 5px;
+}
+
+#password-P, #newPassword-P, #newPassword2-P{
+    border: none;
+	height: 32px;
+	padding: 1%;
+    width: 80%;
+    margin-bottom: 28px;
+    margin-top: 5px;
+    border-radius: 4px;
+    text-indent: 5px;
+}
+
+#authorName{
+    border: none;
 	height: 32px;
 	padding: 1%;
     width: 80%;
