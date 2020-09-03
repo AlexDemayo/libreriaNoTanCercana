@@ -227,18 +227,16 @@
 
   <div class="col-12 col-md-5 col-lg-7 user-password-config recommended-categories-div" style="display:none">
 
-    <form class="form1 update register edit-pf-form recommended-categories-form " action="/" method="POST" name="recommended">
+    <form class="form1 update register edit-pf-form recommended-categories-form " action="/category/recommended" method="POST" name="recommended">
 
     
       <p class="p-profile marginpf edit-form-p marginR">Elegí las categorías recomendadas</p>     
         
-
-      
       
         <% categories.forEach(elem => { %>
          <div class="categories-div">
-          <label class="style-label" for="categoria"><%= elem.name %> </label>
-          <input class="category-input" type="checkbox" name="categoria" onclick='chkcontrol(0)' id="<%= elem.id %>" value="<%= elem.id %>">
+          <label class="style-label" for="categoria"><%= elem.name %></label>
+          <input class="category-input" type="checkbox" name="category" onclick='chkcontrol(0)' id="<%= elem.id %>" value="<%= elem.id %>">
         </div>
         <% }) %>
         

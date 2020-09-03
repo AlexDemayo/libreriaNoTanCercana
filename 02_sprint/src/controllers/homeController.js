@@ -8,11 +8,12 @@ const homeController = {
 		let books = db.Product.findAll();
 		let lastBooks = db.Product.findAll({ order: [['id', 'DESC']] });
 		let bestSellers = db.Product.findAll({order: [['author', 'ASC']]})
+		let categories = db.Category.findAll();
 		// let monthlyAuthor = db.Product.findAll({where: {author: }})
 
-		Promise.all([books, lastBooks, bestSellers])
-		.then(([books, lastBooks, bestSellers]) => {
-			return res.render('index', {books, lastBooks, bestSellers})
+		Promise.all([books, lastBooks, bestSellers, categories])
+		.then(([books, lastBooks, bestSellers, categories]) => {
+			return res.render('index', {books, lastBooks, bestSellers, categories})
 		})
 		.catch(error => {
 			console.log(error)
