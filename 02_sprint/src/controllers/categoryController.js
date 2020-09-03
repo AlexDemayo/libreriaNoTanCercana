@@ -81,23 +81,14 @@ const categoryController = {
 		
 	},
 	recommended: function(req,res){
-		
-		let idRecibidos = req.body.category
-		
-		db.Category.findAll({where: {id: idRecibidos}})
-		.then(categories => {
-			return db.Category.update({
-				status: 1
-			}, {
-				where: {
-					status: 0
-				}
-			})
+		//poner en 0 a todas primero
+		let idRecibidos = req.body.category;
+		db.Category.update({recommended:1}, {where: {id:idRecibidos}})
+		.then(()=>res.send("se cambio"))
+		.catch(error => {
+			console.log(error)
 		})
-		.then((categories) => {
-			return res.send(categories)
-		})
-		
+
 	}
 	
 };

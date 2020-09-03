@@ -12,6 +12,9 @@ module.exports = (sequelize, DataTypes) => {
 		},
 		deletedAt: {
 			type: DataTypes.DATE
+		},
+		recommended: {
+			type: DataTypes.INTEGER
 		}
 	});
 
