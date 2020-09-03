@@ -83,17 +83,14 @@ const categoryController = {
 	recommended: function(req,res){
 		//poner en 0 a todas primero
 		db.Category.update({recommended:0}, {where: {recommended:1}})
-		.then(()=>res.send("se cambio1"))
-		.catch(error => {
-			console.log(error)
+		.then(()=>{
+			// Aca sigue el codigo
+			let idRecibidos = req.body.category;
+			return db.Category.update({recommended:1}, {where: {id:idRecibidos}});
 		})
+		.then(()=> res.redirect("/"))
+		.catch(error => console.log(error))
 
-		let idRecibidos = req.body.category;
-		db.Category.update({recommended:1}, {where: {id:idRecibidos}})
-		.then(()=>res.send("se cambio2"))
-		.catch(error => {
-			console.log(error)
-		})
 
 	}
 	

@@ -236,7 +236,7 @@
         <% categories.forEach(elem => { %>
          <div class="categories-div">
           <label class="style-label" for="categoria"><%= elem.name %></label>
-          <input class="category-input" type="checkbox" name="category" onclick='chkcontrol(0)' id="<%= elem.id %>" value="<%= elem.id %>">
+          <input class="category-input" type="checkbox" name="category" <%= elem.recommended && "checked" %>  onclick='chkcontrol(0)' id="<%= elem.id %>" value="<%= elem.id %>">
         </div>
         <% }) %>
         
