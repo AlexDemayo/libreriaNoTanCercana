@@ -128,16 +128,6 @@ AFTER isbn;
 ALTER TABLE items
 ADD FOREIGN KEY (publisherId) REFERENCES publishers(id);
 
-ALTER TABLE orders
-ADD itemId INT UNSIGNED NOT NULL
-AFTER userId;
-
-ALTER TABLE orders
-ADD FOREIGN KEY (itemId) REFERENCES items(id);
-
-ALTER TABLE orders
-DROP COLUMN itemId;
-
 ALTER TABLE items
 ADD author VARCHAR(50) NOT NULL
 AFTER title;
@@ -150,3 +140,7 @@ CREATE TABLE monthlyAuthors (
     updatedAt DATETIME ON UPDATE CURRENT_TIMESTAMP, 
     deletedAt DATETIME 
 );
+
+ALTER TABLE categories
+ADD recommended INT NOT NULL DEFAULT 0 
+AFTER deletedAt;

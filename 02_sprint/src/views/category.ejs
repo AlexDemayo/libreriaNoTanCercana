@@ -14,6 +14,7 @@
                         <li><a href="/category">Categorías</a></li>
                         <li><a href="/category/<%=category%>"><%= category %></a></li>
                     </ul>
+                   
                 </section>
                 <% if (category == "arte") { %>
                  <section class="col-12">
@@ -144,11 +145,14 @@
                             </div>       
                         <% }) %>
                 <% } %> 
+
+                
             </div>
         </div>
     </main>
     
     <%- include('partials/footer') %>
+    
     
 </body>
 

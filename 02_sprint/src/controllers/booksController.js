@@ -15,15 +15,25 @@ module.exports = {
                 categoryUrl = categoryUrl.replace(' ','+');
                 
             }
-
+            if (book.subCategory != null){
+   
             let subCategoryUrl = book.subCategory.name;
 
             for(let i = 0; i < subCategoryUrl.length; i++){
                 subCategoryUrl = subCategoryUrl.replace(' ','+');
-                
             }
 
-           return res.render('detail', {book, categoryUrl, subCategoryUrl});
+            return res.render('detail', {book, categoryUrl, subCategoryUrl});
+
+
+            }else{
+
+             return res.render('detail', {book, categoryUrl});
+
+             
+            }
+
+           
         })
         .catch(error => {
 			console.log(error)
