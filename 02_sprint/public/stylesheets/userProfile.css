@@ -356,6 +356,9 @@ small{
 	
 }
 
+.category-checkbox-label{
+	text-transform: capitalize;
+}
 
 @media(min-width:768px){
 	.profile-config {

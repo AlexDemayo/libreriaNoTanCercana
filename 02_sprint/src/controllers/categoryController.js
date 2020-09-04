@@ -91,8 +91,7 @@ const categoryController = {
 		.then(()=> res.redirect("/"))
 		.catch(error => console.log(error))
 
-
-	}
+	},
 	
 };
 

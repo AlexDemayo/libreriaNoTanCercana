@@ -178,6 +178,18 @@ p:hover{
   margin-top: 18px;
 }
 
+
+/* categorías recomendadas */
+
+.categories-a:hover{
+  text-decoration: none;
+}
+
+.uk-categories-title{
+  text-transform: capitalize;
+}
+
+
 @media(min-width:768px){
 
 

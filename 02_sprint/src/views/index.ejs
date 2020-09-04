@@ -6,7 +6,6 @@
   <%- include('partials/header') %>
   
   <div class="containerDelBody" >
- 
     <br>
     <div class="div-span-index">
       <span class="span-index">Recomendados</span>
@@ -180,30 +179,17 @@
             <span class="span-index">Categorías Recomendadas </span>
           </div> 
           <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
-            <div>
-              <a href="/category/arte">
-                <div class="uk-card uk-card-default uk-card-body">
-                  <h3 class="uk-card-title">Arte</h3>
-                  <p>Tremenda Categoría 1</p>
-                </a>
+            <% categories.forEach(category => { %>
+              <a class="categories-a" href="/category/<%= category.name %>">
+                <div >
+                  <div class="uk-card uk-card-hover uk-card-body uk-category-body">
+                      <h3 class="uk-card-title uk-categories-title"><%= category.name %> </h3>
+                      <p>Descubrí esta categoría</p>
+                  </div>
               </div>
-            </div>
-            <div>
-              <a href="/category/narrativa">
-                <div class="uk-card uk-card-primary uk-card-body">
-                  <h3 class="uk-card-title">Narrativa</h3>
-                  <p>Tremenda Categoría 2</p>
-                </a>
-              </div>
-            </div>
-            <div>
-              <a href="/category/ensayo">
-                <div class="uk-card uk-card-secondary uk-card-body">
-                  <h3 class="uk-card-title">Ensayos</h3>
-                  <p>Tremenda Categoría 3</p>
-                </a>
-              </div>
-            </div>
+              </a>
+            <% }) %>
+           
           </div>
         </div>
         
@@ -215,10 +201,10 @@
       <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.4/dist/js/uikit-icons.min.js"></script>
       <script src="/js/sessionStorage.js"></script>
+      <script src="/js/categories.js"></script>
       
     </body>
     
     
     </html>
-    
     
