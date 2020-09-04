@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-	let MonthyAuthor = sequelize.define('MonthyAuthor', {
+	let MonthlyAuthor = sequelize.define('MonthlyAuthor', {
 		name: {
 			allowNull: false,
 			type: DataTypes.STRING
@@ -20,5 +20,5 @@ module.exports = (sequelize, DataTypes) => {
 	});
 
 
-	return MonthyAuthor;
+	return MonthlyAuthor;
 };

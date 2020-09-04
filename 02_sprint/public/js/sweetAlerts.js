@@ -24,7 +24,8 @@ window.addEventListener("load", function(){
 
    registerButton.addEventListener("click", function(e){
 
- 
+  // PREGUNTAR SI TENES ERRORES ANTES DE DISPARAR EL SWEET ALERT
+  // guar
      swal({
          title: "Tu cuenta ha sido creada con exito!",
          text: "",

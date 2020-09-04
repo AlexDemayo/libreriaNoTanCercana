@@ -280,7 +280,9 @@ const usersController = {
    },
 
    	monthlyAuthor: function(req,res){
-		db.monthlyAuthor.create({
+		console.log(req.file.filename)
+		
+		db.MonthlyAuthor.create({
 			name: req.body.name,
 			image: req.file.filename
 		})
