@@ -62,7 +62,7 @@ function checker(elem) {
 
     /*small.style.visibility = visible;  */  
       
-    } else { //if limit is less than two
+    } else { // si limite es menor a dos 
 
       if (!checkboxes[i].checked) {
         checkboxes[i].disabled = false;       // habilita los inputs que estan unchecked
