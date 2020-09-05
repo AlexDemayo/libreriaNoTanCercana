@@ -9,9 +9,12 @@ window.addEventListener('load', function() {
    
     
     form.addEventListener('submit', e => {
-        e.preventDefault();
-        
-        checkInputs();
+
+
+        if(!checkInputs()){
+            e.preventDefault();
+        }
+
     });
     
     function checkInputs() {
@@ -20,11 +23,16 @@ window.addEventListener('load', function() {
         const password2Value = newPassword.value.trim();
         const repassword2Value = newPassword2.value.trim();
 	    
-       
+        let contador = 0;
+
+
+
         if(passwordValue === '') {
             setErrorFor(password, 'El campo de contraseña no puede estar vacio');
+            contador ++;
         } else if (passwordValue.length < 8){
             setErrorFor(password, 'El campo de contraseña debe tener almenos 8 caracteres');
+            contador ++;
         }else{    
             setSuccessFor(password);
         }
@@ -32,21 +40,27 @@ window.addEventListener('load', function() {
 
         if(password2Value === '') {
             setErrorFor(newPassword, 'El campo de contraseña no puede estar vacio');
+            contador ++;
         } else if (password2Value.length < 8){
             setErrorFor(newPassword, 'El campo de contraseña debe tener almenos 8 caracteres');
+            contador ++;
         } else{
             setSuccessFor(newPassword);
         }
 
         if(repassword2Value === '') {
             setErrorFor(newPassword2, 'Repetir contraseña no puede estar vacio');
+            contador ++;
         } else if(password2Value !== repassword2Value) {
             setErrorFor(newPassword2, 'Las contraseñas no coinciden');
+            contador ++;
         } else{
             setSuccessFor(newPassword2);
         }
         
-        
+        if (contador < 1){
+            return true
+        }else return false
         
         
        
