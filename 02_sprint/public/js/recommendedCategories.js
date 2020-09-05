@@ -39,26 +39,33 @@ window.addEventListener('load', function() {
 checkboxes = document.querySelectorAll('.checkboxdiv input[type="checkbox"]'); //selecciona todos los checkboxs
  small =  document.getElementById("frontMsg");
 console.log(small);
+var contadorAux = 0;
 function checker(elem) {
+
   if (elem.checked) {
      //si estan chequeados, incrementa el contador
     limit++;
-    console.log(limit);
+    console.log(limit)
+   
   } else {
     limit--; //sino, le resta al contador
   }  
 
   for (i = 0; i < checkboxes.length; i++) { // le hace un loop a todos los inputs
 
-    if (limit == 3) {
+    if (limit > 3) {
        /*if(checkboxes[i].checked){
         checkboxes[i].disabled = true;
        }*/
-
+       if(contadorAux<1){
+        console.log(checkboxes[i])
+       checkboxes[i].checked = false;
+       contadorAux++;
+      }
       if (!checkboxes[i].checked) {
         checkboxes[i].disabled = true; // desabilita todos los inputs que estan unchecked
         small.style.display = "block";
-          // FALTA FIXEAR EL MENSAJE 
+          
     }
 
     /*small.style.display = block;*/
@@ -66,9 +73,10 @@ function checker(elem) {
     } else { // si limite es menor a dos 
 
       if (!checkboxes[i].checked) {
+    
         checkboxes[i].disabled = false;       // habilita los inputs que estan unchecked
         small.style.display = "none";
-           // FALTA FIXEAR EL MENSAJE 
+         
       }
       /*small.style.visibility = hidden;  */
     }
@@ -78,18 +86,18 @@ function checker(elem) {
 
 for (i = 0; i < checkboxes.length; i++) {
     
-  /* window.onload = function(){
-       checker(checkboxes[i]);
-       console.log(checkboxes);
-   }*/
 
-    
+
+
     // hace un loop de todos los inputs y a cada uno de los inputs cuando le hagas onclick ejecuta checker enviandole
   checkboxes[i].onclick = function() { //le hagas onclick ejecuta checker enviandole el elemento actual como parametro
     checker(this);
-    console.log("este es this" + this);
+    console.log("este es this" + this.id);
   }
 }
+
+
+
 
     
 }); 
