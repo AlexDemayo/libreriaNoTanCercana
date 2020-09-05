@@ -57,15 +57,17 @@ function checker(elem) {
 
       if (!checkboxes[i].checked) {
         checkboxes[i].disabled = true; // desabilita todos los inputs que estan unchecked
+        small.style.display = "block";
           // FALTA FIXEAR EL MENSAJE 
     }
 
-    /*small.style.visibility = visible;  */  
+    /*small.style.display = block;*/
       
     } else { // si limite es menor a dos 
 
       if (!checkboxes[i].checked) {
         checkboxes[i].disabled = false;       // habilita los inputs que estan unchecked
+        small.style.display = "none";
            // FALTA FIXEAR EL MENSAJE 
       }
       /*small.style.visibility = hidden;  */
