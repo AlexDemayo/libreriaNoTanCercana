@@ -1,0 +1,1 @@
+INSERT INTO `libreriadb`.`monthlyAuthors` (`id`, `name`, `image`) VALUES ('1', 'Haruki Murakami', 'image-1599280624140.jpg');

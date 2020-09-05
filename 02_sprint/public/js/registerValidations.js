@@ -11,10 +11,8 @@ window.addEventListener('load', function() {
     
     form.addEventListener('submit', e => {
        
-       
-        if(!checkInputs()){
-            e.preventDefault();
-        }else {
+        
+        if(checkInputs()){
             swal({
                 title: "Tu cuenta ha sido creada con exito!",
                 text: "",
@@ -23,6 +21,18 @@ window.addEventListener('load', function() {
                 confirmButtonText: "Ok",
                 timer: 5000
             });
+            
+        }else {
+            swal({
+                title: "Algo sucedio con los campos!",
+                text: "Verificar campos",
+                type: "error",
+                showConfirmButton: false,
+                confirmButtonText: "Ok",
+                timer: 4000
+            });
+            
+            e.preventDefault();
         }
             
             
