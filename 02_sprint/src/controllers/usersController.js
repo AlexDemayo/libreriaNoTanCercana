@@ -24,7 +24,14 @@ const usersController = {
 				orderId: null,
 				image: req.file.filename
 				
-			})
+            }).then(user => {
+            db.User.findOne({ 
+                order: [['createdAt', 'DESC']]   })
+                
+                /* delete user.password; */
+
+                req.session.user = user
+            })   
 			.then(() => res.redirect('/'));
 			
             

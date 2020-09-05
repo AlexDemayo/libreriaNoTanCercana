@@ -335,7 +335,7 @@ small{
 .marginR{
     margin-bottom: 25px;
 }
-.categories-div{
+.checkboxdiv{
     display:flex;
     justify-content: space-between;
     border-bottom: 1px solid rgb(212, 212, 212);
@@ -349,7 +349,7 @@ small{
  }
 
 
-.categories-div input[type=checkbox] {
+.checkboxdiv input[type=checkbox] {
     width: 3%;
     margin-right: 100px;
 	
@@ -358,6 +358,14 @@ small{
 
 .category-checkbox-label{
 	text-transform: capitalize;
+}
+
+.form1 small{
+    font-size:17px;
+    color: #ee331e;
+    margin-left: 53px;
+    visibility: visible;
+
 }
 
 @media(min-width:768px){

@@ -31,26 +31,46 @@ window.addEventListener('load', function() {
 	
 
 
+   /* limit checkers del front */
 
-    
-    let checkEvent = document.querySelector(".category-input");
 
-    checkEvent.addEventListener("click", function(){
-        chkcontrol(i);
-    })
+    limit = 0; //set limit
 
-	function chkcontrol(j) {
-		var total=0;
-		for(var i=0; i < document.form1.categoria.length; i++){
-		if(document.form1.categoria[i].checked){
-		total =total ++;}
-		if(total > 3){
-		alert("Please Select only three") 
-		document.form1.categoria[j].checked = false ;
-		return false;
-	    }
+checkboxes = document.querySelectorAll('.checkboxdiv input[type="checkbox"]'); //selecciona todos los checkboxs
+ small =  document.getElementById("frontMsg");
+
+function checker(elem) {
+  if (elem.checked) { //si estan chequeados, incrementa el contador
+    limit++;
+  } else {
+    limit--; //sino, le resta al contador
+  }
+
+  for (i = 0; i < checkboxes.length; i++) { // le hace un loop a todos los inputs
+
+    if (limit == 3) {
+      if (!checkboxes[i].checked) {
+        checkboxes[i].disabled = true; // desabilita todos los inputs que estan unchecked
+       /* small.style.visibility = visible; */      // FALTA FIXEAR EL MENSAJE 
       }
-    }	
+      
+    } else { //if limit is less than two
+
+      if (!checkboxes[i].checked) {
+        checkboxes[i].disabled = false;       // habilita los inputs que estan unchecked
+       /* small.style.visibility = hidden;  */    // FALTA FIXEAR EL MENSAJE 
+      }
+
+    }
+  }
+
+}
+
+for (i = 0; i < checkboxes.length; i++) {   // hace un loop de todos los inputs y a cada uno de los inputs cuando le hagas onclick ejecuta checker enviandole
+  checkboxes[i].onclick = function() { //le hagas onclick ejecuta checker enviandole el elemento actual como parametro
+    checker(this);
+  }
+}
 
     
 }); 

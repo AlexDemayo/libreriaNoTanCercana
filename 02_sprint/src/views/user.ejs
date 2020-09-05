@@ -234,9 +234,9 @@
         
       
         <% categories.forEach(elem => { %>
-         <div class="categories-div">
+         <div class="checkboxdiv">
           <label class="style-label category-checkbox-label" for="categoria"><%= elem.name %></label>
-          <input class="category-input" type="checkbox" name="category" <%= elem.recommended && "checked" %>  onclick='chkcontrol(0)' id="<%= elem.id %>" value="<%= elem.id %>">
+          <input class="category-input" type="checkbox" name="category" <%= elem.recommended && "checked" %> id="<%= elem.id %>" value="<%= elem.id %>">
         </div>
         <% }) %>
         
@@ -245,6 +245,7 @@
 
       
       <div>
+        <small id="frontMsg">*No podes elegir mas de 3 categorias ! </small>
         <button type="submit" id="button-categories-form">Actualizar</button>
       </div>
     </form>
