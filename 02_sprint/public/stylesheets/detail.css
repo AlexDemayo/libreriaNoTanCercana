@@ -2,8 +2,12 @@
 	padding: 20px;
 }
 
-.breadcrumbs {
-	display: none;
+/* .breadcrumbs {
+	display: none; 
+}*/
+
+.breadcrumbs li:last-child{
+	padding-left: 0px;
 }
 
 .photo-container {
@@ -192,9 +196,9 @@ button.elm-button:hover {
 		margin-bottom: 25px;
 	}
 
-	/* .book-photo{
-     width: 80%
-    } */
+	.breadcrumbs li:last-child{
+		padding-left: none
+	}
 
 	.book-buy input[type=number] {
 		margin: 5px 0px;
