@@ -197,7 +197,7 @@ button.elm-button:hover {
 	}
 
 	.breadcrumbs li:last-child{
-		padding-left: none
+		padding-left: 8px
 	}
 
 	.book-buy input[type=number] {

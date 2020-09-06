@@ -137,8 +137,12 @@ ul {
 	clear: right;
 	text-decoration: none;
 	color: rgb(109, 108, 108);
-	margin: 0 10px;
+	/* margin: 0 10px; */
 	line-height: 50px;
+	display: block;
+	border-bottom: 1px solid #eaeaeb;
+	margin-left: 0px;
+	padding: 5px 0px;
 }
 
 label#togglex {
@@ -164,13 +168,17 @@ label#togglex {
 	width: 100%;
 	display: none;
 	background-color: white;
+	width: 320px;
+    position: relative;
+    left: 24px;
+    top: 31px;
 }
 
-.menu a {
+/* .menu a {
 	display: block;
 	border-bottom: 1px solid #eaeaeb;
 	margin-left: 0px;
-}
+} */
 
 #toggle:checked + .menu {
 	display: block;
@@ -312,6 +320,23 @@ input[type="submit"] {
 .newsletter-back {
 	background-color: #f8f7bf;
 	width: 100%;
+}
+
+
+@media (min-width: 375px){
+	.menu{
+		width: 375px;
+		top:40px;
+		left: 27px;
+	}
+}
+
+@media (min-width: 425px){
+	.menu{
+		width: 425px;
+		top: 48px;
+		left:29px
+	}
 }
 
 @media (min-width: 768px) {
