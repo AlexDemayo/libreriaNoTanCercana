@@ -71,6 +71,7 @@ const usersController = {
 
 		if (req.cookies.remember) {
 			res.clearCookie('remember');
+
 		}
 
 		return res.redirect('/');

@@ -144,3 +144,5 @@ CREATE TABLE monthlyAuthors (
 ALTER TABLE categories
 ADD recommended INT NOT NULL DEFAULT 0 
 AFTER deletedAt;
+
+

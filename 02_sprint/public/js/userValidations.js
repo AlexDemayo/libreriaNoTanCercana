@@ -53,12 +53,7 @@ window.addEventListener('load', function() {
             setSuccessFor(password);
         }
         
-        if(image.value == "") {
-            setErrorFor(image, 'Imagen obligatoria');
-            contador ++;
-        } else{
-            setSuccessFor(image);
-        }
+        
         
         if (contador < 1){
             return true

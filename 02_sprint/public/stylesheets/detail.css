@@ -6,9 +6,7 @@
 	display: none; 
 }*/
 
-.breadcrumbs li:last-child{
-	padding-left: 0px;
-}
+
 
 .photo-container {
 	text-align: center;
@@ -196,9 +194,7 @@ button.elm-button:hover {
 		margin-bottom: 25px;
 	}
 
-	.breadcrumbs li:last-child{
-		padding-left: 8px
-	}
+
 
 	.book-buy input[type=number] {
 		margin: 5px 0px;

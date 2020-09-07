@@ -228,7 +228,8 @@ input.margin-img{
 	visibility: hidden;
 	position: absolute;
 	top: 14px;
-	right: 47px;
+	/* right: 47px; */
+	right: 30px;
 }
 
 .form-C.success i.fa-check-circle {
@@ -344,17 +345,17 @@ small{
 }
 .style-label{
     margin-top:20px;
-    margin-left: 55px;
+    margin-left: 25px;
 
  }
 
 
+
 .checkboxdiv input[type=checkbox] {
-    width: 3%;
-    margin-right: 100px;
-	
-	
+	width: 5%;
+    margin-right: 65px;
 }
+
 
 .category-checkbox-label{
 	text-transform: capitalize;
@@ -363,12 +364,28 @@ small{
 .form1 small{
     font-size:17px;
     color: #ee331e;
-    margin-left: 53px;
-    display: none;
+	/* margin-left: 53px; */
+	margin-left:22px;
+	display: none;
+	margin-bottom: 8px;
+	margin-top: 20px
 
 }
 
 @media(min-width:768px){
+
+	.form-C i.config {
+
+	right: 20px; 
+	
+	} 
+
+
+	.checkboxdiv input[type=checkbox] {
+		width: 6%;
+		margin-right: 45px;
+	} 
+	
 	.profile-config {
 		margin-right: 40px;
 	}
@@ -449,6 +466,21 @@ small{
 
 
 @media(min-width:992px){
+
+	.form1 small{
+		margin-left: 53px; 	
+	}
+
+
+	.checkboxdiv input[type=checkbox] {
+		width: 3%;
+		margin-right: 100px;
+	} 
+	.style-label{
+		
+		margin-left: 55px;
+	
+	 }
 	.user-img {
 		width: 5%; 
 		height: auto;

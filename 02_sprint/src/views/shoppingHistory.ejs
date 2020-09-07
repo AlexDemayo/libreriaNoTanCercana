@@ -23,7 +23,7 @@
                 <% items.forEach(item => { %>
                     <tr>
                         <% total = total + item.total %> 
-                        <td data-th="Product">
+                        <td data-th="Producto">
                             <div class="row">
                                 <div class="col-sm-2 hidden-xs"><img alt="<%= item.title %> " class="img-responsive" src="/images/books/<%= item.image %>"></div>
                                 <div class="col-sm-10">
@@ -32,9 +32,9 @@
                                 </div>
                             </div>
                         </td>
-                        <td data-th="Price" class="text-center">$<%= item.price %> </td>
+                        <td data-th="Precio" class="text-center">$<%= item.price %> </td>
                         <td data-th="Isbn" class="text-center"><%= item.isbn %> </td>
-                        <td data-th="Quantity" class="text-center"><%= item.quantity %> </td>
+                        <td data-th="Cantidad" class="text-center"><%= item.quantity %> </td>
                         <td data-th="Subtotal" class="text-center">$<%= item.total %> </td>
                         <td class="actions" data-th="">
                             <!-- <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button> -->

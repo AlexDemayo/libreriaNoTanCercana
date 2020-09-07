@@ -203,3 +203,5 @@ UPDATE `libreriadb`.`users` SET `admin` = '1' WHERE (`id` = '1');
 UPDATE `libreriadb`.`products` SET `author` = 'Haruki Murakami' WHERE (`id` = '100');
 UPDATE `libreriadb`.`products` SET `author` = 'Haruki Murakami' WHERE (`id` = '99');
 UPDATE `libreriadb`.`products` SET `author` = 'Haruki Murakami' WHERE (`id` = '98');
+
+UPDATE `libreriadb`.`products` SET `title` = 'Everyday Sunshine' WHERE (`id` = '2');

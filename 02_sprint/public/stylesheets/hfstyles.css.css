@@ -168,10 +168,9 @@ label#togglex {
 	width: 100%;
 	display: none;
 	background-color: white;
-	width: 320px;
-    position: relative;
-    left: 24px;
-    top: 31px;
+	position: relative;
+	top: 28px;
+
 }
 
 /* .menu a {
@@ -289,6 +288,7 @@ h2.ft-title2 {
 	min-width: 200px;
 	flex-direction: row;
 	flex-wrap: wrap;
+	margin-left: 8px;
 }
 
 .ft-main-item2 {
@@ -296,6 +296,7 @@ h2.ft-title2 {
 	min-width: 200px;
 	flex-direction: row;
 	flex-wrap: wrap;
+	
 }
 
 /* Newsletter form */
@@ -323,26 +324,37 @@ input[type="submit"] {
 }
 
 
-@media (min-width: 375px){
+/* @media (min-width: 375px){
 	.menu{
-		width: 375px;
+		width: 500px;
 		top:40px;
 		left: 27px;
-	}
-}
+	} 
+} */
 
-@media (min-width: 425px){
+/* @media (min-width: 425px){
 	.menu{
 		width: 425px;
 		top: 48px;
 		left:29px
 	}
-}
+} */
+
 
 @media (min-width: 768px) {
 	.ft-main {
 		justify-content: space-evenly;
 	}
+
+	.ft-main-item2 {
+		min-width: 200px;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100%;
+		padding: 10px 35px;
+	}
+	
+	
 
 	.header-container {
 		display: flex;
@@ -387,11 +399,21 @@ input[type="submit"] {
 		
 	}
 }
+
 @media (min-width: 992px) {
 	.ft-main {
 		justify-content: space-evenly;
+		padding-top: 15px;
     }
-    
+	
+	.ft-main-item2 {
+		padding: 8px 0;
+		min-width: 200px;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: auto;
+		
+	}
 
 	.header-container {
 		display: flex;

@@ -16,13 +16,12 @@ window.addEventListener("load", function(){
     
      /* borra locals */
 
+  
      let logoutButton = document.querySelectorAll("form.clear-storage")
      
      for (const elem of logoutButton) {
           elem.addEventListener("submit", function(e){
-               
                localStorage.clear()
-               
             })
      }
 
