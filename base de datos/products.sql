@@ -205,3 +205,7 @@ UPDATE `libreriadb`.`products` SET `author` = 'Haruki Murakami' WHERE (`id` = '9
 UPDATE `libreriadb`.`products` SET `author` = 'Haruki Murakami' WHERE (`id` = '98');
 
 UPDATE `libreriadb`.`products` SET `title` = 'Everyday Sunshine' WHERE (`id` = '2');
+
+UPDATE `libreriadb`.`categories` SET `recommended` = '1' WHERE (`id` = '1');
+UPDATE `libreriadb`.`categories` SET `recommended` = '1' WHERE (`id` = '6');
+UPDATE `libreriadb`.`categories` SET `recommended` = '1' WHERE (`id` = '2');

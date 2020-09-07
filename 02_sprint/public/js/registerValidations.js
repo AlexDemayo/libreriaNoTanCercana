@@ -29,7 +29,7 @@ window.addEventListener('load', function() {
                 type: "error",
                 showConfirmButton: false,
                 confirmButtonText: "Ok",
-                timer: 4000
+                timer: 2000
             });
             
             e.preventDefault();

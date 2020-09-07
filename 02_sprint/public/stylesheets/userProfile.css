@@ -227,9 +227,9 @@ input.margin-img{
     font-size:15px;
 	visibility: hidden;
 	position: absolute;
-	top: 14px;
-	/* right: 47px; */
-	right: 30px;
+    top: 14px;
+    right: 35px;
+	
 }
 
 .form-C.success i.fa-check-circle {
@@ -259,6 +259,16 @@ small{
 	visibility: visible;
 }
 
+.form1 small{
+    font-size:17px;
+    color: #ee331e;
+	/* margin-left: 53px; */
+	margin-left:22px;
+	display: none;
+	margin-bottom: 8px;
+	margin-top: 20px
+
+}
 /* styling de CONFIG FORM */
 
 
@@ -361,25 +371,23 @@ small{
 	text-transform: capitalize;
 }
 
-.form1 small{
-    font-size:17px;
-    color: #ee331e;
-	/* margin-left: 53px; */
-	margin-left:22px;
-	display: none;
-	margin-bottom: 8px;
-	margin-top: 20px
 
-}
 
 @media(min-width:768px){
 
 	.form-C i.config {
-
-	right: 20px; 
-	
-	} 
-
+        
+        top: 14px;
+        right: -10px;
+        
+    }
+    .form-C small {
+        color: #e74c3c;
+        position: absolute;
+        bottom: -10px;
+        left: 23px;
+        visibility: hidden;
+    }
 
 	.checkboxdiv input[type=checkbox] {
 		width: 6%;
@@ -469,7 +477,22 @@ small{
 
 	.form1 small{
 		margin-left: 53px; 	
-	}
+    }
+    
+    .form-C i.config {
+        
+        top: 14px;
+        right: 36px;
+        
+    }
+
+    .form-C small {
+        color: #e74c3c;
+        position: absolute;
+        bottom: 0px;
+        left: 23px;
+        visibility: hidden;
+    }
 
 
 	.checkboxdiv input[type=checkbox] {
