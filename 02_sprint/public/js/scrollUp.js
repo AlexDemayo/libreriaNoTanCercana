@@ -17,5 +17,6 @@ function scrollFunction() {
 // cuando el usuario hace click sube a la parte de arriba del documento
 function topFunction() {
   document.documentElement.scrollTop = 0; 
+  
 }
 

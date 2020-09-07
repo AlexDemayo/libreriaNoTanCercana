@@ -111,8 +111,9 @@ window.addEventListener('load', function() {
     }
     
     function setErrorFor(input, message) {
-        const formControl = input.parentElement;
+        const formControl = input.parentElement; //trae el elemento padre del input osea el div de cada uno de los inputs
         const small = formControl.querySelector('small');
+        console.log(input.parentElement);
         formControl.className = 'form-L error';
         small.innerText = message;
     }
